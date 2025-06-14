@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { ChevronUp } from "lucide-react"
 
@@ -22,7 +20,10 @@ import Card3 from "../../public/images/Background+Border+Shadow.svg"
 
 import { Check, Users } from "lucide-react"
 
+import TestimonialsSection from "../components/testimonial"
+
 export default function HeroSection() {
+
   const [activeTab, setActiveTab] = useState("Naaractiviteiten")
   const [openFAQ, setOpenFAQ] = useState(0)
 
@@ -156,21 +157,19 @@ export default function HeroSection() {
               <div className=" flex gap-2 items-center rounded-full p-1 ">
                 <button
                   onClick={() => setActiveTab("Naaractiviteiten")}
-                  className={`px-10 py-2 rounded-lg text-sm inter-tight-400  cursor-pointer transition-all duration-300  ${
-                    activeTab === "Naaractiviteiten"
+                  className={`px-10 py-2 rounded-lg text-sm inter-tight-400  cursor-pointer transition-all duration-300  ${activeTab === "Naaractiviteiten"
                       ? "bg-[#8F34EA] text-white "
                       : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
-                  }`}
+                    }`}
                 >
                   Naar activiteiten
                 </button>
                 <button
                   onClick={() => setActiveTab("bekijk voortgang")}
-                  className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${
-                    activeTab === "bekijk voortgang"
+                  className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${activeTab === "bekijk voortgang"
                       ? "bg-[#8F34EA] text-white "
                       : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
-                  }`}
+                    }`}
                 >
                   bekijk voortgang{" "}
                 </button>
@@ -389,7 +388,7 @@ export default function HeroSection() {
             <div className="relative ">
               <div className="absolute inset-0 bg-gradient-to-br from-[#DB297A] to-[#7940EA]  rounded-3xl z-0"></div>
               <div className="absolute  left-1/2 transform -translate-x-1/2 z-20">
-                <div className=" text-white px-6 py-2 font-bold text-sm">Slechts 15 plekken!</div>
+                <div className=" text-white md:px-6 px-full py-2 font-bold text-sm">Slechts 15 plekken!</div>
               </div>
               <div className="bg-white mt-10 rounded-3xl pb-20 p-8 m-3 shadow-lg relative z-10">
                 <div className="flex flex-col items-start">
@@ -405,7 +404,6 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* Features */}
                 <div className="space-y-4 mb-8 mt-5">
                   {[
                     "Levenslang gratis toegang",
@@ -421,7 +419,6 @@ export default function HeroSection() {
                   ))}
                 </div>
 
-                {/* CTA Button */}
                 <button className="w-full bg-gradient-to-br from-[#22C55E] to-[#059669] cursor-pointer text-sm text-white inter-tight-400 py-4 px-6 rounded-2xl transition-colors duration-500">
                   Aanmelden als testgezin
                 </button>
@@ -459,7 +456,6 @@ export default function HeroSection() {
                 )}
               </div>
 
-              {/* Email Input */}
               <div className="mb-6">
                 <input
                   type="email"
@@ -484,7 +480,9 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* Statistics Section */}
+      <TestimonialsSection />
+
+
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F1F6FB] max-w-7xl m-auto mt-10 rounded-3xl">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -518,7 +516,6 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl m-auto mt-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -559,6 +556,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
     </>
   )
 }
