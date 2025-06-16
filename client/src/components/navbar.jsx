@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Search, Menu, X } from "lucide-react"
 import Logo from '../../public/images/logo.svg'
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,11 +32,10 @@ export default function Navbar() {
                 <a
                   key={item}
                   href="#"
-                  className={`cursor-pointer px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                    activeNav === item
+                  className={`cursor-pointer px-3 py-2 text-sm font-medium transition-colors duration-200 ${activeNav === item
                       ? "text-[#5BA3DD]"
                       : "text-[#000000] "
-                  }`}
+                    }`}
                   onClick={(e) => {
                     e.preventDefault()
                     handleNavClick(item)
@@ -52,13 +52,16 @@ export default function Navbar() {
               <Search className="h-4 w-4" />
               <span className="text-sm font-medium">Search</span>
             </div>
-
-            <button className="text-[#000000] hover:bg-[#000000] hover:text-white px-4 py-2 text-sm font-medium rounded-md transition-colors duration-500 cursor-pointer border border-[#D9D9D9]">
-              Log In
-            </button>
+            <Link to={"/signin"}>
+              <button className="text-[#000000] hover:bg-[#000000] hover:text-white px-4 py-2 text-sm font-medium rounded-md transition-colors duration-500 cursor-pointer border border-[#D9D9D9]">
+                Log In
+              </button>
+            </Link>
+            <Link to={"/signup"}>
             <button className="bg-[#000000] text-white hover:bg-gray-900 cursor-pointer px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
               Sign Up
             </button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -79,11 +82,10 @@ export default function Navbar() {
               <a
                 key={item}
                 href="#"
-                className={`cursor-pointer block px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                  activeNav === item
+                className={`cursor-pointer block px-3 py-2 text-base font-medium transition-colors duration-200 ${activeNav === item
                     ? "text-[#5BA3DD]"
                     : "text-[#000000] "
-                }`}
+                  }`}
                 onClick={(e) => {
                   e.preventDefault()
                   handleNavClick(item)
@@ -99,12 +101,17 @@ export default function Navbar() {
             </div>
 
             <div className="px-3 py-2 space-y-2">
+              <Link to={"/signin"}>
               <button className="text-[#000000] w-full hover:bg-[#000000] hover:text-white px-4 py-2 text-sm font-medium rounded-md transition-colors duration-500 cursor-pointer border border-[#D9D9D9]">
                 Log In
               </button>
+              
+              </Link>
+              <Link to={"/signup"}>
               <button className="bg-[#000000] w-full text-white hover:bg-gray-900 cursor-pointer px-4 py-2 rounded-md text-sm font-medium transition-colors duration-500">
                 Sign Up
               </button>
+              </Link>
             </div>
           </div>
         </div>
