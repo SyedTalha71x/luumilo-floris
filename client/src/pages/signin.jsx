@@ -18,12 +18,7 @@ export default function SignInPage() {
 
     return (
         <div className="min-h-screen flex relative">
-            <div className="absolute top-6  right-10 text-sm inter-tight-400 text-gray-600">
-                Doesn't haven't Account?{" "}
-                <Link to="/signup" className="text-gray-900 font-medium hover:underline">
-                    Sign up
-                </Link>
-            </div>
+           
             <div className="hidden lg:flex lg:w-[25%] bg-gradient-to-br from-purple-100 to-purple-200 items-center justify-center p-8">
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-1 mb-4">
@@ -32,7 +27,13 @@ export default function SignInPage() {
                 </div>
             </div>
 
-            <div className="w-full lg:w-[55%] flex items-center justify-end md:p-8 p-4 bg-white relative">
+            <div className="w-full lg:w-[55%] flex items-center justify-center lg:justify-end md:p-8 p-4 bg-white max-lg:relative">
+            <div className="absolute lg:right-10 top-6 text-sm inter-tight-400 text-gray-600">
+                Already a Member?{" "}
+                <Link to="/signup" className="text-gray-900 font-medium hover:underline">
+                    Sign up
+                </Link>
+            </div>
                 <div className="w-full max-w-md space-y-6">
                     <div className="space-y-6">
                         <div className="text-left">

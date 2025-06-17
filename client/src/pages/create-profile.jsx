@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from '../../public/images/logo.svg'
 
 export default function CreateProfile() {
@@ -11,12 +11,6 @@ export default function CreateProfile() {
 
     return (
         <div className="min-h-screen flex relative">
-            <div className="absolute top-6  right-10 text-sm inter-tight-400 text-gray-600">
-                Already a member?{" "}
-                <a href="/signin" className="text-gray-900 font-medium hover:underline">
-                    Sign in
-                </a>
-            </div>
             <div className="hidden lg:flex lg:w-[25%] bg-gradient-to-br from-purple-100 to-purple-200 items-center justify-center p-8">
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-1 mb-4">
@@ -25,7 +19,13 @@ export default function CreateProfile() {
                 </div>
             </div>
 
-            <div className="w-full lg:w-[55%] flex items-center justify-end md:p-8 p-4 bg-white relative">
+            <div className="w-full lg:w-[55%] flex items-center justify-center lg:justify-end md:p-8 p-4 bg-white max-lg:relative">
+            <div className="absolute lg:right-10 top-6 text-sm inter-tight-400 text-gray-600">
+                Already a Member?{" "}
+                <Link to="/signup" className="text-gray-900 font-medium hover:underline">
+                    Sign up
+                </Link>
+            </div>
                 <div className="w-full max-w-md space-y-6">
                     <div className="space-y-6">
                         <div className="text-left">
@@ -42,9 +42,11 @@ export default function CreateProfile() {
                                 Create Profile
                             </button>
                         </div>
+                        <Link to={"/test-register"}>
                         <div className='flex justify-center items-center'>
                             <span className='text-[#8A8A8A] text-sm cursor-pointer underline'>Subscriber Testers Family</span>
                         </div>
+                        </Link>
                     </div>
                 </div>
             </div>
