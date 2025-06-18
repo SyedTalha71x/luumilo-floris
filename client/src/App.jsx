@@ -9,6 +9,7 @@ import CreateProfile from './pages/create-profile'
 import TestRegister from './pages/test-register'
 import AboutUs from './pages/about-us'
 import Activities from './pages/activities'
+import ActivityDetailPage from './pages/activity-detail'
 
 import UserProfileLayout from './layout/user-profile'
 import Profile from './pages/profile'
@@ -32,6 +33,7 @@ function AppWrapper() {
         <Route path="/test-register" element={<TestRegister />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/activities" element={<Activities />} />
+        <Route path="/activity-detail/:id" element={<ActivityDetailPage />} />
         
         {/* User Profile Routes */}
 

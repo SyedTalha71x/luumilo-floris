@@ -6,6 +6,7 @@ import BackgroundPicture2 from "../../public/images/Background (2).svg"
 import BackgroundPicture3 from "../../public/images/Background (3).svg"
 import BackgroundPicture4 from "../../public/images/Background (4).svg"
 import BackgroundPicture5 from "../../public/images/Background.svg"
+import { Link } from "react-router-dom";
 
 export default function EducationalActivites() {
     const activities = [
@@ -99,7 +100,8 @@ export default function EducationalActivites() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {activities.map((activity, index) => (
-                        <div
+                        <Link
+                            to={`/activity-detail/${activity.id}`}
                             key={activity.id}
                             className="relative group pt-5 pb-2 p-[1px]"
                         >
@@ -158,7 +160,7 @@ export default function EducationalActivites() {
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
