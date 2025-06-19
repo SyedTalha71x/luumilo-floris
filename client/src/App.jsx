@@ -10,12 +10,15 @@ import TestRegister from './pages/test-register'
 import AboutUs from './pages/about-us'
 import Activities from './pages/activities'
 import ActivityDetailPage from './pages/activity-detail'
+import Progress from './pages/progress'
+import Library from './pages/library'
 
 import UserProfileLayout from './layout/user-profile'
 import Profile from './pages/profile'
 import Subscription from './pages/subscription'
 import Preferences from './pages/preferences'
 import NotificationSettings from './pages/notifications'
+
 
 function AppWrapper() {
   const location = useLocation()
@@ -34,6 +37,8 @@ function AppWrapper() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/activity-detail/:id" element={<ActivityDetailPage />} />
+        <Route path="/progress" element={<Progress />} />
+        <Route path="/library" element={<Library />} />
         
         {/* User Profile Routes */}
 
