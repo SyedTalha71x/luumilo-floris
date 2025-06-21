@@ -20,9 +20,17 @@ import Preferences from './pages/preferences'
 import NotificationSettings from './pages/notifications'
 
 
+import AdminDashboardLayout from './layout/admin-dashboard'
+import Dashboard from './pages/admin-dashboard-pages/dashboard'
+import ActiviteitenBeheer from './pages/admin-dashboard-pages/activiteitenbeheer'
+import IngezondenActiviteiten from './pages/admin-dashboard-pages/ingezondenactiviteiten'
+import GebruikersBeheren from './pages/admin-dashboard-pages/gebruikersbeheren'
+import ContactBerichten from './pages/admin-dashboard-pages/contactberichten'
+
+
 function AppWrapper() {
   const location = useLocation()
-  const hideLayout = location.pathname === '/signup' || location.pathname === '/signin' || location.pathname === '/create-profile' 
+  const hideLayout = location.pathname === '/signup' || location.pathname === '/signin' || location.pathname === '/create-profile'
 
 
   return (
@@ -39,7 +47,7 @@ function AppWrapper() {
         <Route path="/activity-detail/:id" element={<ActivityDetailPage />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/library" element={<Library />} />
-        
+
         {/* User Profile Routes */}
 
         <Route path="/user-profile" element={<UserProfileLayout />}>
@@ -47,6 +55,17 @@ function AppWrapper() {
           <Route path="subscription" element={<Subscription />} />
           <Route path="preferences" element={<Preferences />} />
           <Route path="notifications" element={<NotificationSettings />} />
+        </Route>
+
+
+        {/* Admin Dashboard Routes */}
+        <Route path="/admin-dashboard" element={<AdminDashboardLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="activiteitenbeheer" element={<ActiviteitenBeheer />} />
+          <Route path="ingezondenactiviteiten" element={<IngezondenActiviteiten />} />
+          <Route path="gebruikersbeheer" element={<GebruikersBeheren />} />
+          <Route path="contactberichten" element={<ContactBerichten />} />
+          {/* Add other admin dashboard routes here */}
         </Route>
       </Routes>
       {!hideLayout && <Footer />}
