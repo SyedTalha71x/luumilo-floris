@@ -5,7 +5,7 @@ import Sidebar from '../components/user-profile-sidebar';
 
 const UserProfileLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col mt-[5%] px-4 md:px-0 pb-10">
+    <div className="min-h-screen flex flex-col md:mt-[5%] mt-5  pb-10">
     <div className="flex-1 container mx-auto px-4 py-8 max-w-7xl">
         <div>
            <h1 className='poppins-700 text-3xl mb-10'> Profile Settings</h1>

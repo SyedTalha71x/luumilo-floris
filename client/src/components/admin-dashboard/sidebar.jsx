@@ -1,64 +1,45 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { FiMenu, FiHome, FiSettings, FiUsers, FiMail, FiCheckCircle, FiUserCheck } from "react-icons/fi";
-import { MdAssignmentTurnedIn, MdOutlineDashboardCustomize } from "react-icons/md";
-import { BsClipboardCheck } from "react-icons/bs";
+
+import NavImage1 from '../../../public/nav-images/SVG (1).svg'
+import NavImage2 from '../../../public/nav-images/SVG (2).svg'
+import NavImage3 from '../../../public/nav-images/SVG (3).svg'
+import NavImage4 from '../../../public/nav-images/SVG (4).svg'
+import NavImage5 from '../../../public/nav-images/SVG (5).svg'
+import NavImage6 from '../../../public/nav-images/SVG.svg'
+import NavImage7 from '../../../public/nav-images/Vector (1).svg'
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const links = [
-    { to: "/admin-dashboard/dashboard", label: "Dashboard", icon: <FiHome className="mr-2" /> },
-    { to: "/admin-dashboard/activiteitenbeheer", label: "Activiteiten Beheer", icon: <MdOutlineDashboardCustomize className="mr-2" /> },
-    { to: "/admin-dashboard/ingezondenactiviteiten", label: "Ingezonden Activiteiten", icon: <MdAssignmentTurnedIn className="mr-2" /> },
-    { to: "/admin-dashboard/gebruikersbeheer", label: "Gebruikers", icon: <FiUsers className="mr-2" /> },
-    { to: "/admin-dashboard/contactberichten", label: "Contact Berichten", icon: <FiMail className="mr-2" /> },
-    { to: "/admin-dashboard/testgroep-aanmeldingen", label: "Testgroep Aanmeldingen", icon: <FiUserCheck className="mr-2" /> },
-    { to: "/admin-dashboard/kwaliteitsaudit", label: "Kwaliteitsaudit", icon: <BsClipboardCheck className="mr-2" /> },
-    { to: "/admin-dashboard/early-access", label: "Early Access", icon: <FiSettings className="mr-2" /> },
+    { to: "/admin-dashboard/dashboard", label: "Dashboard", image: NavImage6 },
+    { to: "/admin-dashboard/activiteitenbeheer", label: "Activiteiten Beheer", image: NavImage7 },
+    { to: "/admin-dashboard/ingezondenactiviteiten", label: "Ingezonden Activiteiten", image: NavImage1 },
+    { to: "/admin-dashboard/gebruikersbeheer", label: "Gebruikers", image: NavImage2 },
+    { to: "/admin-dashboard/contactberichten", label: "Contact Berichten", image: NavImage3 },
+    { to: "/admin-dashboard/testgroepaanmeldingen", label: "Testgroep Aanmeldingen", image: NavImage1 },
+    { to: "/admin-dashboard/kwaliteitsaudit", label: "Kwaliteitsaudit", image: NavImage4 },
+    { to: "/admin-dashboard/earlyaccess", label: "Early Access", image: NavImage5 },
   ];
 
   return (
-    <>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-white shadow p-2 rounded-xl cursor-pointer"
-      >
-        <FiMenu size={24} />
-      </button>
-
-      {isOpen && (
-    <div
-      onClick={() => setIsOpen(false)}
-      className="fixed inset-0 bg-black/50 bg-opacity-50 z-40"
-    ></div>
-  )}
-
-      <nav
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:static md:shadow-none md:h-auto`}
-      >
-        <div className="flex flex-col pt-16 md:pt-0">
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              onClick={() => setIsOpen(false)} // close drawer on link click
-              className={({ isActive }) =>
-                `p-4 flex items-center cursor-pointer inter-tight-400 ${
-                  isActive ? "bg-[#F1F6FB] text-[#2563EB]" : "text-gray-700"
-                }`
-              }
-            >
-              {link.icon}
-              {link.label}
-            </NavLink>
-          ))}
-        </div>
-      </nav>
-    </>
+    <nav className="w-full md:w-64 flex-shrink-0 sticky top-4 bg-white z-10 shadow md:shadow-none ">
+      <div className="flex flex-col">
+        {links.map((link) => (
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className={({ isActive }) =>
+              `p-4 flex items-center gap-3 inter-tight-400 ${
+                isActive ? "bg-[#F1F6FB] text-[#2563EB]" : "text-gray-700"
+              }`
+            }
+          >
+            <img src={link.image} alt={link.label} className="w-5 h-5" />
+            {link.label}
+          </NavLink>
+        ))}
+      </div>
+    </nav>
   );
 };
 

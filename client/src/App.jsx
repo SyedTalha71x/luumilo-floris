@@ -26,7 +26,9 @@ import ActiviteitenBeheer from './pages/admin-dashboard-pages/activiteitenbeheer
 import IngezondenActiviteiten from './pages/admin-dashboard-pages/ingezondenactiviteiten'
 import GebruikersBeheren from './pages/admin-dashboard-pages/gebruikersbeheren'
 import ContactBerichten from './pages/admin-dashboard-pages/contactberichten'
-
+import TestgroepAanmeldingen from './pages/admin-dashboard-pages/testgroepaanmeldingen'
+import Kwaliteitsaudit from './pages/admin-dashboard-pages/kwaliteitsaudit'
+import EarlyAccess from './pages/admin-dashboard-pages/earlyaccess'
 
 function AppWrapper() {
   const location = useLocation()
@@ -65,7 +67,10 @@ function AppWrapper() {
           <Route path="ingezondenactiviteiten" element={<IngezondenActiviteiten />} />
           <Route path="gebruikersbeheer" element={<GebruikersBeheren />} />
           <Route path="contactberichten" element={<ContactBerichten />} />
-          {/* Add other admin dashboard routes here */}
+          <Route path="testgroepaanmeldingen" element={<TestgroepAanmeldingen />} />
+          <Route path="kwaliteitsaudit" element={<Kwaliteitsaudit />} />
+          <Route path="earlyaccess" element={<EarlyAccess />} />
+
         </Route>
       </Routes>
       {!hideLayout && <Footer />}

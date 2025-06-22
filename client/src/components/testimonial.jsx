@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
   }
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 -z-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">

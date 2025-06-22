@@ -13,24 +13,25 @@ const Sidebar = () => {
   ];
 
   return (
-    <nav className="w-full md:w-64 flex-shrink-0 sticky top-4">
-      <div className="flex flex-col">
-        {links.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) =>
-              `p-4 flex items-center cursor-pointer inter-tight-400 ${
-                isActive ? "bg-[#F1F6FB] text-[#2563EB]" : "text-gray-700"
-              }`
-            }
-          >
-            {link.icon}
-            {link.label}
-          </NavLink>
-        ))}
-      </div>
-    </nav>
+    <nav className="w-full md:w-64 flex-shrink-0 sticky top-4 bg-white z-10 shadow md:shadow-none">
+  <div className="flex flex-col pt-16">
+    {links.map((link) => (
+      <NavLink
+        key={link.to}
+        to={link.to}
+        className={({ isActive }) =>
+          `p-4 flex items-center cursor-pointer inter-tight-400 ${
+            isActive ? "bg-[#F1F6FB] text-[#2563EB]" : "text-gray-700"
+          }`
+        }
+      >
+        {link.icon}
+        {link.label}
+      </NavLink>
+    ))}
+  </div>
+</nav>
+
   );
 };
 
