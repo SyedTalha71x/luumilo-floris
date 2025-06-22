@@ -18,6 +18,7 @@ import Profile from './pages/profile'
 import Subscription from './pages/subscription'
 import Preferences from './pages/preferences'
 import NotificationSettings from './pages/notifications'
+import Pricing from './pages/pricing'
 
 
 import AdminDashboardLayout from './layout/admin-dashboard'
@@ -29,6 +30,7 @@ import ContactBerichten from './pages/admin-dashboard-pages/contactberichten'
 import TestgroepAanmeldingen from './pages/admin-dashboard-pages/testgroepaanmeldingen'
 import Kwaliteitsaudit from './pages/admin-dashboard-pages/kwaliteitsaudit'
 import EarlyAccess from './pages/admin-dashboard-pages/earlyaccess'
+
 
 function AppWrapper() {
   const location = useLocation()
@@ -49,6 +51,7 @@ function AppWrapper() {
         <Route path="/activity-detail/:id" element={<ActivityDetailPage />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/library" element={<Library />} />
+        <Route path="/pricing" element={<Pricing />} />
 
         {/* User Profile Routes */}
 

@@ -22,7 +22,7 @@ export default function Navbar() {
     { label: "Progress", icon: <BarChart2 className="h-4 w-4 mr-1" />, to: "/progress" },
     { label: "Library", icon: <BookOpen className="h-4 w-4 mr-1" />, to: "/library" },
     { label: "About Us", icon: <Info className="h-4 w-4 mr-1" />, to: "/about-us" },
-    { label: "Blog", icon: <Newspaper className="h-4 w-4 mr-1" />, to: "/blog" },
+    { label: "Pricing", icon: <Newspaper className="h-4 w-4 mr-1" />, to: "/pricing" },
   ]
 
   return (
