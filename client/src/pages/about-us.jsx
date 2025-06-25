@@ -150,10 +150,10 @@ const AboutUs = () => {
                 <div className="mt-16 space-y-4 flex justify-center items-center flex-col text-center">
                     <h2 className="text-4xl inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]">Missie</h2>
                     <p className="text-[#4B5563] inter-tight-400 text-center max-w-3xl mx-auto">
-                    Bij Luumilo helpen we jou als ouder om op een eenvoudige en inspirerende manier thuis te bouwen aan de innerlijke kracht van je kind
+                    Bij Luumilo helpen we jou als ouder om op een eenvoudige en inspirerende manier thuis te bouwen aan de innerlijke kracht van je kind.
                     </p>
                     <p className="text-[#4B5563] inter-tight-400  text-center max-w-3xl mx-auto">
-                    Met ons leerplatform ondersteun je je kind (3-6) in het ontwikkelen van veerkracht, dankbaarheid, zelfzorg en essentiële levensvaardigheden – via kleine, haalbare stappen die passen in jullie dagelijks leven. Zonder extra stress en vrij van schermtijd
+                    Met ons leerplatform ondersteun je je kind (3-6) in het ontwikkelen van veerkracht, dankbaarheid, zelfzorg en essentiële levensvaardigheden – via kleine, haalbare stappen die passen in jullie dagelijks leven. Zonder extra stress en vrij van schermtijd.
                     </p>
                 </div>
 

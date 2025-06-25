@@ -1,4 +1,3 @@
-"use client"
 
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react"
@@ -14,6 +13,13 @@ import BackgroundPicture3 from "../../public/images/Background (3).svg"
 import BackgroundPicture4 from "../../public/images/Background (4).svg"
 import BackgroundPicture5 from "../../public/images/Background.svg"
 
+
+import Star2 from '../../public/nav-images/Star 2.svg'
+import { IoStarOutline } from "react-icons/io5";
+
+import { IoStarSharp } from "react-icons/io5";
+
+
 function ActivityDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -26,7 +32,7 @@ function ActivityDetail() {
       title: "Dank-Kettingsprint",
       description: "Maak een mini-slinger van dankbaarheid die dagelijks kan groeien.",
       category: "Dankbaarheid",
-      categoryDescription: "Ontdekken waarom we dankbaar zijn",
+      categoryDescription: "Kinderen die leren stilstaan bij wat fijn is, voelen zich vaak rustiger en blijer. In dit leergebied leert je kind kijken naar wat er wél is, waardering uitspreken en kleine dingen opmerken. Dat helpt bij een positieve kijk op het leven.",
       image: BackgroundPicture5,
       color: "orange",
       duration: "8 min",
@@ -209,13 +215,19 @@ function ActivityDetail() {
   }
 
   const getRatingRange = (index) => {
-    const ranges = ["1-2", "3-4", "5-6", "7-8", "9-10"]
+    const ranges = [
+      <span key={0}><span className="font-bold">1-2</span></span>,
+      <span key={1}><span className="font-bold">3-4</span></span>,
+      <span key={2}><span className="font-bold">5-6</span></span>,
+      <span key={3}><span className="font-bold">7-8</span></span>,
+      <span key={4}><span className="font-bold">9-10</span></span>
+    ]
     return ranges[index]
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-6xl mx-auto p-4 lg:p-6">
+      <div className="max-w-7xl mx-auto p-4 lg:p-6">
         <div className="px-4 py-3">
           <button onClick={handleBack} className="flex items-center text-[#262F40] cursor-pointer transition-colors">
             <ArrowLeft className="w-5 h-5 mr-2" />
@@ -327,9 +339,10 @@ function ActivityDetail() {
                   </div>
                   <button
                     onClick={handleRatingClick}
-                    className="text-sm inter-tight-700 font-medium text-[#1F1F1F] hover:text-blue-600 cursor-pointer"
+                    className="text-sm text-[#1F1F1F] hover:text-blue-600 cursor-pointer"
                   >
-                    {activityData.rating} / 10
+                    <span className="inter-tight-700 font-bold">{activityData.rating}</span>
+                    <span className="inter-tight-400 font-light">/10</span>
                   </button>
                 </div>
               </div>
@@ -337,7 +350,7 @@ function ActivityDetail() {
 
             <div className="bg-white rounded-3xl shadow-lg border border-[#E2E4E9] p-6">
               <h3 className="inter-tight-700 font-semibold mb-4 text-[#1F1F1F]">Leergebied</h3>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-start  space-x-3">
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center ${getIconColorClasses(activityData.color)}`}
                 >
@@ -380,7 +393,7 @@ function ActivityDetail() {
                   >
                     <Star
                       className={`w-12 h-12 ${
-                        star <= selectedRating ? "fill-yellow-400 text-yellow-400" : "fill-none text-gray-300 stroke-2"
+                        star <= selectedRating ? "fill-yellow-400 text-yellow-400" : "fill-none text-gray-300 stroke-1"
                       }`}
                     />
                   </button>

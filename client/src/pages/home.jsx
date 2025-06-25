@@ -50,6 +50,9 @@ export default function HeroSection() {
 
   return (
     <>
+    <div className="p-3">
+
+    
       <section className="max-w-7xl m-auto">
         <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto mt-7">
@@ -78,7 +81,7 @@ export default function HeroSection() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div className="bg-[#F8F8FF] rounded-2xl p-6 sm:p-8  transition-shadow duration-500 cursor-pointer border border-slate-300">
                   <div className="flex items-start space-x-3 mt-4">
-                    <div className="w-2 h-2 bg-gray-700 rounded-full mt-3 flex-shrink-0"></div>
+                    {/* <div className="w-2 h-2 bg-gray-700 rounded-full mt-3 flex-shrink-0"></div> */}
                     <p className="text-[#5D5D5D] text-base sm:text-lg font-medium leading-relaxed">
                       Voor ouders die voelen: school alleen is niet genoeg.
                     </p>
@@ -87,7 +90,7 @@ export default function HeroSection() {
 
                 <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-6 sm:p-8  transition-shadow duration-300">
                   <div className="flex items-start space-x-3 mt-4">
-                    <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
+                    {/* <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div> */}
                     <p className="text-[#FFFFFF] text-base sm:text-lg font-medium ">
                       Voor kinderen die straks sterk, nieuwsgierig en zelfstandig de wereld in stappen.
                     </p>
@@ -99,7 +102,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <section className="bg-[#F1F6FB] max-w-7xl m-auto py-16 rounded-3xl px-4 sm:px-6 lg:px-8 mt-6">
+      <section className="md:bg-[#F1F6FB] bg-white md:shadow-none shadow-xl  max-w-7xl m-auto py-16 rounded-3xl px-4 sm:px-6 lg:px-8 mt-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <div className=" flex gap-3">
@@ -290,7 +293,7 @@ export default function HeroSection() {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative">
                     <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
-                      1-Ontdek betekenisvolle activiteiten
+                    1 – Ontdek betekenisvolle activiteiten
                     </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
@@ -298,12 +301,13 @@ export default function HeroSection() {
                       className="absolute  right-34 top-12 h-[30vh] w-full"
                     />
                     <p className="text-[#FFFFFF] inter-tight-400 ml-14 text-sm  leading-relaxed">
-                      Korte, speelse activiteiten die bouwen aan de fundering van je kind — thuis, met echte aandacht.
+                    Korte, speelse activiteiten die bouwen aan de fundering van je kind - thuis, met aandacht en intentie.
                     </p>
                   </div>
                 </div>
 
                 <div className="absolute bottom-0 left-40">
+
                   <div>
                     <img src={Card1 || "/placeholder.svg"} alt="" />
                   </div>
@@ -320,13 +324,16 @@ export default function HeroSection() {
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative">
+                  <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
+                  2 – Versterk jullie band
+                    </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
                       alt="Arrow"
                       className="absolute  right-34 top-12 h-[30vh] w-full"
                     />
-                    <p className="text-[#FFFFFF] mt-24 ml-5 inter-tight-400 text-sm  leading-relaxed">
-                      Creëer dagelijkse momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
+                    <p className="text-[#FFFFFF] mt-10 ml-7 inter-tight-400 text-sm  leading-relaxed">
+                    Creëer momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
                     </p>
                   </div>
                 </div>
@@ -349,7 +356,7 @@ export default function HeroSection() {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative">
                     <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
-                      3-Stimuleer groei op 3 niveaus
+                    3 – Stimuleer groei op 3 niveaus
                     </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
@@ -357,8 +364,7 @@ export default function HeroSection() {
                       className="absolute  right-34 top-12 h-[30vh] w-full"
                     />
                     <p className="text-[#FFFFFF] inter-tight-400 ml-14 text-sm  leading-relaxed">
-                      Elke activiteit versterkt je kind — emotioneel, praktisch en in de band met jou. Voor kinderen van
-                      3–6 jaar.
+                    Elke activiteit versterkt emotionele, praktische en sociale vaardigheden, volg jullie vooruitgang!
                     </p>
                   </div>
                 </div>
@@ -556,6 +562,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+      </div>
 
     </>
   )

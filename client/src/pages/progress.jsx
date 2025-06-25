@@ -41,6 +41,8 @@ const ProgressDashboard = () => {
       title: "Emotionele Gezondheid",
       color: "red",
       percentage: 50,
+      totalActivities: 12,
+      finishedActivities: 6,
       image: DashImage,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -52,6 +54,8 @@ const ProgressDashboard = () => {
       title: "Veerkracht",
       color: "blue",
       percentage: 50,
+      totalActivities: 10,
+      finishedActivities: 5,
       image: DashImage2,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -63,6 +67,8 @@ const ProgressDashboard = () => {
       title: "Dankbaarheid",
       color: "yellow",
       percentage: 50,
+      totalActivities: 8,
+      finishedActivities: 4,
       image: DashImage4,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -74,6 +80,8 @@ const ProgressDashboard = () => {
       title: "Zelfzorg",
       color: "green",
       percentage: 50,
+      totalActivities: 15,
+      finishedActivities: 7,
       image: DashImage6,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -85,6 +93,8 @@ const ProgressDashboard = () => {
       title: "Geldwijsheid",
       color: "purple",
       percentage: 50,
+      totalActivities: 9,
+      finishedActivities: 4,
       image: DashImage3,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -96,6 +106,8 @@ const ProgressDashboard = () => {
       title: "Ondernemerschap",
       color: "orange",
       percentage: 50,
+      totalActivities: 11,
+      finishedActivities: 5,
       image: DashImage5,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -107,6 +119,8 @@ const ProgressDashboard = () => {
       title: "Anders Denken",
       color: "blue",
       percentage: 50,
+      totalActivities: 7,
+      finishedActivities: 3,
       image: DashImage7,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
@@ -200,7 +214,7 @@ const ProgressDashboard = () => {
 
               <div className="space-y-2 max-w-xs w-full m-auto">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-500">{category.percentage}% Voltooid</span>
+                  <span className="text-gray-500">{category.finishedActivities} van {category.totalActivities} Voltooid</span>
                   <div>
                   <CircularProgress color={category.color} percentage={category.percentage} />
 
