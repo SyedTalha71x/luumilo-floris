@@ -15,7 +15,7 @@ import DashImage7 from "../../public/images/Frame (2).svg"
 
 import ArrowImage from "../../public/images/Arrow 1.svg"
 import Card1 from "../../public/images/Highlight Frame 1.png"
-import Card2 from "../../public/images/Group- home-2.svg"
+import Card2 from "../../public/images/6086239_22422 1.svg"
 import Card3 from "../../public/images/Background+Border+Shadow.svg"
 
 import { Check, Users } from "lucide-react"
@@ -285,31 +285,30 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
             <div className=" md:h-[450px] h-full">
               <div
-                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner"
+                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
                 style={{
                   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
                 }}
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="relative">
+                  <div className="relative w-full">
                     <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
                     1 – Ontdek betekenisvolle activiteiten
                     </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
                       alt="Arrow"
-                      className="absolute  right-34 top-12 h-[30vh] w-full"
+                      className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                     />
-                    <p className="text-[#FFFFFF] inter-tight-400 ml-14 text-sm  leading-relaxed">
+                    <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-sm leading-relaxed mt-4 lg:mt-0">
                     Korte, speelse activiteiten die bouwen aan de fundering van je kind - thuis, met aandacht en intentie.
                     </p>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-40">
-
+                <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
                   <div>
-                    <img src={Card1 || "/placeholder.svg"} alt="" />
+                    <img src={Card1 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
                   </div>
                 </div>
               </div>
@@ -317,30 +316,30 @@ export default function HeroSection() {
 
             <div className="  md:h-[450px] h-full">
               <div
-                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner"
+                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
                 style={{
                   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
                 }}
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="relative">
+                  <div className="relative w-full">
                   <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
                   2 – Versterk jullie band
                     </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
                       alt="Arrow"
-                      className="absolute  right-34 top-12 h-[30vh] w-full"
+                      className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                     />
-                    <p className="text-[#FFFFFF] mt-10 ml-7 inter-tight-400 text-sm  leading-relaxed">
+                    <p className="text-[#FFFFFF] lg:mt-10 lg:ml-7 inter-tight-400 text-sm leading-relaxed mt-4 lg:mt-10">
                     Creëer momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
                     </p>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-40">
+                <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
                   <div>
-                    <img src={Card2 || "/placeholder.svg"} alt="" />
+                    <img src={Card2 || "/placeholder.svg"}  alt="" className="w-auto h-auto max-w-full" />
                   </div>
                 </div>
               </div>
@@ -348,30 +347,30 @@ export default function HeroSection() {
 
             <div className=" md:h-[450px] h-full">
               <div
-                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner"
+                className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
                 style={{
                   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
                 }}
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="relative">
+                  <div className="relative w-full">
                     <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
                     3 – Stimuleer groei op 3 niveaus
                     </h3>
                     <img
                       src={ArrowImage || "/placeholder.svg"}
                       alt="Arrow"
-                      className="absolute  right-34 top-12 h-[30vh] w-full"
+                      className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                     />
-                    <p className="text-[#FFFFFF] inter-tight-400 ml-14 text-sm  leading-relaxed">
+                    <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-sm leading-relaxed mt-4 lg:mt-0">
                     Elke activiteit versterkt emotionele, praktische en sociale vaardigheden, volg jullie vooruitgang!
                     </p>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-40">
+                <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
                   <div>
-                    <img src={Card3 || "/placeholder.svg"} alt="" />
+                    <img src={Card3 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
                   </div>
                 </div>
               </div>
@@ -480,7 +479,7 @@ export default function HeroSection() {
 
           <div className="text-center">
             <a href="#" className="text-[#636363] cursor-pointer underline text-sm">
-              Kies uw abonnement!
+            Kies Jouw Abonnement!
             </a>
           </div>
         </div>

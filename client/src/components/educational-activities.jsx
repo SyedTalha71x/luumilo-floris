@@ -73,7 +73,7 @@ export default function EducationalActivites() {
     ]
 
     return (
-        <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] mt-24 p-4 md:p-8">
+        <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] md:mt-24 mt-10 p-4 md:p-8">
             <div className="max-w-7xl mx-auto py-16">
                 <div className="text-center mb-8">
                     <h1 className="text-2xl md:text-3xl  text-[#000000] poppins-700 mb-2">Deze Week: Week 1</h1>
