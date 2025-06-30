@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FiUser, FiBell, FiSettings } from "react-icons/fi";
+import { FiUser, FiBell, FiSettings, FiUserCheck } from "react-icons/fi";
 import { MdSubscriptions } from "react-icons/md";
 
 const Sidebar = () => {
@@ -10,11 +10,13 @@ const Sidebar = () => {
     { to: "/user-profile/subscription", label: "Subscription", icon: <MdSubscriptions className="mr-2" /> },
     { to: "/user-profile/preferences", label: "Preferences", icon: <FiSettings className="mr-2" /> },
     { to: "/user-profile/notifications", label: "Notifications", icon: <FiBell className="mr-2" /> },
+    { to: "/user-profile/refer-a-friend", label: "Refer a Friend", icon: <FiUserCheck className="mr-2" /> },
+
   ];
 
   return (
     <nav className="w-full md:w-64 flex-shrink-0 sticky top-4 bg-white z-10 shadow md:shadow-none">
-  <div className="flex flex-col pt-16">
+  <div className="flex flex-col">
     {links.map((link) => (
       <NavLink
         key={link.to}

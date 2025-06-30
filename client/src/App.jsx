@@ -19,6 +19,7 @@ import Subscription from './pages/subscription'
 import Preferences from './pages/preferences'
 import NotificationSettings from './pages/notifications'
 import Pricing from './pages/pricing'
+import ReferFriend from './pages/refer-a-friend'
 
 
 import AdminDashboardLayout from './layout/admin-dashboard'
@@ -59,6 +60,8 @@ function AppWrapper() {
           <Route path="profile" element={<Profile />} />
           <Route path="subscription" element={<Subscription />} />
           <Route path="preferences" element={<Preferences />} />
+          <Route path="refer-a-friend" element={<ReferFriend />} />
+
           <Route path="notifications" element={<NotificationSettings />} />
         </Route>
 
