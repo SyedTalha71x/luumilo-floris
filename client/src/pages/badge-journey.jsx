@@ -245,7 +245,7 @@ const BadgeJourney = () => {
                                 key={badge.id}
                                 className=" rounded-xl border border-[#D9D9D9] p-6   shadow-lg transition-shadow duration-300"
                             >
-                                <div className="flex justify-center mb-6 bg-[#FFFCF8]">
+                                <div className="flex justify-center mb-6 ">
                                     <div className={`w-26 h-26 rounded-2xl ${badge.iconBg} flex items-center justify-center`}>
                                         <div className={`w-26 h-26 rounded-xl shadow-xl ${badge.bgColor} flex items-center justify-center`}>
                                             <img src={badge.image} alt="" />
@@ -276,7 +276,7 @@ const BadgeJourney = () => {
                                     key={badge.id}
                                     className=" rounded-xl border border-[#D9D9D9] p-6   shadow-lg transition-shadow duration-300"
                                 >
-                                    <div className="flex justify-center mb-6 bg-[#FFFCF8]">
+                                    <div className="flex justify-center mb-6 ">
                                         <div className={`w-26 h-26 rounded-2xl ${badge.iconBg} flex items-center justify-center`}>
                                             <div className={`w-26 h-26 rounded-xl shadow-xl ${badge.bgColor} flex items-center justify-center`}>
                                                 <img src={badge.image} alt="" />
@@ -307,7 +307,7 @@ const BadgeJourney = () => {
                                     key={badge.id}
                                     className=" rounded-xl border border-[#D9D9D9] p-6   shadow-lg transition-shadow duration-300"
                                 >
-                                    <div className="flex justify-center mb-6 bg-[#FFFCF8]">
+                                    <div className="flex justify-center mb-6 ">
                                         <div className={`w-26 h-26 rounded-2xl ${badge.iconBg} flex items-center justify-center`}>
                                             <div className={`w-26 h-26 rounded-xl shadow-xl ${badge.bgColor} flex items-center justify-center`}>
                                                 <img src={badge.image} alt="" />
@@ -329,37 +329,37 @@ const BadgeJourney = () => {
                 <div className='mt-[13%]'>
 
 
-<div className="">
-    <div className='flex flex-col justify-center items-center mb-10'>
+                    <div className="">
+                        <div className='flex flex-col justify-center items-center mb-10'>
 
-    <h2 className="text-2xl  text-center text-[#000000] poppins-700">
-    High achiever badges page                   </h2>
-    <p className='mt-1 text-sm inter-tight-400 text-black'>Complete long term challenges to earn rare badges!</p>
-    </div>
+                            <h2 className="text-2xl  text-center text-[#000000] poppins-700">
+                                High achiever badges page                   </h2>
+                            <p className='mt-1 text-sm inter-tight-400 text-black'>Complete long term challenges to earn rare badges!</p>
+                        </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {highBadges.map((badge) => (
-            <div
-                key={badge.id}
-                className=" rounded-xl border border-[#D9D9D9] p-6   shadow-lg transition-shadow duration-300"
-            >
-                <div className="flex justify-center mb-6 bg-[#FFFCF8]">
-                    <div className={`w-26 h-26 rounded-2xl ${badge.iconBg} flex items-center justify-center`}>
-                        <div className={`w-26 h-26 rounded-xl shadow-xl ${badge.bgColor} flex items-center justify-center`}>
-                            <img src={badge.image} alt="" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {highBadges.map((badge) => (
+                                <div
+                                    key={badge.id}
+                                    className=" rounded-xl border border-[#D9D9D9] p-6   shadow-lg transition-shadow duration-300"
+                                >
+                                    <div className="flex justify-center mb-6 ">
+                                        <div className={`w-26 h-26 rounded-2xl ${badge.iconBg} flex items-center justify-center`}>
+                                            <div className={`w-26 h-26 rounded-xl shadow-xl ${badge.bgColor} flex items-center justify-center`}>
+                                                <img src={badge.image} alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-lg md:text-xl poppins-700 text-black text-center">
+                                        {badge.title}
+                                    </h3>
+                                    <p className='mt-1 text-sm flex justify-center items-center text-[#828282] inter-tight-400'>{badge.description}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
-
-                <h3 className="text-lg md:text-xl poppins-700 text-black text-center">
-                    {badge.title}
-                </h3>
-                <p className='mt-1 text-sm flex justify-center items-center text-[#828282] inter-tight-400'>{badge.description}</p>
-            </div>
-        ))}
-    </div>
-</div>
-</div>
             </div>
         </div>
     );
