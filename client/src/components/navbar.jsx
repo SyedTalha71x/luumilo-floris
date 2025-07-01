@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Search, Menu, X, Home, Activity, BarChart2, BookOpen, Info, Newspaper, User } from "lucide-react"
+import { Search, Menu, X, Home, Activity, BarChart2, BookOpen, Info, Newspaper, User, Badge } from "lucide-react"
 import Logo from "../../public/images/logo-miIQ_By4 1.svg"
 import { Link } from "react-router-dom"
 
@@ -48,6 +48,8 @@ export default function Navbar() {
     { label: "Library", icon: <BookOpen className="h-4 w-4 mr-1" />, to: "/library" },
     { label: "About Us", icon: <Info className="h-4 w-4 mr-1" />, to: "/about-us" },
     { label: "Pricing", icon: <Newspaper className="h-4 w-4 mr-1" />, to: "/pricing" },
+    { label: "Badges", icon: <Badge className="h-4 w-4 mr-1" />, to: "/badge-journey" },
+
   ]
 
   // Bottom nav items (subset of main nav for mobile)
@@ -58,6 +60,7 @@ export default function Navbar() {
     { label: "Library", icon: <BookOpen className="h-5  w-5" />, to: "/library" },
     { label: "About Us", icon: <Info className="h-5 w-5" />, to: "/about-us" },
     { label: "Pricing", icon: <Newspaper className="h-5 w-5" />, to: "/pricing" },
+    { label: "Badges", icon: <Badge className="h-4 w-4 mr-1" />, to: "/badge-journey" },
   ]
 
   return (

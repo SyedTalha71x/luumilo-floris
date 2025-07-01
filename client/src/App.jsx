@@ -12,6 +12,7 @@ import Activities from './pages/activities'
 import ActivityDetailPage from './pages/activity-detail'
 import Progress from './pages/progress'
 import Library from './pages/library'
+import BadgeJourney from './pages/badge-journey'
 
 import UserProfileLayout from './layout/user-profile'
 import Profile from './pages/profile'
@@ -54,6 +55,7 @@ function AppWrapper() {
         <Route path="/progress" element={<Progress />} />
         <Route path="/library" element={<Library />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/badge-journey" element={<BadgeJourney />} />
 
         {/* User Profile Routes */}
 
