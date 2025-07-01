@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiUser, FiBell, FiSettings, FiUserCheck } from "react-icons/fi";
 import { MdSubscriptions } from "react-icons/md";
+import { Badge } from "lucide-react";
 
 const Sidebar = () => {
   const links = [
@@ -11,6 +12,8 @@ const Sidebar = () => {
     { to: "/user-profile/preferences", label: "Preferences", icon: <FiSettings className="mr-2" /> },
     { to: "/user-profile/notifications", label: "Notifications", icon: <FiBell className="mr-2" /> },
     { to: "/user-profile/refer-a-friend", label: "Refer a Friend", icon: <FiUserCheck className="mr-2" /> },
+    { to: "/user-profile/earn-a-badge", label: "Earned Badges", icon: <Badge className="mr-2" /> },
+
 
   ];
 

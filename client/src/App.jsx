@@ -20,7 +20,7 @@ import Preferences from './pages/preferences'
 import NotificationSettings from './pages/notifications'
 import Pricing from './pages/pricing'
 import ReferFriend from './pages/refer-a-friend'
-
+import EarnBadge from './pages/earn-badge'
 
 import AdminDashboardLayout from './layout/admin-dashboard'
 import Dashboard from './pages/admin-dashboard-pages/dashboard'
@@ -31,6 +31,7 @@ import ContactBerichten from './pages/admin-dashboard-pages/contactberichten'
 import TestgroepAanmeldingen from './pages/admin-dashboard-pages/testgroepaanmeldingen'
 import Kwaliteitsaudit from './pages/admin-dashboard-pages/kwaliteitsaudit'
 import EarlyAccess from './pages/admin-dashboard-pages/earlyaccess'
+import Managebadge from './pages/admin-dashboard-pages/manage-badge'
 
 
 function AppWrapper() {
@@ -61,7 +62,7 @@ function AppWrapper() {
           <Route path="subscription" element={<Subscription />} />
           <Route path="preferences" element={<Preferences />} />
           <Route path="refer-a-friend" element={<ReferFriend />} />
-
+          <Route path="earn-a-badge" element={<EarnBadge />} />
           <Route path="notifications" element={<NotificationSettings />} />
         </Route>
 
@@ -76,6 +77,7 @@ function AppWrapper() {
           <Route path="testgroepaanmeldingen" element={<TestgroepAanmeldingen />} />
           <Route path="kwaliteitsaudit" element={<Kwaliteitsaudit />} />
           <Route path="earlyaccess" element={<EarlyAccess />} />
+          <Route path="manage-badge" element={<Managebadge />} />
 
         </Route>
       </Routes>

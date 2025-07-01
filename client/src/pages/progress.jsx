@@ -4,16 +4,16 @@ import StatImage2 from "../../public/images/Background (1)-progress.svg"
 import StatImage3 from "../../public/images/Background (2)-progress.svg"
 import StatImage4 from "../../public/images/Background (3)-progress.svg"
 
-import DashImage from "../../public/images/Group - home.svg"
-import DashImage2 from "../../public/images/Group (1) - home.svg"
-import DashImage3 from "../../public/images/Group (2).svg"
-import DashImage4 from "../../public/images/36.smile.svg"
-import DashImage5 from "../../public/images/Frame (1) - home.svg"
-import DashImage6 from "../../public/images/Vector.svg"
-import DashImage7 from "../../public/images/Frame (2).svg"
+import PDashImage from "../../public/activities-images/Frame (6).svg"
+import PDashImage2 from "../../public/activities-images/Frame (7).svg"
+import PDashImage3 from "../../public/activities-images/Frame (8).svg"
+import PDashImage4 from "../../public/activities-images/Frame (9).svg"
+import PDashImage5 from "../../public/activities-images/Group (3).svg"
+import PDashImage6 from "../../public/activities-images/SVG (1).svg"
+import PDashImage7 from "../../public/activities-images/SVG.svg"
 
 const ProgressDashboard = () => {
-  const statsData = [
+  const statsData = [ 
     {
       value: "0",
       label: "Voltooid",
@@ -43,10 +43,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 12,
       finishedActivities: 6,
-      image: DashImage,
+      image: PDashImage5,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage || "/placeholder.svg"} alt="Emotionele Gezondheid" className="w-6 h-6" />
+          <img src={PDashImage5 || "/placeholder.svg"} alt="Emotionele Gezondheid" className="w-6 h-6" />
         </div>
       ),
     },
@@ -56,10 +56,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 10,
       finishedActivities: 5,
-      image: DashImage2,
+      image: PDashImage,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage2 || "/placeholder.svg"} alt="Veerkracht" className="w-6 h-6" />
+          <img src={PDashImage || "/placeholder.svg"} alt="Veerkracht" className="w-6 h-6" />
         </div>
       ),
     },
@@ -69,10 +69,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 8,
       finishedActivities: 4,
-      image: DashImage4,
+      image: PDashImage3,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage4 || "/placeholder.svg"} alt="Dankbaarheid" className="w-6 h-6" />
+          <img src={PDashImage3 || "/placeholder.svg"} alt="Dankbaarheid" className="w-6 h-6" />
         </div>
       ),
     },
@@ -82,10 +82,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 15,
       finishedActivities: 7,
-      image: DashImage6,
+      image: PDashImage4,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage3 || "/placeholder.svg"} alt="Zelfzorg" className="w-6 h-6" />
+          <img src={PDashImage4 || "/placeholder.svg"} alt="Zelfzorg" className="w-6 h-6" />
         </div>
       ),
     },
@@ -95,10 +95,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 9,
       finishedActivities: 4,
-      image: DashImage3,
+      image: PDashImage2,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage6 || "/placeholder.svg"} alt="Geldwijsheid" className="w-6 h-6" />
+          <img src={PDashImage2 || "/placeholder.svg"} alt="Geldwijsheid" className="w-6 h-6" />
         </div>
       ),
     },
@@ -108,10 +108,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 11,
       finishedActivities: 5,
-      image: DashImage5,
+      image: PDashImage7,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage5 || "/placeholder.svg"} alt="Ondernemerschap" className="w-6 h-6" />
+          <img src={PDashImage7 || "/placeholder.svg"} alt="Ondernemerschap" className="w-6 h-6" />
         </div>
       ),
     },
@@ -121,10 +121,10 @@ const ProgressDashboard = () => {
       percentage: 50,
       totalActivities: 7,
       finishedActivities: 3,
-      image: DashImage7,
+      image: PDashImage6,
       icon: (
         <div className="w-12 h-12 bg-[#F8E6E6] rounded-xl flex items-center justify-center">
-          <img src={DashImage7 || "/placeholder.svg"} alt="Anders Denken" className="w-6 h-6" />
+          <img src={PDashImage6 || "/placeholder.svg"} alt="Anders Denken" className="w-6 h-6" />
         </div>
       ),
     },

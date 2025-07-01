@@ -3,13 +3,13 @@ import { ChevronUp } from 'lucide-react'
 import Image1 from "../../public/images/Group.svg"
 import Image2 from "../../public/images/Group (1).svg"
 import Image3 from "../../public/images/Frame (1).svg"
-import DashImage from "../../public/images/Group - home.svg"
-import DashImage2 from "../../public/images/Group (1) - home.svg"
-import DashImage3 from "../../public/images/Group (2).svg"
-import DashImage4 from "../../public/images/36.smile.svg"
-import DashImage5 from "../../public/images/Frame (1) - home.svg"
-import DashImage6 from "../../public/images/Vector.svg"
-import DashImage7 from "../../public/images/Frame (2).svg"
+import DashImage from "../../public/activities-images/Frame (6).svg"
+import DashImage2 from "../../public/activities-images/Frame (7).svg"
+import DashImage3 from "../../public/activities-images/Frame (8).svg"
+import DashImage4 from "../../public/activities-images/Frame (9).svg"
+import DashImage5 from "../../public/activities-images/Group (3).svg"
+import DashImage6 from "../../public/activities-images/SVG (1).svg"
+import DashImage7 from "../../public/activities-images/SVG.svg"
 import ArrowImage from "../../public/images/Arrow 1.svg"
 import Card1 from "../../public/images/Highlight Frame 1.png"
 import Card2 from "../../public/images/6086239_22422 1.svg"
@@ -207,7 +207,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full flex flex-col justify-center">
                   <div className="text-center">
                     <div className="h-16 w-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage5 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Emotionele Gezondheid</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">Herken wat je voelt en leer dat ook zeggen</p>
@@ -218,7 +218,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage2 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Veerkracht</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">Blijf proberen, ook als iets moeilijk is</p>
@@ -229,7 +229,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage4 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage3 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Dankbaarheid</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">Zie wat er wél is — en voel hoe fijn dat is.</p>
@@ -240,7 +240,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage6 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage4 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Zelfzorg</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">Zorg goed voor je lichaam én je hoofd.</p>
@@ -251,7 +251,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage3 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage2 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] ttextext-md">Geldwijsheid</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">
@@ -264,7 +264,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage5 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage7 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Ondernemerschap</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">Kijk anders, denk verder, vind je eigen idee</p>
@@ -275,7 +275,7 @@ export default function HeroSection() {
                 <div className="bg-[#FFFFFF]  rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-xl transition-shadow duration-500 h-full">
                   <div className="text-center">
                     <div className="w-16 h-16 shadow-lg bg-[#F8E6E6] rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <img src={DashImage7 || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                      <img src={DashImage6 || "/placeholder.svg"} className="h-10 w-10" alt="" />
                     </div>
                     <h3 className="poppins-700 text-[#000000] text-md">Anders Denken</h3>
                     <p className="text-[#828282] text-sm leading-relaxed">

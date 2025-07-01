@@ -1,5 +1,8 @@
 import { useState } from "react"
 import { IoPlayCircleOutline } from "react-icons/io5"
+import Pic1 from '../../public/library-images/Frame (6).svg'
+import Pic2 from '../../public/library-images/SVG (1).svg'
+import Pic3 from '../../public/library-images/SVG.svg'
 
 const Library = () => {
     const [activeTab, setActiveTab] = useState("activiteit-toevoegen")
@@ -15,8 +18,10 @@ const Library = () => {
             description: "Maak een mini-slinger van dankbaarheid die dagelijks kan groeien",
             duration: "6 min",
             ageRange: "5-6 jaar",
-            color: "orange",
+            image: Pic1,
+            color: "#F59E0B",
             status: "completed",
+            tag: "Dankbaarheid",
         },
         {
             id: 2,
@@ -24,8 +29,10 @@ const Library = () => {
             description: "Bouw samen torens die omvallen en leer dat herbouwen tot groei leidt.",
             duration: "10 min",
             ageRange: "3-5 jaar",
-            color: "blue",
+            image: Pic3,
+            color: "#3B82F6",
             status: "completed",
+            tag: "Veerkracht",
         },
         {
             id: 3,
@@ -33,31 +40,12 @@ const Library = () => {
             description: "Ontdek emoties door gezichtsuitdrukkingen in despiegel te maken en lichaamssignalen te voelen.",
             duration: "8 min",
             ageRange: "3-4 jaar",
-            color: "red",
+            image: Pic2,
+            color: "#EF4444",
             status: "available",
+            tag: "Emotionele Gezondheid",
         },
     ]
-
-    const getColorClasses = (color) => {
-        const colorMap = {
-            orange: {
-                header: "bg-orange-400",
-                badge: " text-orange-600",
-                button: "bg-orange-500 hover:bg-orange-600",
-            },
-            blue: {
-                header: "bg-blue-400",
-                badge: "    text-orange-600",
-                button: "bg-orange-500 hover:bg-blue-600",
-            },
-            red: {
-                header: "bg-red-400",
-                badge: " text-red-600",
-                button: "bg-red-500 hover:bg-red-600",
-            },
-        }
-        return colorMap[color] || colorMap.orange
-    }
 
     return (
         <div className="min-h-screen  p-4 sm:p-6 lg:p-8">
@@ -66,8 +54,8 @@ const Library = () => {
                     <button
                         onClick={() => setActiveTab("speelweek")}
                         className={`flex-1 min-w-[100px] w-full cursor-pointer px-6 py-2 rounded-xl text-sm font-medium transition-colors ${activeTab === "speelweek"
-                                ? "bg-[#8F34EA] text-white"
-                                : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
+                            ? "bg-[#8F34EA] text-white"
+                            : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
                             }`}
                     >
                         Speelweek
@@ -75,8 +63,8 @@ const Library = () => {
                     <button
                         onClick={() => setActiveTab("activiteitenbibliotheek")}
                         className={`flex-1 min-w-[100px] w-full cursor-pointer px-6 py-2 rounded-xl text-sm font-medium transition-colors ${activeTab === "activiteitenbibliotheek"
-                                ? "bg-[#8F34EA] text-white"
-                                : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
+                            ? "bg-[#8F34EA] text-white"
+                            : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
                             }`}
                     >
                         Activiteitenbibliotheek
@@ -84,8 +72,8 @@ const Library = () => {
                     <button
                         onClick={() => setActiveTab("activiteit-toevoegen")}
                         className={`flex-1 min-w-[100px] w-full cursor-pointer px-6 py-2 rounded-xl text-sm font-medium transition-colors ${activeTab === "activiteit-toevoegen"
-                                ? "bg-[#8F34EA] text-white"
-                                : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
+                            ? "bg-[#8F34EA] text-white"
+                            : "text-[#616161] inter-tight-400 border border-[#B4B4B4]"
                             }`}
                     >
                         Activiteit Toevoegen
@@ -96,7 +84,7 @@ const Library = () => {
                 <div className="bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] p-6 mb-8 shadow-sm">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div className="relative">
-                           
+
                             <input
                                 type="text"
                                 placeholder="Zoek Activiteiten"
@@ -104,7 +92,7 @@ const Library = () => {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="w-full pl-10 pr-4 py-2 border-none outline-none text-sm bg-[#FFFFFF] rounded-xl inter-tight-400 "
                             />
-                             <div className="absolute inset-y-0 left-0 bottom-0 pl-3 flex items-center pointer-events-none">
+                            <div className="absolute inset-y-0 left-0 bottom-0 pl-3 flex items-center pointer-events-none">
                                 <svg className="h-5 w-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
@@ -156,20 +144,33 @@ const Library = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {activities.map((activity) => {
-                            const colors = getColorClasses(activity.color)
-
                             return (
                                 <div
                                     key={activity.id}
                                     className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                                 >
-                                    <div className={`h-1 ${colors.header}`}></div>
+                                    <div className="h-1" style={{ backgroundColor: activity.color }}></div>
 
                                     <div className="p-6">
                                         <div className="flex items-start justify-between mb-4">
-                                            <div className="flex-1">
-                                                <h3 className="text-lg font-semibold pt-3 poppins-700 text-[#111827] mb-2">{activity.title}</h3>
-                                                <p className="text-[#4B5563] inter-tight-400 text-sm leading-relaxed mb-4">{activity.description}</p>
+                                            <div className="flex">
+                                                <div>
+                                                    <div className="flex items-center gap-2">
+                                                        <div style={{ backgroundColor: activity.color }} className="w-14 h-14 rounded-full flex items-center justify-center">
+                                                            <img src={activity.image} alt="" className="w-6 h-6" />
+                                                        </div>
+                                                        <div>
+                                                            <h3 className="text-lg font-semibold poppins-700 text-[#111827] mb-1">{activity.title}</h3>
+                                                            <span
+                                                                className="inline-block px-2 py-1 rounded-full text-xs font-medium text-white"
+                                                                style={{ backgroundColor: activity.color }}
+                                                            >
+                                                                {activity.tag}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-[#4B5563] inter-tight-400 text-sm leading-relaxed mb-4 mt-3">{activity.description}</p>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -205,29 +206,27 @@ const Library = () => {
                                         {activity.status === "completed" ? (
                                             <div className="bg-[#FEFCE8] flex-col flex justify-center items-center p-10 rounded-3xl">
 
-                                            <div
-                                                className={`inline-flex  items-center px-3 py-1 rounded-full text-sm font-medium ${colors.badge}`}
-                                                >
-                                                <svg className={`w-4 h-4 mr-1 bg-orange-600 text-white rounded-full`} fill="currentColor" viewBox="0 0 20 20" clas>
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                        clipRule="evenodd"
+                                                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-orange-600">
+                                                    <svg className="w-4 h-4 mr-1 bg-orange-600 text-white rounded-full" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path
+                                                            fillRule="evenodd"
+                                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                            clipRule="evenodd"
                                                         />
-                                                </svg>
-                                                Voltooid
+                                                    </svg>
+                                                    Voltooid
+                                                </div>
+                                                <span className="text-[#F59E0B] inter-tight-400 mt-2 text-sm">Fantastisch gedaan!</span>
                                             </div>
-                                            <span className="text-[#F59E0B] inter-tight-400 mt-2 text-sm">Fantastisch gedaan!</span>
-                                                        </div>
                                         ) : (
                                             <div className="space-y-2">
-                                              
-                                                                                  <button
-                                                                                      className="w-full bg-gradient-to-br from-[#C42E8B] to-[#6650C7] text-white inter-tight-700 cursor-pointer py-2 px-4 rounded-2xl hover:opacity-90 transition-opacity text-sm flex items-center justify-center gap-2"
-                                                                                  >
-                                                                                      <IoPlayCircleOutline className="w-6 h-6" />
-                                                                                      Start Activiteit
-                                                                                  </button>
+
+                                                <button
+                                                    className="w-full bg-gradient-to-br from-[#C42E8B] to-[#6650C7] text-white inter-tight-700 cursor-pointer py-2 px-4 rounded-2xl hover:opacity-90 transition-opacity text-sm flex items-center justify-center gap-2"
+                                                >
+                                                    <IoPlayCircleOutline className="w-6 h-6" />
+                                                    Start Activiteit
+                                                </button>
                                                 <p className="text-center text-sm inter-tight-400 text-[#767676]">Klaar om aan de slag te gaan?</p>
                                             </div>
                                         )}

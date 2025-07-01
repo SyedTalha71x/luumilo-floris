@@ -8,6 +8,7 @@ import NavImage4 from '../../../public/nav-images/SVG (4).svg'
 import NavImage5 from '../../../public/nav-images/SVG (5).svg'
 import NavImage6 from '../../../public/nav-images/SVG.svg'
 import NavImage7 from '../../../public/nav-images/Vector (1).svg'
+import NavImage8 from '../../../public/library-images/Frame (6)-new.svg'
 
 const Sidebar = () => {
   const links = [
@@ -19,6 +20,8 @@ const Sidebar = () => {
     { to: "/admin-dashboard/testgroepaanmeldingen", label: "Testgroep Aanmeldingen", image: NavImage1 },
     { to: "/admin-dashboard/kwaliteitsaudit", label: "Kwaliteitsaudit", image: NavImage4 },
     { to: "/admin-dashboard/earlyaccess", label: "Early Access", image: NavImage5 },
+    { to: "/admin-dashboard/manage-badge", label: "Manage Badge", image: NavImage8 },
+
   ];
 
   return (
