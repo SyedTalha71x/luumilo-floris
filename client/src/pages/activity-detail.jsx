@@ -152,16 +152,16 @@ const BadgeModal = ({ isVisible, onClose, onSubmitRating }) => {
                 <p className="text-[#000000] inter-tight-400 mb-3 leading-relaxed">
                   You've Successfully Completed The Task And Earned A New Badge!
                 </p>
-               
+
               </motion.div>
             </div>
 
-<div className="flex justify-center mt-8 items-center text-center inter-tight-400 ">
+            <div className="flex justify-center mt-8 items-center text-center inter-tight-400 ">
 
-            <p className="text-sm text-[#000000]">
-                  Keep Up The Great Work And Continue Unlocking More Achievements.
-                </p>
-</div>
+              <p className="text-sm text-[#000000]">
+                Keep Up The Great Work And Continue Unlocking More Achievements.
+              </p>
+            </div>
 
             {/* Buttons */}
             <motion.div
@@ -600,9 +600,9 @@ function ActivityDetail() {
       </div>
 
       {showRatingModal && (
-        <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-50 md:p-4 p-2">
           <div className="bg-white rounded-3xl p-8 max-w-xl w-full mx-4 relative">
-          <button
+            <button
               onClick={() => setShowRatingModal(false)}
               className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
             >
@@ -619,9 +619,9 @@ function ActivityDetail() {
                     onClick={() => handleStarClick(star)}
                     className="focus:outline-none transition-transform hover:scale-110"
                   >
-<IoMdStar
-  className={`w-12 h-12 ${star <= selectedRating ? "text-[#EEAA43]" : "text-[#D9D9D9]"}`}
-/>
+                    <IoMdStar
+                      className={`w-12 h-12 ${star <= selectedRating ? "text-[#EEAA43]" : "text-[#D9D9D9]"}`}
+                    />
 
                   </button>
                 ))}
@@ -633,17 +633,17 @@ function ActivityDetail() {
                   </span>
                 ))}
               </div>
-              <div className="flex space-x-4">
+              <div className="flex md:flex-row gap-2  flex-col w-full space-x-4">
                 <button
                   onClick={handleRateLater}
-                  className="flex-1 px-6 py-3 border inter-tight-400 text-sm border-gray-600 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors"
+                  className="flex-1 px-6 py-2 md:w-auto w-full border inter-tight-400 text-sm border-gray-600 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors"
                 >
                   Beoordeel Later
                 </button>
                 <button
                   onClick={handleSubmitRating}
                   disabled={selectedRating === 0}
-                  className={`flex-1 px-6 py-3 rounded-xl inter-tight-400 text-sm font-medium transition-colors ${selectedRating > 0
+                  className={`flex-1 px-6 py-2 md:w-auto w-full rounded-xl inter-tight-400 text-sm font-medium transition-colors ${selectedRating > 0
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                     }`}
@@ -656,45 +656,45 @@ function ActivityDetail() {
         </div>
       )}
 
-<section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl m-auto mt-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div className="mt-16">
-                <h2 className="text-3xl sm:text-5xl  text-[#0F2137] inter-tight-700">
-                  Veelgestelde
-                  <br />
-                  vragen
-                </h2>
-              </div>
-              <div className="space-y-4  bg-[#F1F6FB] p-7 rounded-md">
-                {faqData.map((faq, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-4">
-                    <button
-                      onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
-                      className="flex justify-between items-center w-full text-left py-4"
-                    >
-                      <span className="text-[#0F2137] font-medium inter-tight-400 text-base">{faq.question}</span>
-                      <div className="ml-4 flex-shrink-0">
-                        {openFAQ === index ? (
-                          <ChevronUp className="w-5 h-5 text-black" />
-                        ) : (
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center">
-                            <span className="text-black text-lg font-bold">+</span>
-                          </div>
-                        )}
-                      </div>
-                    </button>
-                    {openFAQ === index && (
-                      <div className="pb-4">
-                        <p className="text-[#666666] text-sm inter-tight-400 leading-relaxed">{faq.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+      <section className=" px-4 sm:px-6 lg:px-8 max-w-7xl w-full m-auto md:mt-10 mt-3">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="mt-16">
+              <h2 className="text-3xl sm:text-5xl w-full  text-[#0F2137] inter-tight-700">
+                Veelgestelde
+                <br />
+                vragen
+              </h2>
+            </div>
+            <div className="space-y-4  bg-[#F1F6FB] p-7 rounded-md">
+              {faqData.map((faq, index) => (
+                <div key={index} className="border-b border-gray-200 pb-4">
+                  <button
+                    onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
+                    className="flex justify-between items-center w-full text-left py-4"
+                  >
+                    <span className="text-[#0F2137] font-medium inter-tight-400 text-base">{faq.question}</span>
+                    <div className="ml-4 flex-shrink-0">
+                      {openFAQ === index ? (
+                        <ChevronUp className="w-5 h-5 text-black" />
+                      ) : (
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                          <span className="text-black text-lg font-bold">+</span>
+                        </div>
+                      )}
+                    </div>
+                  </button>
+                  {openFAQ === index && (
+                    <div className="pb-4">
+                      <p className="text-[#666666] text-sm inter-tight-400 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
     </div>
   )
 }
