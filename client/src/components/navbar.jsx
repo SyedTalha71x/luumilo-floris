@@ -69,7 +69,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div>
-              <img src={Logo || "/placeholder.svg"} alt="Logo" />
+            <img
+  src={Logo}
+  alt="Logo"
+  className="h-10 w-auto sm:h-14"
+  loading="eager"
+/>
             </div>
 
             <div className="hidden md:block">

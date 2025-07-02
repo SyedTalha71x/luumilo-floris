@@ -1,26 +1,21 @@
-"use client"
-
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react"
-
-import { ArrowLeft, Clock, Users, Star, CheckCircle } from "lucide-react"
-
+import { ArrowLeft, Clock, Users, Star, CheckCircle, X, Award, ChevronUp } from "lucide-react"
 import { useParams, useNavigate } from "react-router-dom"
+import Badge1 from '../../public/profile-images/Frame.svg'
+
+import { motion, AnimatePresence } from "framer-motion"
 
 import DetailImage from "../../public/images/SVG-detail.svg"
-
 import DetailImage1 from "../../public/images/SVG-detail-1.svg"
-
 import DetailImage2 from "../../public/images/Frame (1)-detail.svg"
-
 import BackgroundPicture1 from "../../public/images/Background (1).svg"
-
 import BackgroundPicture2 from "../../public/images/Background (2).svg"
-
 import BackgroundPicture3 from "../../public/images/Background (3).svg"
-
 import BackgroundPicture4 from "../../public/images/Background (4).svg"
-
 import BackgroundPicture5 from "../../public/images/Background.svg"
+import { IoMdStar, IoMdStarOutline } from "react-icons/io";
+
 
 // Sparkle Component
 const Sparkle = ({ style }) => (
@@ -75,7 +70,6 @@ const CelebrationSparkles = ({ isVisible, onComplete }) => {
           font-size: 24px;
           animation: sparkleFloat var(--duration, 3s) ease-out forwards;
         }
-        
         @keyframes sparkleFloat {
           0% {
             transform: translateY(100vh) rotate(0deg) scale(0);
@@ -99,12 +93,110 @@ const CelebrationSparkles = ({ isVisible, onComplete }) => {
   )
 }
 
+// Badge Congratulations Modal Component
+
+const BadgeModal = ({ isVisible, onClose, onSubmitRating }) => {
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 20 }}
+            transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+            className="bg-white rounded-3xl p-8 max-w-2xl w-full relative shadow-xl"
+          >
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              <X className="w-4 h-4 text-gray-600" />
+            </button>
+
+            {/* Content Layout */}
+            <div className="flex flex-col md:p-2 p-0 sm:flex-row gap-6 items-center sm:items-start">
+              {/* Badge Section */}
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.2, type: "spring", duration: 0.6 }}
+                className="flex-1 flex justify-center sm:justify-end"
+              >
+                <div className="rounded-2xl border border-[#D9D9D9] p-3 shadow-xl w-full">
+                  <div className="flex justify-center mb-3">
+                    <div className="w-24 h-24 rounded-2xl  flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-xl shadow-2xl bg-[#FFF6F7] flex items-center justify-center">
+                        <img src={Badge1} alt="Badge" className="w-10 h-10" />
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-black text-center inter-tight-400">First Step</h3>
+                  <p className="mt-1 text-sm text-[#828282] inter-tight-400 text-center">Complete Your 1st Activity</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex-1 mt-2 text-center sm:text-left"
+              >
+                <h2 className="text-2xl  text-[#000000] inter-tight-700 mb-2">Congratulations!</h2>
+                <p className="text-[#000000] inter-tight-400 mb-3 leading-relaxed">
+                  You've Successfully Completed The Task And Earned A New Badge!
+                </p>
+               
+              </motion.div>
+            </div>
+
+<div className="flex justify-center mt-8 items-center text-center inter-tight-400 ">
+
+            <p className="text-sm text-[#000000]">
+                  Keep Up The Great Work And Continue Unlocking More Achievements.
+                </p>
+</div>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-3 mt-6"
+            >
+              <button
+                onClick={onSubmitRating}
+                className="flex-1 px-6 py-2 border text-[#000000] border-[#A1A1A1] text-sm rounded-xl transition-colors"
+              >
+                Submit Rating
+              </button>
+              <button
+                onClick={onClose}
+                className="flex-1 px-6 py-2 bg-gradient-to-r from-[#2B60EB] to-[#8F35EA] text-white text-sm rounded-xl"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 function ActivityDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [showRatingModal, setShowRatingModal] = useState(false)
   const [selectedRating, setSelectedRating] = useState(0)
   const [showCelebration, setShowCelebration] = useState(false)
+  const [showBadgeModal, setShowBadgeModal] = useState(false)
 
   const activities = [
     {
@@ -236,6 +328,29 @@ function ActivityDetail() {
     },
   ]
 
+  const [openFAQ, setOpenFAQ] = useState(0)
+
+  const faqData = [
+    {
+      question: "Hoe lang duurt een activiteit?",
+      answer: "Onze activiteiten duren tussen de 5 en 15 minuten. Perfect om in jullie dagelijkse routine te passen.",
+    },
+    {
+      question: "Voor welke leeftijd is Luumilo geschikt?",
+      answer: "Luumilo is speciaal ontwikkeld voor kinderen van 3 tot 6 jaar.",
+    },
+    {
+      question: "Hebben jullie ervoor nodig materialen?",
+      answer:
+        "De meeste activiteiten kunnen met gewone huishoudelijke spullen. Soms hebben we simpele materialen nodig die je waarschijnlijk al thuis hebt.",
+    },
+    {
+      question: "Wanneer is Luumilo beschikbaar?",
+      answer:
+        "We zijn hard bezig met de ontwikkeling. Meld je aan om als eerste op de hoogte te blijven van de lancering.",
+    },
+  ]
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -257,6 +372,19 @@ function ActivityDetail() {
 
   const handleCelebrationComplete = () => {
     setShowCelebration(false)
+    // Show badge modal after celebration
+    setTimeout(() => {
+      setShowBadgeModal(true)
+    }, 200)
+  }
+
+  const handleBadgeModalClose = () => {
+    setShowBadgeModal(false)
+  }
+
+  const handleBadgeSubmitRating = () => {
+    setShowBadgeModal(false)
+    setShowRatingModal(true)
   }
 
   const handleRatingClick = () => {
@@ -290,7 +418,6 @@ function ActivityDetail() {
     return colorMap[color] || "bg-orange-400"
   }
 
-
   const getRatingRange = (index) => {
     const ranges = [
       <span key={0}>
@@ -315,6 +442,7 @@ function ActivityDetail() {
   return (
     <div className="min-h-screen bg-gray-50">
       <CelebrationSparkles isVisible={showCelebration} onComplete={handleCelebrationComplete} />
+      <BadgeModal isVisible={showBadgeModal} onClose={handleBadgeModalClose} onSubmitRating={handleBadgeSubmitRating} />
 
       <div className="md:w-[90%] w-full mx-auto p-4 lg:p-6">
         <div className="px-4 py-3">
@@ -332,9 +460,7 @@ function ActivityDetail() {
                   <img src={activityData.image || "/placeholder.svg"} alt="" />
                 </div>
               </div>
-
               <h1 className="text-2xl lg:text-3xl inter-tight-700 font-bold leading-tight">{activityData.title}</h1>
-
               <div className="flex justify-center mt-2">
                 <span className={`${activityData.tagColor} px-3 py-1 rounded-full text-xs font-medium`}>
                   {activityData.tag}
@@ -356,7 +482,6 @@ function ActivityDetail() {
                 </div>
                 Benodigdheden
               </h2>
-
               <div className="bg-[#F0FDF4] border border-[#BBF7D0] p-6 rounded-2xl">
                 <p className="text-sm inter-tight-400 text-[#166534]">{activityData.materials}</p>
               </div>
@@ -371,7 +496,6 @@ function ActivityDetail() {
                 </div>
                 Stap voor stap
               </h2>
-
               <div className="space-y-4">
                 {activityData.steps.map((step, index) => (
                   <div key={index} className="flex items-start space-x-3">
@@ -409,7 +533,6 @@ function ActivityDetail() {
           <div className="space-y-6">
             <div className="bg-white rounded-3xl shadow-lg border border-[#E2E4E9] p-6">
               <h3 className="inter-tight-700 font-semibold mb-4 text-[#1F1F1F]">Activiteit details</h3>
-
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-[#4B5563]">
@@ -418,7 +541,6 @@ function ActivityDetail() {
                   </div>
                   <span className="text-sm inter-tight-700 font-medium text-[#1F1F1F]">{activityData.duration}</span>
                 </div>
-
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-[#4B5563]">
                     <Users className="w-4 h-4 mr-2" />
@@ -426,7 +548,6 @@ function ActivityDetail() {
                   </div>
                   <span className="text-sm inter-tight-700 font-medium text-[#1F1F1F]">{activityData.ageRange}</span>
                 </div>
-
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-[#4B5563]">
                     <Star className="w-4 h-4 mr-2" />
@@ -445,19 +566,15 @@ function ActivityDetail() {
 
             <div className="bg-white rounded-3xl shadow-lg border border-[#E2E4E9] p-6">
               <h3 className="inter-tight-700 font-semibold mb-4 text-[#1F1F1F]">Leergebied</h3>
-
               <div className="flex items-start space-x-4">
                 {/* Fixed image container - larger and better proportions */}
-                <div
-                  className={`w-8 h-8 rounded-2xl mt-1 flex items-center justify-center flex-shrink-0`}
-                >
+                <div className={`w-8 h-8 rounded-2xl mt-1 flex items-center justify-center flex-shrink-0`}>
                   <img
                     src={activityData.image || "/placeholder.svg"}
                     alt={activityData.category}
                     className="w-full h-full object-contain"
                   />
                 </div>
-
                 <div className="flex-1">
                   <p className="inter-tight-700 font-medium text-base text-[#1F1F1F] mb-1">{activityData.category}</p>
                   <p className="text-sm inter-tight-400 text-[#4B5563] leading-relaxed">
@@ -485,11 +602,16 @@ function ActivityDetail() {
       {showRatingModal && (
         <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-3xl p-8 max-w-xl w-full mx-4 relative">
+          <button
+              onClick={() => setShowRatingModal(false)}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            >
+              <X className="w-4 h-4 text-gray-600" />
+            </button>
             <div className="text-center">
               <h2 className="text-lg font-semibold inter-tight-400 text-gray-800 mb-8">
                 Beoordeling Selecteer Een Aantal Sterren:
               </h2>
-
               <div className="flex justify-center space-x-4 mb-6">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
@@ -497,15 +619,13 @@ function ActivityDetail() {
                     onClick={() => handleStarClick(star)}
                     className="focus:outline-none transition-transform hover:scale-110"
                   >
-                    <Star
-                      className={`w-12 h-12 ${
-                        star <= selectedRating ? "fill-yellow-400 text-yellow-400" : "fill-none text-gray-300 stroke-1"
-                      }`}
-                    />
+<IoMdStar
+  className={`w-12 h-12 ${star <= selectedRating ? "text-[#EEAA43]" : "text-[#D9D9D9]"}`}
+/>
+
                   </button>
                 ))}
               </div>
-
               <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-500">
                 {[1, 2, 3, 4, 5].map((index) => (
                   <span key={index} className={selectedRating === index ? "text-green-600 font-medium" : ""}>
@@ -513,7 +633,6 @@ function ActivityDetail() {
                   </span>
                 ))}
               </div>
-
               <div className="flex space-x-4">
                 <button
                   onClick={handleRateLater}
@@ -521,15 +640,13 @@ function ActivityDetail() {
                 >
                   Beoordeel Later
                 </button>
-
                 <button
                   onClick={handleSubmitRating}
                   disabled={selectedRating === 0}
-                  className={`flex-1 px-6 py-3 rounded-xl inter-tight-400 text-sm font-medium transition-colors ${
-                    selectedRating > 0
-                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  }`}
+                  className={`flex-1 px-6 py-3 rounded-xl inter-tight-400 text-sm font-medium transition-colors ${selectedRating > 0
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
                 >
                   Verstuur
                 </button>
@@ -538,6 +655,46 @@ function ActivityDetail() {
           </div>
         </div>
       )}
+
+<section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl m-auto mt-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div className="mt-16">
+                <h2 className="text-3xl sm:text-5xl  text-[#0F2137] inter-tight-700">
+                  Veelgestelde
+                  <br />
+                  vragen
+                </h2>
+              </div>
+              <div className="space-y-4  bg-[#F1F6FB] p-7 rounded-md">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4">
+                    <button
+                      onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
+                      className="flex justify-between items-center w-full text-left py-4"
+                    >
+                      <span className="text-[#0F2137] font-medium inter-tight-400 text-base">{faq.question}</span>
+                      <div className="ml-4 flex-shrink-0">
+                        {openFAQ === index ? (
+                          <ChevronUp className="w-5 h-5 text-black" />
+                        ) : (
+                          <div className="w-6 h-6 rounded-full flex items-center justify-center">
+                            <span className="text-black text-lg font-bold">+</span>
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                    {openFAQ === index && (
+                      <div className="pb-4">
+                        <p className="text-[#666666] text-sm inter-tight-400 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   )
 }

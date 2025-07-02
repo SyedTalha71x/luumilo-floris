@@ -115,12 +115,12 @@ const AboutUs = () => {
             </section>
 
             <div className='flex justify-center mt-16 items-center flex-col'>
-                <h1 className='text-4xl inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]'>Waarom het ertoe doet</h1>
+                <h1 className='text-4xl text-center inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]'>Waarom het ertoe doet</h1>
                 <p className='mt-3 max-w-2xl text-[#4B5563] m-auto text-center'>We weten dat de kindertijd de belangrijkste fase is voor het ontwikkelen van gezonde gewoonten en emotionele vaardigheden. Luumilo moedigt kinderen aan om niet alleen academisch, maar ook sociaal en emotioneel te groeien – vaardigheden waar ze hun hele leven profijt van hebben.
                 </p>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto w-full py-12  px-0 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4 p-10">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4 inter-tight-700">Onze waarden</h2>
@@ -133,7 +133,7 @@ const AboutUs = () => {
 
                     </div>
 
-                    <div className="bg-[#F1F6FB] p-10 rounded-lg">
+                    <div className="bg-[#F1F6FB] md:p-10 p-6 rounded-lg">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4 inter-tight-700">Met zorg gebouwd</h2>
                         <p className="text-[#1B2838] inter-tight-400">
                             Luumilo is ontwikkeld door een gepassioneerd team van pedagogen, ouders en ontwerpers die de waarde van onderwijs aan jonge kinderen begrijpen. We zijn er om gezinnen te ondersteunen en een blijvende impact te maken – één speelse missie tegelijk.
