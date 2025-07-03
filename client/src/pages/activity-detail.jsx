@@ -17,35 +17,34 @@ import BackgroundPicture5 from "../../public/images/Background.svg"
 import { IoMdStar, IoMdStarOutline } from "react-icons/io";
 
 
-// Sparkle Component
 const Sparkle = ({ style }) => (
   <div className="absolute pointer-events-none" style={style}>
     <div className="sparkle">✨</div>
   </div>
 )
 
-// Celebration Component
 const CelebrationSparkles = ({ isVisible, onComplete }) => {
   const [sparkles, setSparkles] = useState([])
 
   useEffect(() => {
     if (isVisible) {
       const newSparkles = []
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 10; i++) {
         newSparkles.push({
           id: i,
-          left: Math.random() * 100 + "%",
+          // Position sparkles around button area (bottom of left column)
+          left: Math.random() * 20 + 20 + "%", // 20% to 80% from left
+          top: Math.random() * 90 + 20 + "%", // 70% to 100% from top (bottom area)
           animationDelay: Math.random() * 2 + "s",
           animationDuration: Math.random() * 3 + 2 + "s",
         })
       }
       setSparkles(newSparkles)
 
-      // Clean up after animation
       const timer = setTimeout(() => {
         setSparkles([])
         onComplete()
-      }, 4000)
+      }, 2000)
 
       return () => clearTimeout(timer)
     }
@@ -60,6 +59,7 @@ const CelebrationSparkles = ({ isVisible, onComplete }) => {
           key={sparkle.id}
           style={{
             left: sparkle.left,
+            top: sparkle.top,
             animationDelay: sparkle.animationDelay,
             animationDuration: sparkle.animationDuration,
           }}
@@ -67,24 +67,29 @@ const CelebrationSparkles = ({ isVisible, onComplete }) => {
       ))}
       <style jsx>{`
         .sparkle {
-          font-size: 24px;
-          animation: sparkleFloat var(--duration, 3s) ease-out forwards;
+          font-size: 30px;
+          animation: sparkleButtonFloat var(--duration, 3s) ease-out forwards;
         }
-        @keyframes sparkleFloat {
+        
+        @keyframes sparkleButtonFloat {
           0% {
-            transform: translateY(100vh) rotate(0deg) scale(0);
+            transform: translateX(0) translateY(0) rotate(0deg) scale(0);
             opacity: 0;
           }
-          10% {
+          20% {
             opacity: 1;
-            transform: translateY(90vh) rotate(180deg) scale(1);
+            transform: translateX(5px) translateY(-15px) rotate(180deg) scale(1);
+          }
+          60% {
+            opacity: 1;
+            transform: translateX(-10px) translateY(-25px) rotate(360deg) scale(1.1);
           }
           90% {
             opacity: 1;
-            transform: translateY(-10vh) rotate(720deg) scale(1);
+            transform: translateX(15px) translateY(-35px) rotate(540deg) scale(1);
           }
           100% {
-            transform: translateY(-20vh) rotate(900deg) scale(0);
+            transform: translateX(0) translateY(-45px) rotate(720deg) scale(0);
             opacity: 0;
           }
         }
@@ -92,8 +97,6 @@ const CelebrationSparkles = ({ isVisible, onComplete }) => {
     </div>
   )
 }
-
-// Badge Congratulations Modal Component
 
 const BadgeModal = ({ isVisible, onClose, onSubmitRating }) => {
   return (
@@ -440,7 +443,7 @@ function ActivityDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-10">
       <CelebrationSparkles isVisible={showCelebration} onComplete={handleCelebrationComplete} />
       <BadgeModal isVisible={showBadgeModal} onClose={handleBadgeModalClose} onSubmitRating={handleBadgeSubmitRating} />
 

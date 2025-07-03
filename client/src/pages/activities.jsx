@@ -4,6 +4,7 @@ import TestimonialsSection from "../components/testimonial"
 import Specs from "../components/specs"
 import Faqs from "../components/faqs"
 import BookImage from '../../public/nav-images/Frame (6).svg'
+import BookGif from '../../public/profile-images/attachment.gif'
 
 export default function Activities() {
     return (
