@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Search, Menu, X, Home, Activity, BarChart2, BookOpen, Info, Newspaper, User, Badge } from "lucide-react"
 import Logo from "../../public/images/logo-miIQ_By4 1.svg"
