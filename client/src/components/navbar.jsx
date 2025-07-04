@@ -70,7 +70,7 @@ export default function Navbar() {
             <img
   src={Logo}
   alt="Logo"
-  className="h-10 w-auto sm:h-14"
+  className=""
   loading="eager"
 />
             </div>
