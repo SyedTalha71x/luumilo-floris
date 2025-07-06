@@ -332,29 +332,6 @@ function ActivityDetail() {
     },
   ]
 
-  const [openFAQ, setOpenFAQ] = useState(0)
-
-  const faqData = [
-    {
-      question: "Hoe lang duurt een activiteit?",
-      answer: "Onze activiteiten duren tussen de 5 en 15 minuten. Perfect om in jullie dagelijkse routine te passen.",
-    },
-    {
-      question: "Voor welke leeftijd is Luumilo geschikt?",
-      answer: "Luumilo is speciaal ontwikkeld voor kinderen van 3 tot 6 jaar.",
-    },
-    {
-      question: "Hebben jullie ervoor nodig materialen?",
-      answer:
-        "De meeste activiteiten kunnen met gewone huishoudelijke spullen. Soms hebben we simpele materialen nodig die je waarschijnlijk al thuis hebt.",
-    },
-    {
-      question: "Wanneer is Luumilo beschikbaar?",
-      answer:
-        "We zijn hard bezig met de ontwikkeling. Meld je aan om als eerste op de hoogte te blijven van de lancering.",
-    },
-  ]
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -376,7 +353,6 @@ function ActivityDetail() {
 
   const handleCelebrationComplete = () => {
     setShowCelebration(false)
-    // Show badge modal after celebration
     setTimeout(() => {
       setShowBadgeModal(true)
     }, 200)

@@ -1,5 +1,7 @@
 import { Clock, User, Star, Play } from "lucide-react"
 import { IoPlayCircleOutline } from "react-icons/io5";
+import { FiUsers } from "react-icons/fi";
+
 
 import BackgroundPicture1 from "../../public/images/Background (1).svg"
 import BackgroundPicture2 from "../../public/images/Background (2).svg"
@@ -125,24 +127,24 @@ export default function EducationalActivites() {
                                 <div className="p-4 space-y-4">
                                     <div>
                                         <h3 className="text-lg text-[#0F2137] poppins-700 mb-1">{activity.title}</h3>
-                                        <p className="text-[#666666] inter-tight-400 text-md leading-relaxed">{activity.description}</p>
+                                        <p className="text-[#666666] space-grotesk-400 text-[16px] leading-relaxed">{activity.description}</p>
                                     </div>
 
                                     <div className="flex items-center inter-tight-400 justify-between text-sm mt-8 text-[#838383]">
-                                        <div className="flex items-center gap-1">
+                                        <div className="flex items-center gap-1 sora-400">
                                             <Clock className="w-4 h-4" />
                                             <span>{activity.progress}</span>
                                         </div>
-                                        <div className="flex items-center gap-1">
-                                            <User className="w-4 h-4" />
+                                        <div className="flex items-center gap-1 sora-400">
+                                            <FiUsers className="w-4 h-4" />
                                             <span>{activity.ageRange}</span>
                                         </div>
                                     </div>
 
-                                    <div className="rounded-lg p-3 flex items-center justify-center gap-2">
+                                    <div className="rounded-lg bg-[#FFFCE6] border border-yellow-200 p-3 flex items-center justify-center gap-2">
                                         <Star className="w-4 h-4 text-[#FACC15] fill-current" />
                                         <span className="text-sm inter-tight-400 font-medium text-gray-700">
-                                            <span className="font-bold inter-tight-400">{activity.rating}</span> ({activity.reviews})
+                                            <span className="font-bold text-black inter-tight-700">{activity.rating}</span> ({activity.reviews})
                                         </span>
                                     </div>
 
