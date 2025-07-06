@@ -68,19 +68,18 @@ export default function HeroSection() {
             <div className="max-w-6xl mx-auto mt-7">
               <div className="text-center mb-12">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-                  <span className=" inter-tight-700 text-[#2563EB]">Je kind future-proof maken?</span>
+                  <span className=" inter-tight-700 bg-clip-text text-transparent  bg-gradient-to-b to-[#2563EB] from-[#9333EA]">Je kind future-proof maken?</span>
                   <br />
                   <span className="text-[#111827] inter-tight-700">Dat doe je samen.</span>
                 </h1>
-                <p className="text-md inter-tight-400 mt-7 text-[#8F8F8F] mb-2 max-w-3xl mx-auto">
+                {/* <p className="text-md inter-tight-400 mt-7 text-[#8F8F8F] mb-2 max-w-3xl mx-auto">
                   In 10 Minuten Per Dag, Zonder Scherm.
-                </p>
-                <div className="flex items-center justify-center mb-12">
+                </p> */}
+                <div className="flex items-center mt-10 justify-center mb-12">
                   <div className="flex items-center space-x-4">
-                    <div className="text-center max-w-lg">
-                      <p className="text-sm sm:text-base text-[#8F8F8F] inter-tight-400 leading-relaxed">
-                        Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, weerbaarheid, zelfzorg en meer – via
-                        korte, speelse missies die jullie band versterken.
+                    <div className="text-center max-w-xl">
+                      <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
+                      Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte, speelse missies die jullie band versterken.
                       </p>
                     </div>
                   </div>
@@ -88,15 +87,15 @@ export default function HeroSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
                   <div className="bg-[#F8F8FF] rounded-2xl p-6 sm:p-8  transition-shadow duration-500 cursor-pointer border border-slate-300">
                     <div className="flex items-start space-x-3 mt-4">
-                      <p className="text-[#5D5D5D] text-base sm:text-lg font-medium leading-relaxed">
-                        Voor ouders die voelen: school alleen is niet genoeg.
+                      <p className="text-[#5D5D5D] text-sm md:text-[18px] inter-tight-400 capitalize">
+                        <span className="inter-tight-700 text-[#5D5D5D] mr-1">Voor ouders</span>die voelen dat innerlijke kracht belangrijker is dan hoge cijfers.
                       </p>
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-6 sm:p-8  transition-shadow duration-300">
                     <div className="flex items-start space-x-3 mt-4">
-                      <p className="text-[#FFFFFF] text-base sm:text-lg font-medium ">
-                        Voor kinderen die straks sterk, nieuwsgierig en zelfstandig de wereld in stappen.
+                    <p className="text-[#FFFFFF] text-sm md:text-[18px] inter-tight-400 capitalize">
+                        <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
                       </p>
                     </div>
                   </div>
@@ -155,7 +154,7 @@ export default function HeroSection() {
         <section className="h-auto max-w-7xl m-auto mt-10 bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] py-16 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl inter-tight-700 text-[#000000] mb-2">Welkom terug!</h2>
+              <h2 className="text-3xl sm:text-4xl inter-tight-700 text-[#000000] poppins-700 mb-2">Welkom terug!</h2>
               <p className="text-md inter-tight-400 text-[#000000] text-sm mb-3">Klaar voor de volgende activiteit?</p>
               <div className="flex justify-center mb-12">
                 <div className=" flex gap-2 items-center rounded-full p-1 ">
@@ -275,7 +274,7 @@ export default function HeroSection() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl poppins-700  text-white mb-2">Hoe het werkt</h2>
-              <p className="text-white text-md">3-stappenstroom</p>
+              <p className="text-white text-md">3 Simpele Stappen</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
               <div className=" md:h-[450px] h-full">

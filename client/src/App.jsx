@@ -33,6 +33,7 @@ import TestgroepAanmeldingen from './pages/admin-dashboard-pages/testgroepaanmel
 import Kwaliteitsaudit from './pages/admin-dashboard-pages/kwaliteitsaudit'
 import EarlyAccess from './pages/admin-dashboard-pages/earlyaccess'
 import Managebadge from './pages/admin-dashboard-pages/manage-badge'
+import ScrollToTop from './components/ScrollToTop'
 
 
 function AppWrapper() {
@@ -91,6 +92,7 @@ function AppWrapper() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppWrapper />
     </BrowserRouter>
   )

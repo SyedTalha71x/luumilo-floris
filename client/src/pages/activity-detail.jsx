@@ -15,6 +15,7 @@ import BackgroundPicture3 from "../../public/images/Background (3).svg"
 import BackgroundPicture4 from "../../public/images/Background (4).svg"
 import BackgroundPicture5 from "../../public/images/Background.svg"
 import { IoMdStar, IoMdStarOutline } from "react-icons/io";
+import Faqs from "../components/faqs"
 
 
 const Sparkle = ({ style }) => (
@@ -659,45 +660,7 @@ function ActivityDetail() {
         </div>
       )}
 
-      <section className=" px-4 sm:px-6 lg:px-8 max-w-7xl w-full m-auto md:mt-10 mt-3">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="mt-16">
-              <h2 className="text-3xl sm:text-5xl w-full  text-[#0F2137] inter-tight-700">
-                Veelgestelde
-                <br />
-                vragen
-              </h2>
-            </div>
-            <div className="space-y-4  bg-[#F1F6FB] p-7 rounded-md">
-              {faqData.map((faq, index) => (
-                <div key={index} className="border-b border-gray-200 pb-4">
-                  <button
-                    onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
-                    className="flex justify-between items-center w-full text-left py-4"
-                  >
-                    <span className="text-[#0F2137] font-medium inter-tight-400 text-base">{faq.question}</span>
-                    <div className="ml-4 flex-shrink-0">
-                      {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-black" />
-                      ) : (
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center">
-                          <span className="text-black text-lg font-bold">+</span>
-                        </div>
-                      )}
-                    </div>
-                  </button>
-                  {openFAQ === index && (
-                    <div className="pb-4">
-                      <p className="text-[#666666] text-sm inter-tight-400 leading-relaxed">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+   <Faqs/>
     </div>
   )
 }
