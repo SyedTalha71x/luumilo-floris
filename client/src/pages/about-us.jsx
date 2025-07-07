@@ -7,6 +7,8 @@ import DashImage5 from "../../public/activities-images/Group (3).svg"
 import DashImage6 from "../../public/activities-images/SVG (1).svg"
 import DashImage7 from "../../public/activities-images/SVG.svg"
 
+import AboutImageRight from '../../public/images/Layer_2.svg'
+
 const AboutUs = () => {
     return (
         <div className='h-full p-4 mt-10 max-w-7xl mx-auto w-full'>
@@ -114,67 +116,66 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            <div className='flex justify-center mt-16 items-center flex-col'>
-                <h1 className='text-4xl text-center inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]'>Waarom het ertoe doet</h1>
-                <p className='mt-3 max-w-2xl text-[#4B5563] m-auto text-center'>We weten dat de kindertijd de belangrijkste fase is voor het ontwikkelen van gezonde gewoonten en emotionele vaardigheden. Luumilo moedigt kinderen aan om niet alleen academisch, maar ook sociaal en emotioneel te groeien – vaardigheden waar ze hun hele leven profijt van hebben.
-                </p>
+            <div className="max-w-7xl mx-auto w-full py-12 px-0 md:px-8">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-12 mt-16">
+
+                    {/* Text Column */}
+                    <div className="md:w-2/3 flex flex-col md:items-start items-center text-center md:text-left">
+                        <h1 className="text-4xl inter-tight-700 bg-clip-text text-transparent bg-gradient-to-b to-[#9333EA] from-[#DB2777]">
+                            Waarom het ertoe doet
+                        </h1>
+                        <p className="mt-7 text-[#4B5563] md:text-[18px] text-sm inter-tight-400 max-w-2xl">
+                        We weten dat de kindertijd de belangrijkste fase is voor het ontwikkelen van gezonde gewoonten en emotionele vaardigheden. Luumilo moedigt kinderen aan om niet alleen academisch, maar ook sociaal en emotioneel te groeien – vaardigheden waar ze hun hele leven profijt van hebben.
+                        </p>
+                    </div>
+
+                    <div className="md:w-1/2 flex justify-center md:justify-end">
+                        <img src={AboutImageRight} alt="" className="rounded-2xl max-w-full h-auto" />
+                    </div>
+                </div>
             </div>
 
-            <div className="max-w-7xl mx-auto w-full py-12  px-0 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div className="space-y-4 p-10">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4 inter-tight-700">Onze waarden</h2>
-                        <p className="text-gray-900 text-sm inter-tight-400"><span className='font-bold mr-1 text-[#000000] poppins-700 text-sm'>Verbinding:</span>Familiebanden versterken door gezamenlijke activiteiten</p>
-                        <p className="text-gray-900 text-sm inter-tight-400">
-                            <span className='font-bold mr-1 text-[#000000] poppins-700 text-sm'>Groei:</span>Persoonlijke ontwikkeling bevorderen in kleine, vreugdevolle stapjes
+
+            <div className="max-w-7xl mx-auto w-full md:py-12 py-7 px-0 md:px-8">
+                <div className="flex flex-col md:flex-row justify-center items-start gap-12">
+
+                    <div className="md:mt-20 mt-6 space-y-4 text-center md:text-left md:w-1/2">
+                        <h2 className="text-4xl inter-tight-700 bg-clip-text text-transparent bg-gradient-to-b to-[#9333EA] from-[#DB2777]">
+                            Missie
+                        </h2>
+                        <p className="text-[#1B2838] inter-tight-400 max-w-3xl">
+                            Bij Luumilo helpen we jou als ouder om op een eenvoudige en inspirerende manier thuis te bouwen aan de innerlijke kracht van je kind.
                         </p>
-                        <p className="text-gray-900 text-sm inter-tight-400"><span className='font-bold mr-1 text-[#000000] poppins-700 text-sm'>Eenvoud:</span>Het voor drukke ouders gemakkelijk maken om betekenisvol betrokken te zijn</p>
-                        <p className="text-gray-900 text-sm inter-tight-400"><span className='font-bold mr-1 text-[#000000] poppins-700 text-sm'>Inclusie:</span>Kinderen van alle achtergronden en mogelijkheden verwelkomen</p>
-
-                    </div>
-
-                    <div className="bg-[#F1F6FB] md:p-10 p-6 rounded-lg">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4 inter-tight-700">Met zorg gebouwd</h2>
-                        <p className="text-[#1B2838] inter-tight-400">
-                            Luumilo is ontwikkeld door een gepassioneerd team van pedagogen, ouders en ontwerpers die de waarde van onderwijs aan jonge kinderen begrijpen. We zijn er om gezinnen te ondersteunen en een blijvende impact te maken – één speelse missie tegelijk.
+                        <p className="text-[#1B2838] inter-tight-400 max-w-3xl">
+                            Met ons leerplatform ondersteun je je kind (3-6) in het ontwikkelen van veerkracht, dankbaarheid, zelfzorg en essentiële levensvaardigheden – via kleine, haalbare stappen die passen in jullie dagelijks leven. Zonder extra stress en vrij van schermtijd.
                         </p>
                     </div>
+
+                    <div className="mt-4 space-y-4 text-center bg-[#F1F6FB] p-6 rounded-md md:text-left md:w-1/2">
+                        <h2 className="text-4xl inter-tight-700 text-[#000000]">
+                            Visie
+                        </h2>
+                        <p className="text-[#1B2838] md:text-[16px] text-sm inter-tight-400 max-w-3xl">
+                            Wij geloven dat kinderen die stevig in hun schoenen staan, klaar zijn voor de toekomst.
+                        </p>
+                        <p className="text-[#1B2838] md:text-[16px] text-sm inter-tight-400 max-w-3xl">
+                            In een wereld vol prikkels, prestatiedruk en constante verandering, bieden wij jou een toegankelijke, unieke en speelse methodiek om een sterke basis te leggen voor je kind, met aandacht en intentie, passend in jullie gezinsleven.
+                        </p>
+                        <p className="text-[#1B2838] md:text-[16px] text-sm inter-tight-400 max-w-3xl">
+                            Ons doel is om samen met miljoenen ouders zoals jij een krachtiger, betekenisvoller begin te bouwen in de belangrijkste en meest vormende jaren van jullie kinderen.
+                        </p>
+                    </div>
                 </div>
+            </div>
 
-                <div className="mt-16 space-y-4 flex justify-center items-center flex-col text-center">
-                    <h2 className="text-4xl inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]">Missie</h2>
-                    <p className="text-[#4B5563] inter-tight-400 text-center max-w-3xl mx-auto">
-                        Bij Luumilo helpen we jou als ouder om op een eenvoudige en inspirerende manier thuis te bouwen aan de innerlijke kracht van je kind.
-                    </p>
-                    <p className="text-[#4B5563] inter-tight-400  text-center max-w-3xl mx-auto">
-                        Met ons leerplatform ondersteun je je kind (3-6) in het ontwikkelen van veerkracht, dankbaarheid, zelfzorg en essentiële levensvaardigheden – via kleine, haalbare stappen die passen in jullie dagelijks leven. Zonder extra stress en vrij van schermtijd.
-                    </p>
-                </div>
-
-                <div className="mt-12 space-y-4 flex justify-center items-center flex-col text-center">
-                    <h2 className="text-4xl inter-tight-700  text-[#000000]">Visie</h2>
-                    <p className="text-[#4B5563] text-center max-w-3xl mx-auto inter-tight-400">
-                        Wij geloven dat kinderen die stevig in hun schoenen staan, klaar zijn voor de toekomst.
-
-                    </p>
-                    <p className="text-[#4B5563] text-center max-w-3xl mx-auto inter-tight-400">
-                        In een wereld vol prikkels, prestatiedruk en constante verandering, bieden wij jou een toegankelijke, unieke en speelse methodiek om een sterke basis te leggen voor je kind, met aandacht en intentie, passend in jullie gezinsleven.
-
-                    </p>
-                    <p className="text-[#4B5563] text-center max-w-3xl mx-auto inter-tight-400">
-                        Ons doel is om samen met miljoenen ouders zoals jij een krachtiger, betekenisvoller begin te bouwen in de belangrijkste en meest vormende jaren van jullie kinderen.
-                    </p>
-                </div>
-
-                <div className="mt-12 bg-gradient-to-r from-[#A855F7] to-[#EC4899] rounded-2xl   p-6 text-white">
-                    <h2 className="text-xl font-bold mb-4 text-center">Ga mee op reis! 🚀</h2>
-                    <p className="text-center max-w-3xl mx-auto">
-                        Wij nodigen u uit om Luumilo te ontdekken, de activiteiten uit te proberen, de voortgang van uw kind te volgen en te genieten van de leerzame en grappige momenten die u onderweg tegenkomt.
-                    </p>
-                    <p className="text-center max-w-3xl mx-auto mt-4">
-                        Laten we samen een betere toekomst bouwen, één dag, één missie tegelijk.
-                    </p>
-                </div>
+            <div className="mt-7 bg-gradient-to-r from-[#A855F7] to-[#EC4899] rounded-2xl mb-10   p-6 text-white">
+                <h2 className="text-xl font-bold mb-4 text-center">Ga mee op reis! 🚀</h2>
+                <p className="text-center max-w-3xl mx-auto">
+                    Wij nodigen u uit om Luumilo te ontdekken, de activiteiten uit te proberen, de voortgang van uw kind te volgen en te genieten van de leerzame en grappige momenten die u onderweg tegenkomt.
+                </p>
+                <p className="text-center max-w-3xl mx-auto mt-4">
+                    Laten we samen een betere toekomst bouwen, één dag, één missie tegelijk.
+                </p>
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ import DashImage6 from "../../public/activities-images/SVG (1).svg"
 import DashImage7 from "../../public/activities-images/SVG.svg"
 import ArrowImage from "../../public/images/Arrow 1.svg"
 import Card1 from "../../public/images/Highlight Frame 1.png"
-import Card2 from "../../public/images/6086239_22422 1.svg"
+import Card2 from "../../public/images/Clip path group.svg"
 import Card3 from "../../public/images/Background+Border+Shadow.svg"
 import { Check, Users } from 'lucide-react'
 import Faqs from "../components/faqs"
@@ -286,7 +286,7 @@ export default function HeroSection() {
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
+                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
                         1 – Ontdek betekenisvolle activiteiten
                       </h3>
                       <img
@@ -294,7 +294,7 @@ export default function HeroSection() {
                         alt="Arrow"
                         className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                       />
-                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-sm leading-relaxed mt-4 lg:mt-0">
+                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-[16px] leading-relaxed mt-4 lg:mt-0">
                         Korte, speelse activiteiten die bouwen aan de fundering van je kind - thuis, met aandacht en intentie.
                       </p>
                     </div>
@@ -315,7 +315,7 @@ export default function HeroSection() {
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
+                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
                         2 – Versterk jullie band
                       </h3>
                       <img
@@ -323,14 +323,14 @@ export default function HeroSection() {
                         alt="Arrow"
                         className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                       />
-                      <p className="text-[#FFFFFF] lg:mt-10 lg:ml-7 inter-tight-400 text-sm leading-relaxed mt-4 lg:mt-10">
+                      <p className="text-[#FFFFFF] lg:mt-10 lg:ml-7 inter-tight-400 text-[16px] leading-relaxed mt-4 ">
                         Creëer momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
                       </p>
                     </div>
                   </div>
-                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
+                  <div className="lg:absolute lg:bottom-0 lg:left-30 mt-6 lg:mt-0  flex justify-center lg:justify-start">
                     <div>
-                      <img src={Card2 || "/placeholder.svg"}  alt="" className="w-auto h-auto max-w-full" />
+                      <img src={Card2 || "/placeholder.svg"}  alt="" className="w-auto  h-auto max-w-full" />
                     </div>
                   </div>
                 </div>
@@ -344,7 +344,7 @@ export default function HeroSection() {
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-700 text-lg sm:text-xl mb-1">
+                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
                         3 – Stimuleer groei op 3 niveaus
                       </h3>
                       <img
@@ -352,7 +352,7 @@ export default function HeroSection() {
                         alt="Arrow"
                         className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
                       />
-                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-sm leading-relaxed mt-4 lg:mt-0">
+                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-[16px] leading-relaxed mt-4 lg:mt-0">
                         Elke activiteit versterkt emotionele, praktische en sociale vaardigheden, volg jullie vooruitgang!
                       </p>
                     </div>
