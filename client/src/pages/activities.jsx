@@ -173,7 +173,7 @@ export default function Activities() {
                             <div className="flex  gap-2 justify-center items-center bg-gradient-to-tr from-[#F3F4F6] to-[#E5E7EB] p-1 rounded-lg">
                                 <button
                                     onClick={() => setActiveTab('speelweek')}
-                                    className={`md:w-[575px] w-[150px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'speelweek'
+                                    className={`md:w-[575px] w-[160px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'speelweek'
                                         ? 'bg-[#8F34EA] text-white rounded-lg'
                                         : 'text-[#616161]  rounded-lg'
                                         }`}
@@ -183,7 +183,7 @@ export default function Activities() {
                                 </button>
                                 <button
                                     onClick={() => setActiveTab('library')}
-                                    className={`md:w-[575px] w-[150px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'library'
+                                    className={`md:w-[575px] w-[160px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'library'
                                         ? 'bg-[#8F34EA] text-white rounded-lg'
                                         : 'text-[#616161] rounded-lg'
                                         }`}
