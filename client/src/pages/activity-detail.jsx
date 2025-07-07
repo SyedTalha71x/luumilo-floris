@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react"
-import { ArrowLeft, Clock, Users, Star, CheckCircle, X, Award, ChevronUp } from "lucide-react"
+import { ArrowLeft, Clock, Users, Star, CheckCircle, X } from "lucide-react"
 import { useParams, useNavigate } from "react-router-dom"
 import Badge1 from '../../public/profile-images/Frame.svg'
 
