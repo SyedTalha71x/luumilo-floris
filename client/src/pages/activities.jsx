@@ -168,8 +168,11 @@ export default function Activities() {
                     <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] md:mt-24 mt-10 p-4 md:p-8">
                         <div className="max-w-7xl mx-auto py-16">
                             <div className="text-center mb-8">
+                              {activeTab === 'speelweek' &&  <div>
+
                                 <h1 className="text-2xl md:text-3xl  text-[#000000] poppins-700 mb-2">Deze Week: Week 1</h1>
                                 <p className="text-[#4B5563] text-sm mb-6">5 zorgvuldig geselecteerde activiteiten om samen te ontdekken</p>
+                                </div>}
 
                                 <div className="flex flex-col mt-10 sm:flex-row gap-4 justify-center items-center">
                                     <button
