@@ -1,4 +1,4 @@
-import { BookOpen, Circle } from "lucide-react"
+import { BookOpen, Circle, Plus } from "lucide-react"
 import EducationalActivites from "../components/educational-activities"
 import TestimonialsSection from "../components/testimonial"
 import Specs from "../components/specs"
@@ -134,7 +134,7 @@ export default function Activities() {
     return (
         <>
             <div className="h-full flex flex-col items-center justify-center px-4 py-8">
-                <div className="max-w-7xl w-full  text-center space-y-8">
+                <div className="md:w-[90%] mx-auto w-full  text-center space-y-8">
                     <div className="flex justify-center items-center space-x-4 mb-8">
                         <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
                             <img src={BookImage} alt="" />
@@ -152,55 +152,55 @@ export default function Activities() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
                         <div className="bg-[#F8F8FF] rounded-2xl py-2 border border-[#CDCDCD]">
                             <div className="flex items-center inter-tight-400 justify-center space-x-2">
+                                <div className="w-2 h-2 rounded-full bg-[#2563EB] mr-2"></div>
                                 <span className="text-md font-medium text-[#5D5D5D]">35+ Activiteiten Beschikbaar</span>
                             </div>
                         </div>
 
                         <div className="bg-[#F8F8FF] rounded-2xl py-2 border border-[#CDCDCD]">
                             <div className="flex items-center inter-tight-400 justify-center space-x-2">
+                                <div className="w-2 h-2 rounded-full bg-[#3FDBB1] mr-2"></div>
                                 <span className="text-md font-medium text-[#5D5D5D]">5-15 Minuten Per Dag</span>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div>
-                    <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] md:mt-24 mt-10 p-4 md:p-8">
-                        <div className="max-w-7xl mx-auto py-16">
-                            <div className="text-center mb-8">
-                              {activeTab === 'speelweek' &&  <div>
-
-                                <h1 className="text-2xl md:text-3xl  text-[#000000] poppins-700 mb-2">Deze Week: Week 1</h1>
-                                <p className="text-[#4B5563] text-sm mb-6">5 zorgvuldig geselecteerde activiteiten om samen te ontdekken</p>
-                                </div>}
-
-                                <div className="flex flex-col mt-10 sm:flex-row gap-4 justify-center items-center">
-                                    <button
-                                        onClick={() => setActiveTab('speelweek')}
-                                        className={`w-[300px] py-2 cursor-pointer text-sm transition-colors ${activeTab === 'speelweek'
-                                            ? 'bg-[#8F34EA] text-white rounded-xl'
-                                            : 'text-[#616161] border border-gray-300 rounded-xl'
-                                            }`}
-                                    >
-                                        Speelweek
-                                    </button>
-
-                                    <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
-
-                                    <button
-                                        onClick={() => setActiveTab('library')}
-                                        className={`w-[300px] py-2 cursor-pointer text-sm transition-colors ${activeTab === 'library'
-                                            ? 'bg-[#8F34EA] text-white rounded-xl'
-                                            : 'text-[#616161] border border-gray-300 rounded-xl'
-                                            }`}
-                                    >
-                                        Activiteitenbibliotheek
-                                    </button>
-                                </div>
-
+                    <div className="text-center mb-8 ">
+                        <div className="flex flex-col  mt-10 sm:flex-row  gap-2 justify-center items-center">
+                            <div className="flex  gap-2 justify-center items-center bg-gradient-to-tr from-[#F3F4F6] to-[#E5E7EB] p-1 rounded-lg">
+                                <button
+                                    onClick={() => setActiveTab('speelweek')}
+                                    className={`md:w-[575px] w-[150px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'speelweek'
+                                        ? 'bg-[#8F34EA] text-white rounded-lg'
+                                        : 'text-[#616161]  rounded-lg'
+                                        }`}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 h-4 w-4"><line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>
+                                    <span className="inline">Speelweek</span>
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('library')}
+                                    className={`md:w-[575px] w-[150px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'library'
+                                        ? 'bg-[#8F34EA] text-white rounded-lg'
+                                        : 'text-[#616161] rounded-lg'
+                                        }`}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                                    <span className="inline">Activiteitenbibliotheek</span>
+                                </button>
                             </div>
+                            <button className="justify-center md:w-auto w-full cursor-pointer text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 whitespace-nowrap ">
+                                <Plus size={16} />
+                                Activiteit Toevoegen
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                            {activeTab === 'library' && <div className="bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] p-6 mb-8 shadow-sm">
+                {activeTab === 'library' && <div className="bg-gradient-to-br md:w-[90%] mx-auto w-full rounded-xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] p-6 mb-8 shadow-sm">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div className="relative">
 
@@ -257,6 +257,15 @@ export default function Activities() {
                         </select>
                     </div>
                 </div>}
+
+                <div className="md:w-[90%] mx-auto">
+                    <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] mt-5 p-4 md:p-8">
+                        <div className=" w-full m-auto">
+                            {activeTab === 'speelweek' && <div className="flex justify-center items-center flex-col">
+
+                                <h1 className="text-2xl md:text-3xl  text-[#000000] poppins-700 py-5">Deze Week: Week 1</h1>
+                                <p className="text-[#4B5563] text-center text-sm mb-6">5 zorgvuldig geselecteerde activiteiten om samen te ontdekken</p>
+                            </div>}
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {getCurrentActivities().map((activity, index) => (

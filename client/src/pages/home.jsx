@@ -18,6 +18,8 @@ import { Check, Users } from 'lucide-react'
 import Faqs from "../components/faqs"
 // import TestimonialsSection from "../components/testimonial" // Hidden for now
 
+import StarImage from '../../public/profile-images/Frame (11)-star.svg'
+
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("Naaractiviteiten")
 
@@ -79,7 +81,7 @@ export default function HeroSection() {
                   <div className="flex items-center space-x-4">
                     <div className="text-center max-w-xl">
                       <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
-                      Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte, speelse missies die jullie band versterken.
+                        Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte, speelse missies die jullie band versterken.
                       </p>
                     </div>
                   </div>
@@ -94,7 +96,7 @@ export default function HeroSection() {
                   </div>
                   <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-6 sm:p-8  transition-shadow duration-300">
                     <div className="flex items-start space-x-3 mt-4">
-                    <p className="text-[#FFFFFF] text-sm md:text-[18px] inter-tight-400 capitalize">
+                      <p className="text-[#FFFFFF] text-sm md:text-[18px] inter-tight-400 capitalize">
                         <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
                       </p>
                     </div>
@@ -151,7 +153,12 @@ export default function HeroSection() {
           </div>
         </section>
 
-        <section className="h-auto max-w-7xl m-auto mt-10 bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] py-16 px-4 sm:px-6 lg:px-8 ">
+        <section className="relative h-auto max-w-7xl m-auto mt-10 bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] py-16 px-4 sm:px-6 lg:px-8 ">
+          <img
+            src={StarImage}
+            alt="Top left decoration"
+            className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 w-16 sm:w-20 lg:w-24 h-auto z-10"
+          />
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl inter-tight-700 text-[#000000] poppins-700 mb-2">Welkom terug!</h2>
@@ -160,21 +167,19 @@ export default function HeroSection() {
                 <div className=" flex gap-2 items-center rounded-full p-1 ">
                   <button
                     onClick={() => setActiveTab("Naaractiviteiten")}
-                    className={`px-10 py-2 rounded-lg text-sm inter-tight-400  cursor-pointer transition-all duration-300  ${
-                      activeTab === "Naaractiviteiten"
+                    className={`px-10 py-2 rounded-lg text-sm inter-tight-400  cursor-pointer transition-all duration-300  ${activeTab === "Naaractiviteiten"
                         ? "bg-[#8F34EA] text-white "
                         : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
-                    }`}
+                      }`}
                   >
                     Naar activiteiten
                   </button>
                   <button
                     onClick={() => setActiveTab("bekijk voortgang")}
-                    className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${
-                      activeTab === "bekijk voortgang"
+                    className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${activeTab === "bekijk voortgang"
                         ? "bg-[#8F34EA] text-white "
                         : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
-                    }`}
+                      }`}
                   >
                     bekijk voortgang{" "}
                   </button>
@@ -330,7 +335,7 @@ export default function HeroSection() {
                   </div>
                   <div className="lg:absolute lg:bottom-0 lg:left-30 mt-6 lg:mt-0  flex justify-center lg:justify-start">
                     <div>
-                      <img src={Card2 || "/placeholder.svg"}  alt="" className="w-auto  h-auto max-w-full" />
+                      <img src={Card2 || "/placeholder.svg"} alt="" className="w-auto  h-auto max-w-full" />
                     </div>
                   </div>
                 </div>
@@ -477,7 +482,7 @@ export default function HeroSection() {
                 Inzichten van wereldberoemde experts die de basis legden voor modern onderwijs
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {educationalQuotes.map((quote, index) => (
                 <div key={index} className="bg-gradient-to-br from-[#F8F9FF] to-[#F0F4FF] rounded-2xl p-6 border border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300">
@@ -536,7 +541,7 @@ export default function HeroSection() {
           </div>
         </section>
 
-       <Faqs/>
+        <Faqs />
       </div>
     </>
   )
