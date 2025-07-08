@@ -1,5 +1,10 @@
 import { useState } from "react"
-
+import Daniel from '../../public/legends-pictures/DanielGoleman_BW.jpg'
+import Lev from '../../public/legends-pictures/LevVygotsky_BW.jpg'
+import Robert from '../../public/legends-pictures/Robert Emmons_BW.jpg'
+import Maria from '../../public/legends-pictures/Maria Montessori_BW.jpg'
+import Lusardi from '../../public/legends-pictures/Lusardi & Mitchell_BW.jpg'
+import Ken from '../../public/legends-pictures/KenRobinson_BW.jpg'
 const educationalQuotes = [
   {
     area: "EMOTIONELE INTELLIGENTIE",
@@ -7,6 +12,7 @@ const educationalQuotes = [
     author: "Daniel Goleman",
     color: "from-pink-400 to-purple-500",
     icon: "💝",
+    image: Daniel,
   },
   {
     area: "VEERKRACHT",
@@ -14,6 +20,7 @@ const educationalQuotes = [
     author: "Lev Vygotsky",
     color: "from-blue-400 to-cyan-500",
     icon: "💪",
+    image: Lev,
   },
   {
     area: "DANKBAARHEID",
@@ -21,6 +28,7 @@ const educationalQuotes = [
     author: "Robert Emmons",
     color: "from-green-400 to-emerald-500",
     icon: "🙏",
+    image: Robert,
   },
   {
     area: "ZELFZORG",
@@ -28,6 +36,7 @@ const educationalQuotes = [
     author: "Maria Montessori",
     color: "from-yellow-400 to-orange-500",
     icon: "🌱",
+    image: Maria,
   },
   {
     area: "FINANCIËLE EDUCATIE",
@@ -35,6 +44,7 @@ const educationalQuotes = [
     author: "Lusardi & Mitchell",
     color: "from-red-400 to-pink-500",
     icon: "💰",
+    image: Lusardi,
   },
   {
     area: "CREATIVITEIT",
@@ -42,6 +52,7 @@ const educationalQuotes = [
     author: "Ken Robinson",
     color: "from-indigo-400 to-purple-500",
     icon: "🎨",
+    image: Ken,
   },
 //   {
 //     area: "SPEL & LEREN",
@@ -129,20 +140,19 @@ export default function Component() {
                     </blockquote>
 
                     <div className="flex items-center inter-tight-400 mt-auto">
-                      <div
-                        className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${quote.color} rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 shadow-lg transform transition-transform duration-300 hover:rotate-12 flex-shrink-0`}
-                      >
-                        {quote.author
-                          .split(" ")
-                          .map((name) => name[0])
-                          .join("")
-                          .slice(0, 2)}
-                      </div>
-                      <div className="min-w-0">
-                        <div className="font-bold text-gray-800 text-xs sm:text-sm truncate">{quote.author}</div>
-                        {/* <div className="text-gray-500 text-xs font-medium">Onderwijsexpert</div> */}
-                      </div>
-                    </div>
+  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4 shadow-lg flex-shrink-0">
+    <img
+      src={quote.image}
+      alt=""
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
+  <div className="min-w-0">
+    <div className="font-bold text-gray-800 text-xs sm:text-sm truncate">{quote.author}</div>
+  </div>
+</div>
+
+
 
                     {hoveredCard === index && (
                       <div className="absolute inset-0 pointer-events-none">
