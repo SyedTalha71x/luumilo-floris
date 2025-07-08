@@ -14,6 +14,9 @@ import Progress from './pages/progress'
 import Library from './pages/library'
 import BadgeJourney from './pages/badge-journey'
 import CreateActivity from './pages/create-activity'
+import ForgotPassword from './pages/forgot-password'
+import VerifyOtp from './pages/verify-otp'
+import ResetPassword from './pages/reset-password'
 
 import UserProfileLayout from './layout/user-profile'
 import Profile from './pages/profile'
@@ -39,7 +42,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 function AppWrapper() {
   const location = useLocation()
-  const hideLayout = location.pathname === '/signup' || location.pathname === '/signin' || location.pathname === '/create-profile'
+  const hideLayout = location.pathname === '/signup' || location.pathname === '/signin' || location.pathname === '/reset-password' || location.pathname === '/verify-otp' || location.pathname === '/forgot-password' || location.pathname === '/create-profile'
 
 
   return (
@@ -59,6 +62,9 @@ function AppWrapper() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/badge-journey" element={<BadgeJourney />} />
         <Route path="/create-activity" element={<CreateActivity />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* User Profile Routes */}
 

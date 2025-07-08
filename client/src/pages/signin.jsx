@@ -66,6 +66,9 @@ export default function SignInPage() {
                             <span>Or continue with email address</span>
                         </div>
 
+
+
+
                         <div className="space-y-4">
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -91,6 +94,12 @@ export default function SignInPage() {
                                     onChange={(e) => setpassword(e.target.value)}
                                     className="w-full pl-10 h-12 border border-[#D4D4D4] text-sm outline-none rounded-xl text-[#000000] px-3"
                                 />
+                            </div>
+                            
+                            <div className="flex justify-end items-center">
+                                <Link to={"/forgot-password"}>
+                                <span className="text-sm inter-tight-400 cursor-pointer underline">Forgot Password?</span>
+                                </Link>
                             </div>
                             <button
                                 className={`w-full h-12 ${

@@ -1,11 +1,14 @@
 "use client"
-
 import { useState } from "react"
-import { Edit3, Trash2, Badge, ChevronDown, Upload } from "lucide-react"
+import { Edit3, Trash2, Badge, ChevronDown, Upload, X } from "lucide-react"
 
 const ManageBadge = () => {
   const [activeTab, setActiveTab] = useState("CORE PROGRESSION")
   const [isCreating, setIsCreating] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
+  const [editingBadge, setEditingBadge] = useState(null)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [badgeToDelete, setBadgeToDelete] = useState(null)
   const [formData, setFormData] = useState({
     category: "Core progression",
     name: "",
@@ -15,7 +18,7 @@ const ManageBadge = () => {
 
   const tabs = ["CORE PROGRESSION", "LEARNING AREA BADGES", "SPECIAL & BONUS BADGES", "HIGH ACHIEVER BADGES"]
 
-  const badges = [
+  const [badges, setBadges] = useState([
     {
       id: 1,
       name: "First Step",
@@ -23,16 +26,77 @@ const ManageBadge = () => {
       icon: "🏆",
       category: "CORE PROGRESSION",
     },
-  ]
+    {
+      id: 2,
+      name: "Learning Master",
+      description: "Complete 10 Learning Activities",
+      icon: "📚",
+      category: "LEARNING AREA BADGES",
+    },
+    {
+      id: 3,
+      name: "Special Achievement",
+      description: "Complete Special Challenge",
+      icon: "⭐",
+      category: "SPECIAL & BONUS BADGES",
+    },
+  ])
 
   const filteredBadges = badges.filter((badge) => badge.category === activeTab)
 
   const handleCreateBadge = () => {
     setIsCreating(true)
+    setIsEditing(false)
+    setEditingBadge(null)
+    setFormData({
+      category: "Core progression",
+      name: "",
+      description: "",
+      photo: null,
+    })
+  }
+
+  const handleEditBadge = (badge) => {
+    setIsEditing(true)
+    setIsCreating(false)
+    setEditingBadge(badge)
+    setFormData({
+      category:
+        badge.category === "CORE PROGRESSION"
+          ? "Core progression"
+          : badge.category === "LEARNING AREA BADGES"
+            ? "Learning area"
+            : badge.category === "SPECIAL & BONUS BADGES"
+              ? "Special & bonus"
+              : "High achiever",
+      name: badge.name,
+      description: badge.description,
+      photo: null,
+    })
+  }
+
+  const handleDeleteBadge = (badge) => {
+    setBadgeToDelete(badge)
+    setShowDeleteModal(true)
+  }
+
+  const confirmDelete = () => {
+    if (badgeToDelete) {
+      setBadges(badges.filter((badge) => badge.id !== badgeToDelete.id))
+      setShowDeleteModal(false)
+      setBadgeToDelete(null)
+    }
+  }
+
+  const cancelDelete = () => {
+    setShowDeleteModal(false)
+    setBadgeToDelete(null)
   }
 
   const handleBackToList = () => {
     setIsCreating(false)
+    setIsEditing(false)
+    setEditingBadge(null)
     setFormData({
       category: "Core progression",
       name: "",
@@ -42,8 +106,48 @@ const ManageBadge = () => {
   }
 
   const handlePublish = () => {
-    // Handle publish logic here
-    console.log("Publishing badge:", formData)
+    if (isEditing && editingBadge) {
+      // Update existing badge
+      const categoryMap = {
+        "Core progression": "CORE PROGRESSION",
+        "Learning area": "LEARNING AREA BADGES",
+        "Special & bonus": "SPECIAL & BONUS BADGES",
+        "High achiever": "HIGH ACHIEVER BADGES",
+      }
+
+      setBadges(
+        badges.map((badge) =>
+          badge.id === editingBadge.id
+            ? {
+                ...badge,
+                name: formData.name,
+                description: formData.description,
+                category: categoryMap[formData.category],
+              }
+            : badge,
+        ),
+      )
+      console.log("Updating badge:", formData)
+    } else {
+      // Create new badge
+      const categoryMap = {
+        "Core progression": "CORE PROGRESSION",
+        "Learning area": "LEARNING AREA BADGES",
+        "Special & bonus": "SPECIAL & BONUS BADGES",
+        "High achiever": "HIGH ACHIEVER BADGES",
+      }
+
+      const newBadge = {
+        id: badges.length + 1,
+        name: formData.name,
+        description: formData.description,
+        icon: "🏆",
+        category: categoryMap[formData.category],
+      }
+
+      setBadges([...badges, newBadge])
+      console.log("Creating badge:", formData)
+    }
     handleBackToList()
   }
 
@@ -54,16 +158,53 @@ const ManageBadge = () => {
     }))
   }
 
-  if (isCreating) {
+  // Delete Modal Component
+  const DeleteModal = () => {
+    if (!showDeleteModal) return null
+
+    return (
+      <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-semibold text-[#262F40] poppins-700">Delete Badge</h3>
+            <button onClick={cancelDelete} className="text-gray-400 cursor-pointer hover:text-gray-600">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          <p className="text-[#262F40] text-[16px] inter-tight-400 mb-6">
+            Are you sure you want to delete "{badgeToDelete?.name}"? This action cannot be undone.
+          </p>
+          <div className="flex gap-3 justify-end">
+            <button
+              onClick={cancelDelete}
+              className="px-4 py-2 text-sm inter-tight-400 cursor-pointer text-[#262F40] bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={confirmDelete}
+              className="px-4 py-2 text-sm inter-tight-400 cursor-pointer bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (isCreating || isEditing) {
     return (
       <div className="">
         <div className="max-w-7xl mx-auto border border-[#E2E4E9] md:h-[500px] h-full rounded-md p-6">
-          {/* Create Badge Header */}
+          {/* Create/Edit Badge Header */}
           <div className="mb-8">
-            <h1 className="text-xl lg:text-[24px] inter-tight-400 text-[#262F40]">Create new badge</h1>
+            <h1 className="text-xl lg:text-[24px] inter-tight-400 text-[#262F40]">
+              {isEditing ? "Edit badge" : "Create new badge"}
+            </h1>
           </div>
 
-          {/* Create Badge Form */}
+          {/* Create/Edit Badge Form */}
           <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-gray-200">
               {/* Category Dropdown */}
@@ -99,16 +240,16 @@ const ManageBadge = () => {
                   placeholder="Description"
                   value={formData.description}
                   onChange={(e) => handleInputChange("description", e.target.value)}
-                  className="w-full bg-transparent text-sm inter-tight-400 text-[#262F40] placeholder-[#262F40]  focus:outline-none"
+                  className="w-full bg-transparent text-sm inter-tight-400 text-[#262F40] placeholder-[#262F40] focus:outline-none"
                 />
               </div>
 
               {/* Upload Photo */}
               <div className="p-4">
-                <div className="flex items-center gap-2 cursor-pointer">
+                <label htmlFor="photo-upload" className="flex items-center gap-2 cursor-pointer">
                   <Upload className="w-4 h-4 text-[#262F40]" />
-                  <span className="text-sm inter-tight-400 text-[#262F40] ">upload photo</span>
-                </div>
+                  <span className="text-sm inter-tight-400 text-[#262F40]">upload photo</span>
+                </label>
                 <input
                   type="file"
                   accept="image/*"
@@ -124,7 +265,7 @@ const ManageBadge = () => {
                   onClick={handlePublish}
                   className="w-full bg-[#16A34A] hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm inter-tight-400 transition-colors"
                 >
-                  Publish
+                  {isEditing ? "Update" : "Publish"}
                 </button>
               </div>
             </div>
@@ -167,7 +308,7 @@ const ManageBadge = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-4 text-sm font-medium whitespace-nowrap transition-colors ${
                     activeTab === tab
-                      ? "border-gray-900 text-[#060606] "
+                      ? "border-gray-900 text-[#060606]"
                       : "border-transparent text-[#6B7280] hover:text-gray-700 hover:border-gray-300"
                   }`}
                 >
@@ -188,23 +329,26 @@ const ManageBadge = () => {
                     <div className="md:col-span-3 flex items-center">
                       <span className="text-[#262F40] font-medium text-sm inter-tight-400">{badge.name}</span>
                     </div>
-
                     <div className="md:col-span-4 flex items-center">
                       <span className="text-[#262F40] text-sm inter-tight-400">{badge.description}</span>
                     </div>
-
                     <div className="md:col-span-2 flex items-center justify-center md:justify-start">
                       <div className="w-12 h-12 bg-[#FFFCF8] rounded-xl shadow-xl flex items-center justify-center">
-                        <span className="text-xl">🏆</span>
+                        <span className="text-xl">{badge.icon}</span>
                       </div>
                     </div>
-
                     <div className="md:col-span-3 flex items-center gap-2 justify-end">
-                      <button className="flex items-center gap-2 px-5 py-2 text-[#262F40] bg-[#F7FAFC] text-sm cursor-pointer border border-[#E2E4E9] rounded-md transition-colors">
+                      <button
+                        onClick={() => handleEditBadge(badge)}
+                        className="flex items-center gap-2 px-5 py-2 text-[#262F40] bg-[#F7FAFC] text-sm cursor-pointer border border-[#E2E4E9] rounded-md hover:bg-gray-100 transition-colors"
+                      >
                         <Edit3 className="w-4 h-4" />
                         <span className="text-sm">Edit</span>
                       </button>
-                      <button className="flex items-center gap-2 px-5 py-2 text-[#262F40] bg-[#F7FAFC] text-sm cursor-pointer border border-[#E2E4E9] rounded-md transition-colors">
+                      <button
+                        onClick={() => handleDeleteBadge(badge)}
+                        className="flex items-center gap-2 px-5 py-2 text-[#262F40] bg-[#F7FAFC] text-sm cursor-pointer border border-[#E2E4E9] rounded-md hover:bg-red-50 hover:text-red-600 transition-colors"
+                      >
                         <Trash2 className="w-4 h-4" />
                         <span className="text-sm">Delete</span>
                       </button>
@@ -237,6 +381,8 @@ const ManageBadge = () => {
           </div>
         </div>
       </div>
+
+      <DeleteModal />
     </div>
   )
 }
