@@ -9,6 +9,8 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 import { FiUsers } from "react-icons/fi";
 import { useState } from "react";
 
+import StarImage from '../../public/profile-images/Frame (11)-star.svg'
+
 import BackgroundPicture1 from "../../public/images/Background (1).svg"
 import BackgroundPicture2 from "../../public/images/Background (2).svg"
 import BackgroundPicture3 from "../../public/images/Background (3).svg"
@@ -283,7 +285,12 @@ export default function Activities() {
                 </div>}
 
                 <div className="md:w-[90%] mx-auto">
-                    <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] mt-5 p-4 md:p-8">
+                    <div className="h-auto relative bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] mt-5 p-4 md:p-8">
+                        <img
+                                              src={StarImage}
+                                              alt="Top left decoration"
+                                              className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 w-16 sm:w-20 lg:w-24 h-auto z-10"
+                                            />
                         <div className=" w-full m-auto">
                             {activeTab === 'speelweek' && <div className="flex justify-center items-center flex-col">
 

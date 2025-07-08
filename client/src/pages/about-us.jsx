@@ -6,19 +6,27 @@ import DashImage4 from "../../public/activities-images/Frame (9).svg"
 import DashImage5 from "../../public/activities-images/Group (3).svg"
 import DashImage6 from "../../public/activities-images/SVG (1).svg"
 import DashImage7 from "../../public/activities-images/SVG.svg"
+import StarImage from '../../public/profile-images/Frame (11)-star.svg'
 
 import AboutImageRight from '../../public/images/Layer_2.svg'
 
 const AboutUs = () => {
     return (
-        <div className='h-full p-4 mt-10 max-w-7xl mx-auto w-full'>
+        <div className='h-full  p-4 mt-10 max-w-7xl mx-auto w-full'>
+             
             <div className='flex justify-center items-center flex-col'>
                 <h1 className='text-4xl inter-tight-700  bg-clip-text text-transparent  bg-gradient-to-b to-[#9333EA] from-[#DB2777]'>Welkom bij Luumilo!</h1>
                 <p className='mt-3 max-w-2xl text-[#4B5563] m-auto text-center'>Bij Luumilo geloven we dat sommige van de belangrijkste vaardigheden in het leven – zoals emotionele veerkracht, dankbaarheid en zelfzorg – het beste al vroeg aangeleerd kunnen worden, door middel van echte ervaringen en speelse interactie. Daarom hebben we een platform gecreëerd dat gezinnen helpt deze essentiële waarden te introduceren bij kinderen van 3 tot 6 jaar door middel van leuke, schermloze dagelijkse activiteiten.
                 </p>
             </div>
 
-            <section className="h-auto max-w-7xl m-auto mt-10 bg-gradient-to-br rounded-4xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] py-16 px-4 sm:px-6 lg:px-8 ">
+            <section className="h-auto relative max-w-7xl m-auto mt-10 bg-gradient-to-br rounded-4xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] py-16 px-4 sm:px-6 lg:px-8 ">
+               
+            <img
+                        src={StarImage}
+                        alt="Top left decoration"
+                        className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 w-16 sm:w-20 lg:w-24 h-auto z-10"
+                      />
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-8">
                         <h2 className="text-3xl sm:text-4xl inter-tight-700 text-[#000000] mb-2">Wat wij doen</h2>
