@@ -24,6 +24,9 @@ export default function Activities() {
     const [selectedHeight, setSelectedHeight] = useState("hoogte")
 
 
+
+
+
     const speelweekActivities = [
         {
             id: 1,
@@ -137,7 +140,7 @@ export default function Activities() {
                 <div className="md:w-[90%] mx-auto w-full  text-center space-y-8">
                     <div className="flex justify-center items-center space-x-4 mb-8">
                         <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
-                            <img src={BookImage} alt="" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open w-8 h-8 text-white animate-pulse"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
                         </div>
                     </div>
 
@@ -182,36 +185,37 @@ export default function Activities() {
                                     <span className="inline">Speelweek</span>
                                 </button>
                                 <button
-  onClick={() => setActiveTab('library')}
-  className={`md:w-[575px] w-[160px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${
-    activeTab === 'library'
-      ? 'bg-[#8F34EA] text-white rounded-lg'
-      : 'text-[#616161] rounded-lg'
-  }`}
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="hidden md:inline h-4 w-4"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M12 7v14"></path>
-    <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
-  </svg>
-  <span className="inline">Activiteitenbibliotheek</span>
-</button>
+                                    onClick={() => setActiveTab('library')}
+                                    className={`md:w-[575px] w-[160px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'library'
+                                            ? 'bg-[#8F34EA] text-white rounded-lg'
+                                            : 'text-[#616161] rounded-lg'
+                                        }`}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="hidden md:inline h-4 w-4"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M12 7v14"></path>
+                                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                                    </svg>
+                                    <span className="inline">Activiteitenbibliotheek</span>
+                                </button>
 
                             </div>
+                            <Link to={"/create-activity"}>
                             <button className="justify-center md:w-auto w-full cursor-pointer text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 whitespace-nowrap ">
                                 <Plus size={16} />
                                 Activiteit Toevoegen
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -244,10 +248,15 @@ export default function Activities() {
                             onChange={(e) => setSelectedCategory(e.target.value)}
                             className="w-full pl-10 pr-4 py-2 border-none outline-none text-[#707070] text-sm bg-[#FFFFFF] rounded-xl inter-tight-400"
                         >
-                            <option value="alle-leergebieden">Alle Leergebieden</option>
-                            <option value="emotioneel">Emotioneel</option>
-                            <option value="sociaal">Sociaal</option>
-                            <option value="cognitief">Cognitief</option>
+                            <option value="Alle Leergebieden">Alle Leergebieden</option>
+                            <option value="Emotionele gezondheid">Emotionele gezondheid</option>
+                            <option value="Veerkracht">Veerkracht</option>
+                            <option value="Dankbaarheid">Dankbaarheid</option>
+                            <option value="Zelfzorg">Zelfzorg</option>
+                            <option value="Geldwijsheid">Geldwijsheid</option>
+                            <option value="Ondernemerschap">Ondernemerschap</option>
+                            <option value="Anders denken">Anders denken</option>
+
                         </select>
 
                         <select
@@ -266,10 +275,9 @@ export default function Activities() {
                             onChange={(e) => setSelectedHeight(e.target.value)}
                             className="w-full pl-10 pr-4 py-2 border-none outline-none text-[#707070] text-sm bg-[#FFFFFF] rounded-xl inter-tight-400"
                         >
-                            <option value="hoogte">Hoogte</option>
-                            <option value="laag">Laag</option>
-                            <option value="gemiddeld">Gemiddeld</option>
-                            <option value="hoog">Hoog</option>
+                            <option value="hoogstgewaardeerde">Hoogst gewaardeerde</option>
+                            <option value="meestgewaardeerde">Meest gewaardeerde</option>
+                            <option value="voltooid">Voltooid</option>
                         </select>
                     </div>
                 </div>}

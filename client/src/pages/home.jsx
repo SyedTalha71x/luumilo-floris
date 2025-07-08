@@ -19,9 +19,16 @@ import Faqs from "../components/faqs"
 // import TestimonialsSection from "../components/testimonial" // Hidden for now
 
 import StarImage from '../../public/profile-images/Frame (11)-star.svg'
+import { useNavigate } from "react-router-dom"
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("Naaractiviteiten")
+  const navigate = useNavigate();
+
+  const handleProgress = () =>{
+    setActiveTab("bekijk voortgang")
+  navigate('/progress')
+  }
 
 
   const educationalQuotes = [
@@ -175,7 +182,7 @@ export default function HeroSection() {
                     Naar activiteiten
                   </button>
                   <button
-                    onClick={() => setActiveTab("bekijk voortgang")}
+                    onClick={handleProgress}
                     className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${activeTab === "bekijk voortgang"
                         ? "bg-[#8F34EA] text-white "
                         : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"

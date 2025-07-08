@@ -171,10 +171,10 @@ const AboutUs = () => {
             <div className="mt-7 bg-gradient-to-r from-[#A855F7] to-[#EC4899] rounded-2xl mb-10   p-6 text-white">
                 <h2 className="text-xl font-bold mb-4 text-center">Ga mee op reis! 🚀</h2>
                 <p className="text-center max-w-3xl mx-auto">
-                    Wij nodigen u uit om Luumilo te ontdekken, de activiteiten uit te proberen, de voortgang van uw kind te volgen en te genieten van de leerzame en grappige momenten die u onderweg tegenkomt.
+                Wij nodigen je uit om Luumilo te ontdekken, de activiteiten uit te proberen, de voortgang van je kind te volgen en te genieten van de leerzame en grappige momenten die je onderweg tegenkomt.
                 </p>
                 <p className="text-center max-w-3xl mx-auto mt-4">
-                    Laten we samen een betere toekomst bouwen, één dag, één missie tegelijk.
+                Laten we samen een betere toekomst bouwen, één dag, één missie tegelijk.
                 </p>
             </div>
         </div>

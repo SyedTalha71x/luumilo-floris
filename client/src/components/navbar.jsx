@@ -68,9 +68,9 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16">
             <div>
             <img
-  src={Logo}
+  src="https://www.solarcontainerproject.com/assets/logo-miIQ_By4.png"
   alt="Logo"
-  className=""
+  className="h-20 w-auto"
   loading="eager"
 />
             </div>
