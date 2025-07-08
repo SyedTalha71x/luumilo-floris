@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { ChevronUp } from 'lucide-react'
 import Image1 from "../../public/images/Group.svg"
 import Image2 from "../../public/images/Group (1).svg"
 import Image3 from "../../public/images/Frame (1).svg"
@@ -11,12 +10,13 @@ import DashImage5 from "../../public/activities-images/Group (3).svg"
 import DashImage6 from "../../public/activities-images/SVG (1).svg"
 import DashImage7 from "../../public/activities-images/SVG.svg"
 import ArrowImage from "../../public/images/Arrow 1.svg"
-import Card1 from "../../public/images/Highlight Frame 1.png"
+import Card1 from "../../public/images/new-card.svg"
 import Card2 from "../../public/images/Clip path group.svg"
 import Card3 from "../../public/images/Background+Border+Shadow.svg"
 import { Check, Users } from 'lucide-react'
 import Faqs from "../components/faqs"
-// import TestimonialsSection from "../components/testimonial" // Hidden for now
+
+import EducationalQuotes from '../components/educational-quotes'
 
 import StarImage from '../../public/profile-images/Frame (11)-star.svg'
 import { useNavigate } from "react-router-dom"
@@ -25,49 +25,49 @@ export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("Naaractiviteiten")
   const navigate = useNavigate();
 
-  const handleProgress = () =>{
+  const handleProgress = () => {
     setActiveTab("bekijk voortgang")
-  navigate('/progress')
+    navigate('/progress')
   }
 
 
-  const educationalQuotes = [
-    {
-      quote: "Emotionele intelligentie begint met het leren benoemen van je emoties.",
-      author: "Daniel Goleman",
-      area: "Emotionele Gezondheid"
-    },
-    {
-      quote: "Kinderen ontwikkelen veerkracht wanneer ze worden uitgedaagd met een helpende hand.",
-      author: "Lev Vygotsky",
-      area: "Veerkracht"
-    },
-    {
-      quote: "Dankbaarheid is de snelweg naar geluk.",
-      author: "Robert Emmons",
-      area: "Dankbaarheid"
-    },
-    {
-      quote: "Zelfzorg is een praktische weg naar zelfvertrouwen.",
-      author: "Maria Montessori",
-      area: "Zelfzorg"
-    },
-    {
-      quote: "Vroeg beginnen met financiële educatie draagt bij aan levenslang financieel welzijn.",
-      author: "Lusardi & Mitchell",
-      area: "Geldwijsheid"
-    },
-    {
-      quote: "Creativiteit is net zo belangrijk als lezen en schrijven.",
-      author: "Ken Robinson",
-      area: "Ondernemerschap"
-    },
-    {
-      quote: "Spel is de taal van het kind, de poort naar creatief denken.",
-      author: "Jean Piaget",
-      area: "Anders Denken"
-    }
-  ]
+  // const educationalQuotes = [
+  //   {
+  //     quote: "Emotionele intelligentie begint met het leren benoemen van je emoties.",
+  //     author: "Daniel Goleman",
+  //     area: "Emotionele Gezondheid"
+  //   },
+  //   {
+  //     quote: "Kinderen ontwikkelen veerkracht wanneer ze worden uitgedaagd met een helpende hand.",
+  //     author: "Lev Vygotsky",
+  //     area: "Veerkracht"
+  //   },
+  //   {
+  //     quote: "Dankbaarheid is de snelweg naar geluk.",
+  //     author: "Robert Emmons",
+  //     area: "Dankbaarheid"
+  //   },
+  //   {
+  //     quote: "Zelfzorg is een praktische weg naar zelfvertrouwen.",
+  //     author: "Maria Montessori",
+  //     area: "Zelfzorg"
+  //   },
+  //   {
+  //     quote: "Vroeg beginnen met financiële educatie draagt bij aan levenslang financieel welzijn.",
+  //     author: "Lusardi & Mitchell",
+  //     area: "Geldwijsheid"
+  //   },
+  //   {
+  //     quote: "Creativiteit is net zo belangrijk als lezen en schrijven.",
+  //     author: "Ken Robinson",
+  //     area: "Ondernemerschap"
+  //   },
+  //   {
+  //     quote: "Spel is de taal van het kind, de poort naar creatief denken.",
+  //     author: "Jean Piaget",
+  //     area: "Anders Denken"
+  //   }
+  // ]
 
   return (
     <>
@@ -175,8 +175,8 @@ export default function HeroSection() {
                   <button
                     onClick={() => setActiveTab("Naaractiviteiten")}
                     className={`px-10 py-2 rounded-lg text-sm inter-tight-400  cursor-pointer transition-all duration-300  ${activeTab === "Naaractiviteiten"
-                        ? "bg-[#8F34EA] text-white "
-                        : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
+                      ? "bg-[#8F34EA] text-white "
+                      : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
                       }`}
                   >
                     Naar activiteiten
@@ -184,8 +184,8 @@ export default function HeroSection() {
                   <button
                     onClick={handleProgress}
                     className={`px-10 py-2 rounded-lg text-sm inter-tight-400 cursor-pointer  transition-all duration-300  ${activeTab === "bekijk voortgang"
-                        ? "bg-[#8F34EA] text-white "
-                        : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
+                      ? "bg-[#8F34EA] text-white "
+                      : "text-[#000000] bg-[#FFFFFF] border border-[#EBEBEB]"
                       }`}
                   >
                     bekijk voortgang{" "}
@@ -475,7 +475,7 @@ export default function HeroSection() {
         </section>
 
         {/* Educational Quotes Section - Replaces Testimonials */}
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        {/* <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center mb-6">
@@ -513,8 +513,9 @@ export default function HeroSection() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
+        <EducationalQuotes />
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F1F6FB] max-w-7xl m-auto mt-10 rounded-3xl">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">

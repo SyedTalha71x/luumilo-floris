@@ -1,14 +1,11 @@
 import { BookOpen, Circle, Plus } from "lucide-react"
-import EducationalActivites from "../components/educational-activities"
-import TestimonialsSection from "../components/testimonial"
 import Specs from "../components/specs"
 import Faqs from "../components/faqs"
-import BookImage from '../../public/nav-images/Frame (6).svg'
 import { Clock, User, Star, Play } from "lucide-react"
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { FiUsers } from "react-icons/fi";
 import { useState } from "react";
-
+import EducationalQuotes from '../components/educational-quotes'
 import StarImage from '../../public/profile-images/Frame (11)-star.svg'
 
 import BackgroundPicture1 from "../../public/images/Background (1).svg"
@@ -372,7 +369,8 @@ export default function Activities() {
                 </div>
 
             </div>
-            <TestimonialsSection />
+            {/* <TestimonialsSection /> */}
+            <EducationalQuotes/>
             <Specs />
             <Faqs />
         </>
