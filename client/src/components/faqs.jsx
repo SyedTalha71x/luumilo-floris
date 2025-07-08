@@ -2,6 +2,7 @@ import { ChevronUp } from 'lucide-react'
 import React, { useState } from 'react'
 
 const Faqs = () => {
+  const [openSection, setOpenSection] = useState(null)
   const [openFAQ, setOpenFAQ] = useState(null)
 
   const groupedFaqData = [
@@ -104,9 +105,15 @@ const Faqs = () => {
         <div className="space-y-6 bg-[#F1F6FB] mt-10 p-7 rounded-md">
           {groupedFaqData.map((section, sectionIndex) => (
             <div key={sectionIndex}>
-              <h3 className="text-lg font-bold text-[#0F2137] mb-4">{section.header}</h3>
+              <button
+                onClick={() => setOpenSection(openSection === sectionIndex ? null : sectionIndex)}
+                className="text-lg font-bold text-[#0F2137] mb-4 flex justify-between items-center w-full"
+              >
+                <span>{section.header}</span>
+                <span className="ml-2 text-xl">{openSection === sectionIndex ? '−' : '+'}</span>
+              </button>
 
-              {section.faqs.map((faq, index) => {
+              {openSection === sectionIndex && section.faqs.map((faq, index) => {
                 const globalIndex = `${sectionIndex}-${index}`;
                 return (
                   <div key={globalIndex} className="border-b border-gray-200 pb-4">
