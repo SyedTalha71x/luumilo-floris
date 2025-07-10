@@ -9,12 +9,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import DetailImage from "../../public/images/SVG-detail.svg"
 import DetailImage1 from "../../public/images/SVG-detail-1.svg"
 import DetailImage2 from "../../public/images/Frame (1)-detail.svg"
-import BackgroundPicture1 from "../../public/images/Background (1).svg"
-import BackgroundPicture2 from "../../public/images/Background (2).svg"
-import BackgroundPicture3 from "../../public/images/Background (3).svg"
-import BackgroundPicture4 from "../../public/images/Background (4).svg"
-import BackgroundPicture5 from "../../public/images/Background.svg"
-import { IoMdStar, IoMdStarOutline } from "react-icons/io";
+import BackgroundPicture1 from "../../public/activities-images/Frame (8).svg"
+import BackgroundPicture2 from "../../public/activities-images/Frame (6).svg"
+import BackgroundPicture3 from "../../public/activities-images/Group (3).svg"
+import BackgroundPicture4 from "../../public/activities-images/SVG.svg"
+import BackgroundPicture5 from "../../public/activities-images/SVG (1).svg"
+import { IoMdStar } from "react-icons/io";
 import Faqs from "../components/faqs"
 
 
@@ -210,7 +210,7 @@ function ActivityDetail() {
       category: "Dankbaarheid",
       categoryDescription:
         "Kinderen die leren stilstaan bij wat fijn is, voelen zich vaak rustiger en blijer. In dit leergebied leert je kind kijken naar wat er wél is, waardering uitspreken en kleine dingen opmerken. Dat helpt bij een positieve kijk op het leven.",
-      image: BackgroundPicture5,
+      image: BackgroundPicture1,
       color: "orange",
       duration: "8 min",
       ageRange: "3-6 jaar",
@@ -236,7 +236,7 @@ function ActivityDetail() {
       description: "Maak een mini-slinger van dankbaarheid die dagelijks kan groeien.",
       category: "Veerkracht",
       categoryDescription: "Omgaan met tegenslagen",
-      image: BackgroundPicture1,
+      image: BackgroundPicture2,
       color: "blue",
       duration: "10 min",
       ageRange: "3-6 jaar",
@@ -261,7 +261,7 @@ function ActivityDetail() {
       description: "Ontdek emoties door gezichtsuitdrukkingen in de spiegel te maken en lichaamssignalen te voelen.",
       category: "Emotionele Gezondheid",
       categoryDescription: "Emoties herkennen en uiten",
-      image: BackgroundPicture2,
+      image: BackgroundPicture3,
       color: "red",
       duration: "10 min",
       ageRange: "3-6 jaar",
@@ -286,8 +286,8 @@ function ActivityDetail() {
       description: "Experimenteer met smaken en laat familie jouw creaties beoordelen als echte klanten.",
       category: "Veerkracht",
       categoryDescription: "Omgaan met feedback",
-      image: BackgroundPicture3,
-      color: "blue",
+      image: BackgroundPicture4,
+      color: "semiOrange",
       duration: "10 min",
       ageRange: "3-6 jaar",
       rating: 9.5,
@@ -311,8 +311,8 @@ function ActivityDetail() {
       description: "Los technische uitdagingen op door te experimenteren met eenvoudige materialen.",
       category: "Emotionele Gezondheid",
       categoryDescription: "Doorzettingsvermogen",
-      image: BackgroundPicture4,
-      color: "red",
+      image: BackgroundPicture5,
+      color: "blue",
       duration: "8 min",
       ageRange: "3-6 jaar",
       rating: 9.5,
@@ -389,6 +389,7 @@ function ActivityDetail() {
   const getColorClasses = (color) => {
     const colorMap = {
       orange: "bg-orange-400",
+      semiOrange: "bg-orange-500",
       blue: "bg-blue-400",
       green: "bg-green-400",
       purple: "bg-purple-400",
@@ -437,7 +438,7 @@ function ActivityDetail() {
             <div className={`${getColorClasses(activityData.color)} rounded-2xl text-white p-8 text-center`}>
               <div className="w-16 h-16 shadow-2xl bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                 <div>
-                  <img src={activityData.image || "/placeholder.svg"} alt="" />
+                  <img src={activityData.image || "/placeholder.svg"} alt="" className="h-10 w-10" />
                 </div>
               </div>
               <h1 className="text-2xl lg:text-3xl inter-tight-700 font-bold leading-tight">{activityData.title}</h1>

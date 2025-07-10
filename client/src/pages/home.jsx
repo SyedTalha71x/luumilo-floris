@@ -21,6 +21,8 @@ import EducationalQuotes from '../components/educational-quotes'
 import StarImage from '../../public/profile-images/Frame (11)-star.svg'
 import { useNavigate } from "react-router-dom"
 
+import HomePageImage from '../../public/images/getty-images-kr0G3nDBpzg-unsplash.jpg'
+
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState("Naaractiviteiten")
   const navigate = useNavigate();
@@ -72,47 +74,63 @@ export default function HeroSection() {
   return (
     <>
       <div className="p-3">
-        <section className="max-w-7xl m-auto">
-          <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] px-4 py-12 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto mt-7">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-                  <span className=" inter-tight-700 bg-clip-text text-transparent  bg-gradient-to-b to-[#2563EB] from-[#9333EA]">Je kind future-proof maken?</span>
-                  <br />
-                  <span className="text-[#111827] inter-tight-700">Dat doe je samen.</span>
-                </h1>
-                {/* <p className="text-md inter-tight-400 mt-7 text-[#8F8F8F] mb-2 max-w-3xl mx-auto">
-                  In 10 Minuten Per Dag, Zonder Scherm.
-                </p> */}
-                <div className="flex items-center mt-10 justify-center mb-12">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-center max-w-xl">
-                      <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
-                        Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte, speelse missies die jullie band versterken.
-                      </p>
-                    </div>
-                  </div>
+      <section className="max-w-7xl m-auto">
+      <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto ">
+          <div className="text-center ">
+            <h1 className="text-4xl py-10 sm:text-5xl lg:text-6xl font-bold ">
+              <span className="inter-tight-700 bg-clip-text text-transparent bg-gradient-to-b to-[#2563EB] from-[#9333EA]">
+                Je kind future-proof maken?
+              </span>
+              <br />
+              <span className="text-[#111827] inter-tight-700">Dat doe je samen.</span>
+            </h1>
+            <div className="flex items-center mt-10 justify-center mb-12">
+              <div className="flex items-center space-x-4">
+                <div className="text-center max-w-xl">
+                  <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
+                    Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte,
+                    speelse missies die jullie band versterken.
+                  </p>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                  <div className="bg-[#F8F8FF] rounded-2xl p-6 sm:p-8  transition-shadow duration-500 cursor-pointer border border-slate-300">
-                    <div className="flex items-start space-x-3 mt-4">
-                      <p className="text-[#5D5D5D] text-sm md:text-[18px] inter-tight-400 capitalize">
-                        <span className="inter-tight-700 text-[#5D5D5D] mr-1">Voor ouders</span>die voelen dat innerlijke kracht belangrijker is dan hoge cijfers.
-                      </p>
+              </div>
+            </div>
+
+            <div className="relative -mx-4 sm:-mx-6 lg:-mx-16">
+              <div className="relative w-full h-[450px] sm:h-[450px] lg:h-[450px] overflow-hidden">
+                <img
+                  src={HomePageImage}
+                  alt="Child on swing in park"
+                  className="w-full h-full object-bottom object-cover"
+                />
+
+                <div className="absolute inset-0 flex items-end justify-center pb-8 sm:pb-12 lg:pb-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-2xl px-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transition-shadow duration-500 cursor-pointer border border-slate-200 shadow-lg">
+                      <div className="flex items-start space-x-3">
+                        <p className="text-[#5D5D5D] text-sm md:text-base inter-tight-400">
+                          <span className="inter-tight-700 text-[#5D5D5D] mr-1">Voor ouders</span>
+                          die voelen dat innerlijke kracht belangrijker is dan hoge cijfers.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-6 sm:p-8  transition-shadow duration-300">
-                    <div className="flex items-start space-x-3 mt-4">
-                      <p className="text-[#FFFFFF] text-sm md:text-[18px] inter-tight-400 capitalize">
-                        <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
-                      </p>
+
+                    <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-4 sm:p-6 transition-shadow duration-300 shadow-lg">
+                      <div className="flex items-start space-x-3">
+                        <p className="text-[#FFFFFF] text-sm md:text-base inter-tight-400">
+                          <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>
+                          die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
         <section className="md:bg-[#F1F6FB] bg-white md:shadow-none shadow-xl  max-w-7xl m-auto py-16 rounded-3xl px-4 sm:px-6 lg:px-8 mt-6">
           <div className="max-w-6xl mx-auto">
@@ -377,6 +395,17 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+
+             {/* Fun call-to-action */}
+        <div className="text-center cursor-pointer mt-16">
+          <div className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-full px-8 py-4">
+              <p className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Klaar om je eigen leeravontuur te beginnen? 🎉
+              </p>
+            </div>
+          </div>
+        </div>
           </div>
         </section>
 

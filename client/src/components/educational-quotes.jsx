@@ -5,62 +5,71 @@ import Robert from '../../public/legends-pictures/Robert Emmons_BW.jpg'
 import Maria from '../../public/legends-pictures/Maria Montessori_BW.jpg'
 import Lusardi from '../../public/legends-pictures/Lusardi & Mitchell_BW.jpg'
 import Ken from '../../public/legends-pictures/KenRobinson_BW.jpg'
+
+import BackgroundPicture1 from "../../public/activities-images/Frame (6).svg"
+import BackgroundPicture2 from "../../public/activities-images/Frame (7).svg"
+import BackgroundPicture3 from "../../public/activities-images/Frame (8).svg"
+import BackgroundPicture5 from "../../public/activities-images/Group (3).svg"
+import BackgroundPicture6 from "../../public/activities-images/Frame (9).svg"
+
+import DashImage6 from "../../public/activities-images/SVG (1).svg"
+
 const educationalQuotes = [
   {
-    area: "EMOTIONELE INTELLIGENTIE",
+    area: "Emotionele Gezondheid",
     quote: "Emotionele intelligentie begint met het leren benoemen van je emoties.",
     author: "Daniel Goleman",
-    color: "from-pink-400 to-purple-500",
-    icon: "💝",
+    color: "bg-red-600",
+    icon: BackgroundPicture5,
     image: Daniel,
   },
   {
-    area: "VEERKRACHT",
+    area: "Veerkracht",
     quote: "Kinderen ontwikkelen veerkracht wanneer ze worden uitgedaagd met een helpende hand.",
     author: "Lev Vygotsky",
-    color: "from-blue-400 to-cyan-500",
-    icon: "💪",
+    color: "bg-blue-600",
+    icon: BackgroundPicture1,
     image: Lev,
   },
   {
-    area: "DANKBAARHEID",
+    area: "Dankbaarheid ",
     quote: "Dankbaarheid is de snelweg naar geluk.",
     author: "Robert Emmons",
-    color: "from-green-400 to-emerald-500",
-    icon: "🙏",
+    color: "bg-orange-400",
+    icon: BackgroundPicture3,
     image: Robert,
   },
   {
-    area: "ZELFZORG",
+    area: "Zelfzorg",
     quote: "Zelfzorg is een praktische weg naar zelfvertrouwen.",
     author: "Maria Montessori",
-    color: "from-yellow-400 to-orange-500",
-    icon: "🌱",
+    color: "bg-green-400",
+    icon: BackgroundPicture6,
     image: Maria,
   },
   {
-    area: "FINANCIËLE EDUCATIE",
+    area: "Geldwijsheid ",
     quote: "Vroeg beginnen met financiële educatie draagt bij aan levenslang financieel welzijn.",
     author: "Lusardi & Mitchell",
-    color: "from-red-400 to-pink-500",
-    icon: "💰",
+    color: "bg-blue-400",
+    icon: BackgroundPicture2,
     image: Lusardi,
   },
   {
-    area: "CREATIVITEIT",
+    area: "Anders Denken",
     quote: "Creativiteit is net zo belangrijk als lezen en schrijven.",
     author: "Ken Robinson",
-    color: "from-indigo-400 to-purple-500",
-    icon: "🎨",
+    color: "bg-blue-300",
+    icon: DashImage6,
     image: Ken,
   },
-//   {
-//     area: "SPEL & LEREN",
-//     quote: "Spel is de taal van het kind, de poort naar creatief denken.",
-//     author: "Jean Piaget",
-//     color: "from-teal-400 to-blue-500",
-//     icon: "🎮",
-//   },
+  //   {
+  //     area: "SPEL & LEREN",
+  //     quote: "Spel is de taal van het kind, de poort naar creatief denken.",
+  //     author: "Jean Piaget",
+  //     color: "from-teal-400 to-blue-500",
+  //     icon: "🎮",
+  //   },
 ]
 
 export default function Component() {
@@ -105,9 +114,8 @@ export default function Component() {
           {educationalQuotes.map((quote, index) => (
             <div
               key={index}
-              className={`relative transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                hoveredCard === index ? "z-20" : "z-10"
-              } h-full`}
+              className={`relative transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${hoveredCard === index ? "z-20" : "z-10"
+                } h-full`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -115,15 +123,18 @@ export default function Component() {
                 className={`bg-gradient-to-br ${quote.color} p-1 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full`}
               >
                 <div className="bg-white rounded-3xl p-4 sm:p-6 h-full relative overflow-hidden flex flex-col min-h-[320px] sm:min-h-[300px]">
-                  {/* Decorative corner elements */}
                   <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-200 to-pink-200 rounded-full -translate-y-8 sm:-translate-y-10 translate-x-8 sm:translate-x-10 opacity-30"></div>
                   <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full translate-y-6 sm:translate-y-8 -translate-x-6 sm:-translate-x-8 opacity-30"></div>
 
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="mb-4">
-                      <div className="text-3xl sm:text-4xl mb-3 animate-bounce">{quote.icon}</div>
-                      <div
-                        className={`inline-block px-2 inter-tight-400 sm:px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${quote.color} shadow-md`}
+                      <div className="flex justify-start items-start">
+
+                      <div className="h-16 w-16 shadow-lg bg-[#F8E6E6] rounded-xl flex justify-center items-center cursor-pointer mb-4">
+                        <img src={quote.icon} className="h-10 w-10" alt="" />
+                        </div>
+                      </div>                      <div
+                        className={`inline-block inter-tight-400  rounded-full text-md font-bold text-black poppins-700`}
                       >
                         {quote.area}
                       </div>
@@ -140,17 +151,17 @@ export default function Component() {
                     </blockquote>
 
                     <div className="flex items-center inter-tight-400 mt-auto">
-  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4 shadow-lg flex-shrink-0">
-    <img
-      src={quote.image}
-      alt=""
-      className="w-full h-full object-cover rounded-full"
-    />
-  </div>
-  <div className="min-w-0">
-    <div className="font-bold text-gray-800 text-xs sm:text-sm truncate">{quote.author}</div>
-  </div>
-</div>
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4 shadow-lg flex-shrink-0">
+                        <img
+                          src={quote.image}
+                          alt=""
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="font-bold text-gray-800 text-xs sm:text-sm truncate">{quote.author}</div>
+                      </div>
+                    </div>
 
 
 
@@ -169,7 +180,7 @@ export default function Component() {
         </div>
 
         {/* Fun call-to-action */}
-        <div className="text-center mt-16">
+        <div className="text-center cursor-pointer mt-16">
           <div className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             <div className="bg-white rounded-full px-8 py-4">
               <p className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">

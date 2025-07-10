@@ -8,11 +8,12 @@ import { useState } from "react";
 import EducationalQuotes from '../components/educational-quotes'
 import StarImage from '../../public/profile-images/Frame (11)-star.svg'
 
-import BackgroundPicture1 from "../../public/images/Background (1).svg"
-import BackgroundPicture2 from "../../public/images/Background (2).svg"
-import BackgroundPicture3 from "../../public/images/Background (3).svg"
-import BackgroundPicture4 from "../../public/images/Background (4).svg"
-import BackgroundPicture5 from "../../public/images/Background.svg"
+import BackgroundPicture1 from "../../public/activities-images/Frame (6).svg"
+import BackgroundPicture2 from "../../public/activities-images/Frame (7).svg"
+import BackgroundPicture3 from "../../public/activities-images/Frame (8).svg"
+import BackgroundPicture5 from "../../public/activities-images/Group (3).svg"
+import DashImage6 from "../../public/activities-images/SVG (1).svg"
+import DashImage7 from "../../public/activities-images/SVG.svg"
 import { Link } from "react-router-dom";
 
 export default function Activities() {
@@ -22,16 +23,12 @@ export default function Activities() {
     const [selectedAge, setSelectedAge] = useState("alle-leeftijden")
     const [selectedHeight, setSelectedHeight] = useState("hoogte")
 
-
-
-
-
     const speelweekActivities = [
         {
             id: 1,
             title: "Dank-Kettingsprint",
             description: "Maak een mini-slinger van dankbaarheid die dagelijks kan groeien.",
-            image: BackgroundPicture5,
+            image: BackgroundPicture3,
             progress: "20 min",
             ageRange: "4-6 jaar",
             rating: "9.5",
@@ -55,7 +52,7 @@ export default function Activities() {
             id: 3,
             title: "Spiegelgezicht-Safari",
             description: "Ontdek emoties door gezichtsuitdrukkingen in de iegel te maken en lichaamssignalen te voelen.",
-            image: BackgroundPicture2,
+            image: BackgroundPicture5,
             progress: "10 min",
             ageRange: "3-6 jaar",
             rating: "9.5",
@@ -67,7 +64,7 @@ export default function Activities() {
             id: 4,
             title: "Limonade-Lab",
             description: "Experimenteer met smaken en laat familie jouw creaties beoordelen als echte klanten.",
-            image: BackgroundPicture3,
+            image: DashImage7,
             progress: "10 min",
             ageRange: "3-6 jaar",
             rating: "9.5",
@@ -79,7 +76,7 @@ export default function Activities() {
             id: 5,
             title: "Papieren-Brug-Challenge",
             description: "Los technische uitdagingen op door te experimenteren met eenvoudige materialen.",
-            image: BackgroundPicture4,
+            image: DashImage6,
             progress: "8 min",
             ageRange: "3-6 jaar",
             rating: "9.5",
@@ -186,8 +183,8 @@ export default function Activities() {
                                 <button
                                     onClick={() => setActiveTab('library')}
                                     className={`md:w-[575px] w-[160px] py-2 flex justify-center items-center gap-2 cursor-pointer rounded-lg text-sm transition-colors ${activeTab === 'library'
-                                            ? 'bg-[#8F34EA] text-white rounded-lg'
-                                            : 'text-[#616161] rounded-lg'
+                                        ? 'bg-[#8F34EA] text-white rounded-lg'
+                                        : 'text-[#616161] rounded-lg'
                                         }`}
                                 >
                                     <svg
@@ -210,10 +207,10 @@ export default function Activities() {
 
                             </div>
                             <Link to={"/create-activity"}>
-                            <button className="justify-center md:w-auto w-full cursor-pointer text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 whitespace-nowrap ">
-                                <Plus size={16} />
-                                Activiteit Toevoegen
-                            </button>
+                                <button className="justify-center md:w-auto w-full cursor-pointer text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 whitespace-nowrap ">
+                                    <Plus size={16} />
+                                    Activiteit Toevoegen
+                                </button>
                             </Link>
                         </div>
                     </div>
@@ -284,10 +281,10 @@ export default function Activities() {
                 <div className="md:w-[90%] mx-auto">
                     <div className="h-auto relative bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] mt-5 p-4 md:p-8">
                         <img
-                                              src={StarImage}
-                                              alt="Top left decoration"
-                                              className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 w-16 sm:w-20 lg:w-24 h-auto z-10"
-                                            />
+                            src={StarImage}
+                            alt="Top left decoration"
+                            className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 w-16 sm:w-20 lg:w-24 h-auto z-10"
+                        />
                         <div className=" w-full m-auto">
                             {activeTab === 'speelweek' && <div className="flex justify-center items-center flex-col">
 
@@ -315,8 +312,9 @@ export default function Activities() {
                                         >
                                             <div className="p-3">
                                                 <div className="bg-[#F3F4F6] rounded-2xl h-48 flex items-center justify-center">
-                                                    <img src={activity.image || "/placeholder.svg"} alt="" className="w-16 h-16 object-cover" />
-                                                </div>
+                                                    <div className="h-18 w-18 shadow-3xl bg-[#f1e7e7] rounded-full flex items-center justify-center mx-auto mb-4">
+                                                        <img src={activity.image || "/placeholder.svg"} className="h-10 w-10" alt="" />
+                                                    </div>                                                </div>
                                             </div>
 
                                             <div className="p-4 space-y-4">
@@ -370,7 +368,7 @@ export default function Activities() {
 
             </div>
             {/* <TestimonialsSection /> */}
-            <EducationalQuotes/>
+            <EducationalQuotes />
             <Specs />
             <Faqs />
         </>

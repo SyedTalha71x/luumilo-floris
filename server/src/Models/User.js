@@ -19,6 +19,13 @@ const userSchema = new mongoose.Schema({
   referralCode: { type: String, unique: true, sparse: true }, 
   referredBy: { type: String }, 
 
+  resetPasswordOTP: {
+    type: String,
+  },
+  resetPasswordOTPExpires: {
+    type: Date,
+  },
+
 }, { timestamps: true })
 
 export default mongoose.model('User', userSchema)
