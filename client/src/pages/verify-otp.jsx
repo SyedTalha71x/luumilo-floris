@@ -1,89 +1,152 @@
-import { useState, useRef, useEffect } from "react"
-import Logo from '../../public/images/logo.svg'
-import { Link, useNavigate } from "react-router-dom"
-
+import { useState, useRef, useEffect } from "react";
+import Logo from '../../public/images/logo.svg';
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../utils/api";
 
 export default function VerifyOtp() {
     const navigate = useNavigate();
-    const [otp, setOtp] = useState(["", "", "", "", "", ""])
-    const [email] = useState("john.doe@example.com")
-    const [timer, setTimer] = useState(30)  
-    const [canResend, setCanResend] = useState(false)
-    const inputRefs = useRef([])
+    const location = useLocation();
+    const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+    const [email, setEmail] = useState("");
+    const [timer, setTimer] = useState(30);
+    const [canResend, setCanResend] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const inputRefs = useRef([]);
+
+    useEffect(() => {
+        if (location.state?.email) {
+            setEmail(location.state.email);
+        }
+    }, [location.state]);
 
     useEffect(() => {
         if (timer > 0) {
             const interval = setInterval(() => {
-                setTimer(prev => prev - 1)
-            }, 1000)
-            return () => clearInterval(interval)
+                setTimer(prev => prev - 1);
+            }, 1000);
+            return () => clearInterval(interval);
         } else {
-            setCanResend(true)
+            setCanResend(true);
         }
-    }, [timer])
+    }, [timer]);
 
     const handleOtpChange = (index, value) => {
         if (value.length <= 1 && /^\d*$/.test(value)) {
-            const newOtp = [...otp]
-            newOtp[index] = value
-            setOtp(newOtp)
+            const newOtp = [...otp];
+            newOtp[index] = value;
+            setOtp(newOtp);
 
             // Auto-focus next input
             if (value && index < 5) {
-                inputRefs.current[index + 1]?.focus()
+                inputRefs.current[index + 1]?.focus();
             }
         }
-    }
+    };
 
     const handleKeyDown = (index, e) => {
         if (e.key === "Backspace" && !otp[index] && index > 0) {
-            inputRefs.current[index - 1]?.focus()
+            inputRefs.current[index - 1]?.focus();
         }
-    }
+    };
 
     const handlePaste = (e) => {
-        e.preventDefault()
-        const pastedData = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6)
-        const newOtp = [...otp]
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+        const newOtp = [...otp];
 
         for (let i = 0; i < pastedData.length && i < 6; i++) {
-            newOtp[i] = pastedData[i]
+            newOtp[i] = pastedData[i];
         }
-        setOtp(newOtp)
+        setOtp(newOtp);
 
-        // Focus the next empty input or the last input
-        const nextIndex = Math.min(pastedData.length, 5)
-        inputRefs.current[nextIndex]?.focus()
-    }
+        const nextIndex = Math.min(pastedData.length, 5);
+        inputRefs.current[nextIndex]?.focus();
+    };
 
-    const handleContinue = () => {
-        if (otp.every(digit => digit !== "")) {
-            console.log("OTP entered:", otp.join(""))
-            // Navigate to next step or verify OTP
+    const verifyOtp = async () => {
+        const otpCode = otp.join("");
+        if (otpCode.length !== 6) {
+            toast.error("Please enter a 6-digit OTP");
+            return;
         }
-        navigate("/reset-password")
-    }
 
-    const handleResend = () => {
-        if (canResend) {
-            setTimer(30)
-            setCanResend(false)
-            setOtp(["", "", "", "", "", ""])
-            inputRefs.current[0]?.focus()
-            console.log("OTP resent to:", email)
+        setLoading(true);
+        try {
+            const response = await axios.post(`${BASE_URL}/verify-otp`, {
+                email: email,
+                otp: otpCode
+            });
+
+            if(response.data.success === true){
+                toast.success("OTP verified successfully!");
+                setTimeout(() => {
+                    navigate("/reset-password", { state: { email } });
+                }, 2000);
+            }
+            else
+            {
+                toast.error("OTP verification failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("OTP verification error:", error);
+            const errorMessage = error.response?.data?.message || "OTP verification failed. Please try again.";
+            toast.error(errorMessage);
+        } finally {
+            setLoading(false);
         }
-    }
+    };
 
-    const isOtpComplete = otp.every(digit => digit !== "")
+    const handleResendOtp = async () => {
+        if (!canResend) return;
+
+        try {
+            const response = await axios.post(`${BASE_URL}/send-otp`, {
+                email: email
+            });
+
+            if(response.data.success === true){
+                toast.success("New OTP sent successfully!");
+                setTimer(30);
+                setCanResend(false);
+                setOtp(["", "", "", "", "", ""]);
+                inputRefs.current[0]?.focus();
+            }else
+            {
+                toast.error("Failed to resend OTP. Please try again.");
+            }
+
+
+        } catch (error) {
+            console.error("Resend OTP error:", error);
+            const errorMessage = error.response?.data?.message || "Failed to resend OTP. Please try again.";
+            toast.error(errorMessage);
+        }
+    };
+
+    const isOtpComplete = otp.every(digit => digit !== "");
 
     return (
         <div className="min-h-screen flex relative">
+            <ToastContainer 
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+           
             <div className="hidden lg:flex lg:w-[25%] bg-gradient-to-br from-purple-100 to-purple-200 items-center justify-center p-8">
                 <div className="text-center">
-                    <div className="text-center">
-                        <div className="flex items-center justify-center space-x-1 mb-4">
-                            <img src={Logo} alt="" />
-                        </div>
+                    <div className="flex items-center justify-center space-x-1 mb-4">
+                        <img src={Logo} alt="" />
                     </div>
                 </div>
             </div>
@@ -91,10 +154,8 @@ export default function VerifyOtp() {
             <div className="w-full lg:w-[55%] flex items-center justify-center lg:justify-end md:p-8 p-4 bg-white max-lg:relative">
                 <div className="absolute lg:right-10 top-6 text-sm inter-tight-400 text-gray-600">
                     Back to Signin?{" "}
-                    <Link to={"/signin"} >
-                        <button className="text-gray-900 font-medium hover:underline">
-                            Sign in
-                        </button>
+                    <Link to="/signin" className="text-gray-900 font-medium hover:underline">
+                        Sign in
                     </Link>
                 </div>
 
@@ -139,7 +200,7 @@ export default function VerifyOtp() {
                                     </p>
                                 ) : (
                                     <button
-                                        onClick={handleResend}
+                                        onClick={handleResendOtp}
                                         className="text-black font-medium text-sm hover:underline"
                                     >
                                         Resend Code
@@ -149,14 +210,23 @@ export default function VerifyOtp() {
 
                             {/* Continue Button */}
                             <button
-                                className={`w-full h-12 ${isOtpComplete
+                                className={`w-full h-12 ${
+                                    isOtpComplete && !loading
                                         ? "bg-black text-white cursor-pointer"
                                         : "bg-gray-300 text-white cursor-not-allowed"
-                                    } inter-tight-700 rounded-xl transition-colors`}
-                                disabled={!isOtpComplete}
-                                onClick={handleContinue}
+                                } inter-tight-700 rounded-xl transition-colors flex items-center justify-center`}
+                                disabled={!isOtpComplete || loading}
+                                onClick={verifyOtp}
                             >
-                                Continue
+                                {loading ? (
+                                    <>
+                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Verifying...
+                                    </>
+                                ) : "Continue"}
                             </button>
 
                             <div>
@@ -169,5 +239,5 @@ export default function VerifyOtp() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -20,7 +20,7 @@ export const register = async (req, res) => {
       req.body.role = "user";
     }
 
-    const referralCode = generateReferralCode()
+    const referralCode = generateReferralCode();
 
     const user = new User({
       username,
@@ -32,11 +32,11 @@ export const register = async (req, res) => {
     });
     await user.save();
 
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({ success: true, message: "User registered successfully" });
   } catch (error) {
     console.log(error);
-    
-    res.status(500).json({ message: "Server Error" });
+
+    res.status(500).json({ success: false,  message: "Server Error" });
   }
 };
 export const login = async (req, res) => {
@@ -55,30 +55,28 @@ export const login = async (req, res) => {
     });
 
     res.status(200).json({
+      success: true,
       token,
     });
   } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({       success: false,
+      message: "Server Error" });
   }
 };
-
 export const sendResetOTP = async (req, res) => {
   try {
     const { email } = req.body;
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ message: "User not found" });
 
-    // Generate 6-digit OTP
-    const otp = crypto.randomInt(100000, 999999).toString();
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
-    // Set expiry (e.g., 10 minutes)
     user.resetPasswordOTP = otp;
     user.resetPasswordOTPExpires = Date.now() + 10 * 60 * 1000;
     await user.save();
 
-    // Send email using nodemailer
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // or your service
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -92,13 +90,12 @@ export const sendResetOTP = async (req, res) => {
       text: `Your OTP to reset password is: ${otp}`,
     });
 
-    res.status(200).json({ message: "OTP sent to email" });
+    res.status(200).json({ success: true, message: "OTP sent to email" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ success: false, message: "Server Error" });
   }
 };
-
 export const verifyResetOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
@@ -113,39 +110,36 @@ export const verifyResetOTP = async (req, res) => {
     if (Date.now() > user.resetPasswordOTPExpires)
       return res.status(400).json({ message: "OTP expired" });
 
-    res.status(200).json({ message: "OTP verified" });
+    res.status(200).json({ success:true, message: "OTP verified" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ success: false, message: "Server Error" });
   }
 };
-
 export const resetPassword = async (req, res) => {
   try {
-    const { email, otp, newPassword } = req.body;
+    const { email, newPassword } = req.body;
     const user = await User.findOne({ email });
 
-    if (!user || !user.resetPasswordOTP)
+    if (!user)
       return res.status(400).json({ message: "OTP not requested" });
 
-    if (user.resetPasswordOTP !== otp)
-      return res.status(400).json({ message: "Invalid OTP" });
+    // if (user.resetPasswordOTP !== otp)
+    //   return res.status(400).json({ message: "Invalid OTP" });
 
-    if (Date.now() > user.resetPasswordOTPExpires)
-      return res.status(400).json({ message: "OTP expired" });
+    // if (Date.now() > user.resetPasswordOTPExpires)
+    //   return res.status(400).json({ message: "OTP expired" });
 
-    // Hash and update new password
     user.password = await bcrypt.hash(newPassword, 10);
 
-    // Clear OTP fields
-    user.resetPasswordOTP = undefined;
-    user.resetPasswordOTPExpires = undefined;
+    user.resetPasswordOTP = null;
+    user.resetPasswordOTPExpires = null;
 
     await user.save();
 
-    res.status(200).json({ message: "Password reset successfully" });
+    res.status(200).json({ success: true, message: "Password reset successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ success: false, message: "Server Error" });
   }
 };

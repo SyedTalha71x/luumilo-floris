@@ -2,17 +2,86 @@ import { useState } from "react"
 import Logo from '../../public/images/logo.svg'
 import { MdOutlineMail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import { MdLockOutline } from "react-icons/md";
+import { MdDriveFileRenameOutline } from "react-icons/md";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { BASE_URL } from "../utils/api.js";    
+
+console.log("VITE_BACKEND_API_URL:", import.meta.env.VITE_BACKEND_API_URL);
+
+console.log(BASE_URL);
 
 export default function SignUpPage() {
-    const [email, setEmail] = useState("")
     const navigate = useNavigate()
+    
+    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
-    const handleContinue = () => {
-        navigate("/signin")
+    const handleRegister = async () => {
+        if (!email || !username || !password) {
+            toast.error("Please fill in all fields");
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            toast.error("Please enter a valid email address");
+            return;
+        }
+
+        if (password.length < 6) {
+            toast.error("Password must be at least 6 characters");
+            return;
+        }
+
+        setIsLoading(true);
+
+        try {
+            const response = await axios.post(`${BASE_URL}/register`, {
+                username,
+                email,
+                password
+            });
+
+            if (response.data.success === true) {
+                toast.success("Registration successful! Redirecting to sign in...");
+                setTimeout(() => {
+                    navigate("/signin");
+                }, 2000);
+            } else {
+                toast.error("Registration failed, Try Again!");
+            }
+        } catch (error) {
+            console.error("Registration error:", error);
+            if (axios.isAxiosError(error)) {
+                toast.error(error.response?.data?.message || "An error occurred during registration");
+            } else {
+                toast.error("An unexpected error occurred");
+            }
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
         <div className="min-h-screen flex relative">
+            <ToastContainer 
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+            
             <div className="hidden lg:flex lg:w-[25%] bg-gradient-to-br from-purple-100 to-purple-200 items-center justify-center p-8">
                 <div className="text-center">
                     <div className="flex items-center justify-center space-x-1 mb-4">
@@ -22,12 +91,12 @@ export default function SignUpPage() {
             </div>
 
             <div className="w-full lg:w-[55%] flex items-center justify-center lg:justify-end md:p-8 p-4 bg-white max-lg:relative">
-            <div className="absolute lg:right-10 top-6 text-sm inter-tight-400 text-gray-600">
-                Already a Member?{" "}
-                <Link to="/signin" className="text-gray-900 font-medium hover:underline">
-                    Sign in
-                </Link>
-            </div>
+                <div className="absolute lg:right-10 top-6 text-sm inter-tight-400 text-gray-600">
+                    Already a Member?{" "}
+                    <Link to="/signin" className="text-gray-900 font-medium hover:underline">
+                        Sign in
+                    </Link>
+                </div>
                 <div className="w-full max-w-md space-y-6">
                     <div className="space-y-6">
                         <div className="text-left">
@@ -63,6 +132,19 @@ export default function SignUpPage() {
                         <div className="space-y-4">
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <MdDriveFileRenameOutline className="h-5 w-5 text-[#000000]" />
+                                </div>
+                                <input
+                                    type="username"
+                                    placeholder="Your username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    className="w-full pl-10 h-12 border border-[#D4D4D4] text-sm outline-none rounded-xl text-[#000000] px-3"
+                                />
+                            </div>
+
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <MdOutlineMail className="h-5 w-5 text-[#000000]" />
                                 </div>
                                 <input
@@ -74,16 +156,35 @@ export default function SignUpPage() {
                                 />
                             </div>
 
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <MdLockOutline className="h-5 w-5 text-[#000000]" />
+                                </div>
+                                <input
+                                    type="password"
+                                    placeholder="Your Password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="w-full pl-10 h-12 border border-[#D4D4D4] text-sm outline-none rounded-xl text-[#000000] px-3"
+                                />
+                            </div>
+
                             <button
                                 className={`w-full h-12 ${
-                                    email
+                                    email && username && password
                                         ? "bg-black text-white cursor-pointer"
                                         : "bg-gray-300 text-white cursor-not-allowed"
-                                } inter-tight-700 rounded-xl`}
-                                disabled={!email}
-                                onClick={handleContinue}
+                                } inter-tight-700 rounded-xl flex items-center justify-center`}
+                                disabled={!email || !username || !password || isLoading}
+                                onClick={handleRegister}
                             >
-                                Continue
+                                {isLoading ? (
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                ) : null}
+                                {isLoading ? "Processing..." : "Continue"}
                             </button>
                         </div>
                     </div>

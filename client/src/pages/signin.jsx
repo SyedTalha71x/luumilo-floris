@@ -2,22 +2,64 @@
 import { useState } from "react"
 import Logo from '../../public/images/logo.svg'
 import { MdLockOutline, MdOutlineMail } from "react-icons/md";
-import { CiLock } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../utils/api";
 
 export default function SignInPage() {
     const [email, setEmail] = useState("")
-    const [password, setpassword] = useState("")
+    const [password, setPassword] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
-    const handleContinue = () => {
-        navigate("/create-profile")
+    const handleSignIn = async () => {
+        if (!email || !password) {
+            toast.error("Please fill in all fields");
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const response = await axios.post(`${BASE_URL}/login`, {
+                email,
+                password
+            });
+
+            const { token } = response.data;
+            
+            localStorage.setItem("authToken", token);
+            
+            toast.success("Sign in successful!");
+            setTimeout(() => {
+                navigate("/create-profile");
+                
+            }, 2000);
+        } catch (error) {
+            console.error("Sign in error:", error);
+            const errorMessage = error.response?.data?.message || "Sign in failed. Please try again.";
+            toast.error(errorMessage);
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
         <div className="min-h-screen flex relative">
+            <ToastContainer 
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
            
             <div className="hidden lg:flex lg:w-[25%] bg-gradient-to-br from-purple-100 to-purple-200 items-center justify-center p-8">
                 <div className="text-center">
@@ -66,9 +108,6 @@ export default function SignInPage() {
                             <span>Or continue with email address</span>
                         </div>
 
-
-
-
                         <div className="space-y-4">
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -91,7 +130,7 @@ export default function SignInPage() {
                                     type="password"
                                     placeholder="Your Password"
                                     value={password}
-                                    onChange={(e) => setpassword(e.target.value)}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     className="w-full pl-10 h-12 border border-[#D4D4D4] text-sm outline-none rounded-xl text-[#000000] px-3"
                                 />
                             </div>
@@ -106,11 +145,17 @@ export default function SignInPage() {
                                     email && password
                                         ? "bg-black text-white cursor-pointer"
                                         : "bg-gray-300 text-white cursor-not-allowed"
-                                } inter-tight-700 rounded-xl`}
-                                disabled={!email && !password}
-                                onClick={handleContinue}
+                                } inter-tight-700 rounded-xl flex items-center justify-center`}
+                                disabled={!email || !password || loading}
+                                onClick={handleSignIn}
                             >
-                                Continue
+                                {loading ? (
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                ) : null}
+                                {loading ? "Signing in..." : "Continue"}
                             </button>
                             
                             <div>
