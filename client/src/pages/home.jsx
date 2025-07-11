@@ -9,9 +9,9 @@ import DashImage4 from "../../public/activities-images/Frame (9).svg"
 import DashImage5 from "../../public/activities-images/Group (3).svg"
 import DashImage6 from "../../public/activities-images/SVG (1).svg"
 import DashImage7 from "../../public/activities-images/SVG.svg"
-import ArrowImage from "../../public/images/Arrow 1.svg"
+import ArrowImage from "../../public/nav-images/noun-4712550-FFFFFF.png"
 import Card1 from "../../public/images/new-card.svg"
-import Card2 from "../../public/images/Clip path group.svg"
+import Card2 from "../../public/nav-images/ahmed-hossam-iBv9aRp9yME-unsplash.png"
 import Card3 from "../../public/images/Background+Border+Shadow.svg"
 import { Check, Users } from 'lucide-react'
 import Faqs from "../components/faqs"
@@ -74,53 +74,53 @@ export default function HeroSection() {
   return (
     <>
       <div className="p-3">
-      <section className="max-w-7xl m-auto">
-  <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] px-4 sm:px-6 lg:px-8">
-    <div className="max-w-6xl mx-auto ">
-      <div className="text-center ">
-        <h1 className="text-4xl py-16 sm:text-5xl lg:text-6xl font-bold ">
-          <span className="inter-tight-700 bg-clip-text text-transparent bg-gradient-to-b to-[#2563EB] from-[#9333EA]">
-            Je kind future-proof maken?
-          </span>
-          <br />
-          <span className="text-[#111827] inter-tight-700">Dat doe je samen.</span>
-        </h1>
-        <div className="flex items-center mt-2 justify-center mb-12">
-          <div className="flex items-center space-x-4">
-            <div className="text-center max-w-xl">
-              <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
-                Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte,
-                speelse missies die jullie band versterken.
-              </p>
-            </div>
-          </div>
-        </div>
+        <section className="max-w-7xl m-auto">
+          <div className="h-auto bg-gradient-to-br rounded-3xl from-[#EFF6FF] via-[#FAF5FF] to-[#FDF2F8] px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto ">
+              <div className="text-center ">
+                <h1 className="text-4xl py-16 sm:text-5xl lg:text-6xl font-bold ">
+                  <span className="inter-tight-700 bg-clip-text text-transparent bg-gradient-to-b to-[#2563EB] from-[#9333EA]">
+                    Je kind future-proof maken?
+                  </span>
+                  <br />
+                  <span className="text-[#111827] inter-tight-700">Dat doe je samen.</span>
+                </h1>
+                <div className="flex items-center mt-2 justify-center mb-12">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-center max-w-xl">
+                      <p className="text-sm sm:text-[18px] text-[#8F8F8F] inter-tight-400 leading-relaxed">
+                        Luumilo helpt je kind (3–6 jaar) groeien in dankbaarheid, Veerkracht zelfzorg en meer – via korte,
+                        speelse missies die jullie band versterken.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-        <div className="flex justify-center pb-8 sm:pb-12 lg:pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-2xl px-4">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transition-shadow duration-500 cursor-pointer border border-slate-200 shadow-lg">
-              <div className="flex items-start space-x-3">
-                <p className="text-[#5D5D5D] text-sm md:text-base inter-tight-400">
-                  <span className="inter-tight-700 text-[#5D5D5D] mr-1">Voor ouders</span>
-                  die voelen dat innerlijke kracht belangrijker is dan hoge cijfers.
-                </p>
+                <div className="flex justify-center pb-8 sm:pb-12 lg:pb-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-2xl px-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transition-shadow duration-500 cursor-pointer border border-slate-200 shadow-lg">
+                      <div className="flex items-start space-x-3">
+                        <p className="text-[#5D5D5D] text-sm md:text-base inter-tight-400">
+                          <span className="inter-tight-700 text-[#5D5D5D] mr-1">Voor ouders</span>
+                          die voelen dat innerlijke kracht belangrijker is dan hoge cijfers.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-4 sm:p-6 transition-shadow duration-300 shadow-lg">
+                      <div className="flex items-start space-x-3">
+                        <p className="text-[#FFFFFF] text-sm md:text-base inter-tight-400">
+                          <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>
+                          die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div className="bg-gradient-to-br from-[#8D35EA] to-[#2C60EB] rounded-2xl p-4 sm:p-6 transition-shadow duration-300 shadow-lg">
-              <div className="flex items-start space-x-3">
-                <p className="text-[#FFFFFF] text-sm md:text-base inter-tight-400">
-                  <span className="inter-tight-700 text-[#FFFFFF] mr-1">Voor kinderen</span>
-                  die zelfstandig, sterk en nieuwsgierig de wereld in stappen.
-                </p>
-              </div>
-            </div>
           </div>
-        </div>        
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
 
 
@@ -291,115 +291,129 @@ export default function HeroSection() {
 
         <section
           id="4rth-section"
-          className="relative h-auto max-w-7xl m-auto mt-16 rounded-3xl  bg-gradient-to-br from-[#ad1a75] via-[#435CDE] to-[#344bc0] py-16 px-4 sm:px-6 lg:px-8"
+          className="relative h-auto max-w-7xl m-auto mt-16 rounded-3xl bg-gradient-to-br from-[#ad1a75] via-[#435CDE] to-[#344bc0] py-16 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl poppins-700  text-white mb-2">Hoe het werkt</h2>
+              <h2 className="text-3xl md:text-4xl poppins-700 text-white mb-2">Hoe het werkt</h2>
               <p className="text-white text-md">3 Simpele Stappen</p>
             </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
-              <div className=" md:h-[450px] h-full">
+
+              {/* Card 1 */}
+              <div className="md:h-[490px] h-full">
                 <div
-                  className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
-                  style={{
-                    boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
-                  }}
+                  className="bg-gray-200  rounded-3xl p-6 sm:p-6 h-full    relative overflow-hidden border border-white/10"
+                  // style={{
+                  //   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.2)"
+                  // }}
                 >
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
-                        1 – Ontdek betekenisvolle activiteiten
-                      </h3>
-                      <img
-                        src={ArrowImage || "/placeholder.svg"}
-                        alt="Arrow"
-                        className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
-                      />
-                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-[16px] leading-relaxed mt-4 lg:mt-0">
-                        Korte, speelse activiteiten die bouwen aan de fundering van je kind - thuis, met aandacht en intentie.
-                      </p>
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="bg-orange-500 rounded-full w-14 h-14 flex items-center justify-center mb-2">
+                      <span className="text-white text-xl font-bold">1</span>
                     </div>
+                    <h3 className="text-black  text-center inter-tight-600 text-lg sm:text-2xl mb-2">
+                      Speel, leer en groei 
+                      <br />
+                       - samen thuis
+                    </h3>
+                    {/* <img
+                      src={ArrowImage || "/placeholder.svg"}
+                      alt="Arrow"
+                      className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
+                    /> */}
+                    <p className="text-black max-w-xs mx-auto w-full text-center mt-3 inter-tight-400 text-[16px] leading-relaxed">
+                      Korte, speelse activiteiten die bouwen aan de fundering van je kind - thuis, met aandacht en intentie.
+                    </p>
                   </div>
-                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
-                    <div>
-                      <img src={Card1 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
-                    </div>
+                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 flex justify-center lg:justify-start">
+                    <img src={Card1 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
                   </div>
                 </div>
               </div>
-              <div className="  md:h-[450px] h-full">
+
+              {/* Card 2 */}
+              <div className="md:h-[490px] h-full">
                 <div
-                  className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
-                  style={{
-                    boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
-                  }}
+                  className="bg-gray-200  rounded-3xl p-6 sm:p-6 h-full    relative overflow-hidden border border-white/10"
+                  // style={{
+                  //   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.2)"
+                  // }}
                 >
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
-                        2 – Versterk jullie band
-                      </h3>
-                      <img
-                        src={ArrowImage || "/placeholder.svg"}
-                        alt="Arrow"
-                        className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
-                      />
-                      <p className="text-[#FFFFFF] lg:mt-10 lg:ml-7 inter-tight-400 text-[16px] leading-relaxed mt-4 ">
-                        Creëer momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
-                      </p>
+                  <div className="flex flex-col items-center mb-4">
+                  <div className="bg-orange-500 rounded-full w-14 h-14 flex items-center justify-center mb-2">
+                      <span className="text-white text-xl font-bold">2</span>
                     </div>
+                    <h3 className="text-black  text-center inter-tight-600 text-lg sm:text-2xl mb-2">
+                      Versterk de band
+                      <br /> 
+                      met je kind
+                    </h3>
+                    <img
+                      src={ArrowImage || "/placeholder.svg"}
+                      alt="Arrow"
+                      className="absolute right-68 top-64 h-[20vh] w-[20vh] hidden lg:block"
+                    />
+                    <p className="text-black max-w-xs mx-auto w-full text-center mt-3 inter-tight-400 text-[16px] leading-relaxed">
+                      Creëer momenten van verbinding, plezier en groei. Samen ontdekken, lachen en leren.
+                    </p>
                   </div>
-                  <div className="lg:absolute lg:bottom-0 lg:left-30 mt-6 lg:mt-0  flex justify-center lg:justify-start">
-                    <div>
-                      <img src={Card2 || "/placeholder.svg"} alt="" className="w-auto  h-auto max-w-full" />
-                    </div>
-                  </div>
+                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 flex justify-center lg:justify-start">
+  <img 
+    src={Card2 || "/placeholder.svg"} 
+    alt="" 
+    className="w-auto h-auto max-w-full -rotate-[25deg] translate-x-6" 
+  />
+</div>
                 </div>
-              </div>
-              <div className=" md:h-[450px] h-full">
+              </div>  
+
+              {/* Card 3 */}
+              <div className="md:h-[490px] h-full">
                 <div
-                  className="bg-[#C52E8A]/30 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 h-full shadow-inner relative overflow-hidden"
-                  style={{
-                    boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.6), inset 0 4px 16px rgba(255, 255, 255, 0.3)",
-                  }}
+                  className="bg-gray-200  rounded-3xl p-6 sm:p-6 h-full    relative overflow-hidden border border-white/10"
+                  // style={{
+                  //   boxShadow: "inset 0 8px 32px rgba(255, 255, 255, 0.3), inset 0 4px 16px rgba(255, 255, 255, 0.2)"
+                  // }}
                 >
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="relative w-full">
-                      <h3 className="text-white text-center inter-tight-600 text-lg sm:text-[22px] mb-1">
-                        3 – Stimuleer groei op 3 niveaus
-                      </h3>
-                      <img
-                        src={ArrowImage || "/placeholder.svg"}
-                        alt="Arrow"
-                        className="absolute right-34 top-12 h-[30vh] w-full hidden lg:block"
-                      />
-                      <p className="text-[#FFFFFF] inter-tight-400 lg:ml-14 text-[16px] leading-relaxed mt-4 lg:mt-0">
-                        Elke activiteit versterkt emotionele, praktische en sociale vaardigheden, volg jullie vooruitgang!
-                      </p>
+                  <div className="flex flex-col items-center mb-4">
+                  <div className="bg-orange-500 rounded-full w-14 h-14 flex items-center justify-center mb-2">
+                      <span className="text-white text-xl font-bold">3</span>
                     </div>
+                    <h3 className="text-black  text-center inter-tight-600 text-lg sm:text-2xl mb-2">
+                      Groei op 3 vlakken:
+                      <br /> hoofd, hart en handen
+                    </h3>
+                    <img
+                      src={ArrowImage || "/placeholder.svg"}
+                      alt="Arrow"
+                      className="absolute right-68 top-64 h-[20vh] w-[20vh] hidden lg:block"
+                    />
+                    <p className="text-black max-w-xs mx-auto w-full text-center mt-3 inter-tight-400 text-[16px] leading-relaxed">
+                      Elke activiteit versterkt emotionele, praktische en sociale vaardigheden, volg jullie vooruitgang!
+                    </p>
                   </div>
-                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 lg:mt-0 flex justify-center lg:justify-start">
-                    <div>
-                      <img src={Card3 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
-                    </div>
+                  <div className="lg:absolute lg:bottom-0 lg:left-40 mt-6 flex justify-center lg:justify-start">
+                    <img src={Card3 || "/placeholder.svg"} alt="" className="w-auto h-auto max-w-full" />
                   </div>
                 </div>
               </div>
             </div>
 
-             {/* Fun call-to-action */}
-        <div className="text-center cursor-pointer mt-16">
-          <div className="inline-block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="bg-white rounded-full px-8 py-4">
-              <p className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Klaar om je eigen leeravontuur te beginnen? 🎉
-              </p>
+            {/* CTA */}
+            <div className="text-center cursor-pointer mt-16">
+              <div className="inline-block bg-gradient-to-r from-pink-400 via-pink-500 to-purple-500 p-1 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-white rounded-full px-8 py-4">
+                  <p className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Klaar om je eigen leeravontuur te beginnen? 🎉
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-          </div>
         </section>
+
 
         <section className="py-16 px-4 mt-10 sm:px-6 lg:px-8 h-auto max-w-7xl m-auto ">
           <div className="max-w-4xl w-full m-auto">
